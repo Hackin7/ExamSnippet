@@ -1,4 +1,4 @@
-#ExamSnippet
+# ExamSnippet
 
 An educational quiz made to provide quiz bout exmination questions
 

@@ -1,0 +1,11 @@
+{
+	"paper": "noSuchPaper",
+	"section": "Nil",
+	"q_id": "1a", 
+	"question": "What is the nature of the universe?",
+	"image_path":"https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg",
+	"type": "other",
+	"input": "<input name='answer0' type='text'/> <input name='answer1' type='text'/>",
+	"correct_answer": {"answer0":"It's shit", "answer1":"Hi"},
+	"self_mark": false
+}

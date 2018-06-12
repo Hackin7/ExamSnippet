@@ -1,0 +1,122 @@
+<html>
+
+<head>
+<title>Quiz</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+<style>
+	.card{margin:auto;}
+	@media screen and (min-width: 600px){
+		.card{margin:auto;width: 80%;}
+	}
+	@media screen and (min-width: 800px){
+		.card{margin:auto;width: 60%;}
+	}
+	img{width: 100%;}
+</style>
+</head>
+
+<body ng-app="quiz" ng-controller="answering">
+
+<p></p>
+
+<!-- question.html -->
+<div class="card" ng-show="Q.step == 1" ng-repeat="Q in questions">
+<div class="card-header">Question {{Q.id+1}}: From {{Q.paper}}</div>
+<div class="card-body">
+	<div class="container"><div class="row">
+		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
+	</div></div>
+	<p>{{Q.q_id}}: {{Q.question}}</p>
+	<!-- Input Types -->
+	<div ng-show="Q.type == 'mcq'" ng-repeat="given in length(Q.given)" >
+		<input name="answer" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>{{Q.given[given]}}<br>
+	</div>
+	<div ng-show="Q.type == 'blank'" ng-repeat="given in length(Q.given)">
+		<input name="answer{{given}}" type='text' ng-model="Q.answer[given]"/><br>
+	</div>
+	<div ng-show="Q.type == 'essay'" ng-repeat="given in length(Q.given)">
+		<textarea name="answer{{given}}" cols="100" ng-model="Q.answer[given]"/></textarea><br>
+	</div>
+</div>
+<div class="card-footer">
+	<input type="submit" class="btn btn-default" style="float:left;" value="Quit"/>
+	<input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click="Q.step = Q.step + 1;marking(Q.id);"/>
+	<input type="reset" class="btn btn-default" style="float:right;" value="Reset" ng-click="again();"/>
+</div>
+</div>
+
+
+<!-- marking -->
+<div class="card" ng-show="Q.self_mark && Q.step == 2" ng-repeat="Q in questions">
+<div class="card-header">Marking {{Q.id+1}}: From {{Q.paper}}</div>
+<div class="card-body">
+	<div class="container"><div class="row">
+		<!--Image for testing https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg -->
+		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
+		<div class="col">{{Q.q_id}}: {{Q.question}}</div>
+	</div></div>
+
+	<table class="table">
+	<tr><th>Answer</th><th>Marking</th></tr>
+	<tr><td>
+			<p ng-repeat="answer in Q.answer">{{answer}}</p>
+		</td>
+		<td>
+			<span ng-repeat="correct in length(Q.correct)">
+				<input type="checkbox" ng-model="Q.awarded[correct]" value="{{Q.marks[correct]}}"/>
+				{{Q.correct[correct]}}	<b>[{{Q.marks[correct]}}]</b><br></span>
+			Score: {{scoring(Q.awarded, Q.marks)}}
+		</td></tr>
+	</table>
+</div>
+<div class="card-footer">
+	<input type="submit" class="btn btn-default" style="float:left;" value="Quit"/>
+	<input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click="Q.step = Q.step + 1"/>
+	<input type="reset" class="btn btn-default" style="float:right;" value="Reset" ng-click="again();"/>
+</div>
+</div>
+
+<div class="card" ng-show="checkComplete(questions)">
+<div class="card-header">Results</div>
+<div class="card-body">
+	<p><b>Total Score: {{totalScoring(questions)}}</b></p>
+	<!--<div class="container"><div class="row">
+		<div class="col"></div>
+	</div></div>-->
+	
+	<b>Questions:</b>
+	<div ng-repeat="Q in questions">
+	{{Q.paper}} {{Q.q_id}}: {{Q.question}}
+	<table class="table">
+	<tr><th>Images</th><th>Answer</th><th>Correct Answer</th></tr>
+		<tr>
+			<td width="20%">
+					<div ng-repeat="image in length(Q.images)"><img src="{{Q.images[image]}}"/></div>
+			<!--<ul>
+				<li ng-repeat="image in length(Q.images)">
+				<img src="{{Q.images[image]}}" width="30%"/></li>
+			</ul>--></td>
+			<td><ul>
+				<li ng-repeat="answer in length(Q.answer)">
+				{{Q.answer[answer]}}</li>
+			</ul></td>
+			<td><ul>
+				<li ng-repeat="correct in length(Q.correct)" ng-style="mistakeHighlighting(Q,correct)">
+				{{Q.correct[correct]}}	<b>[{{Q.marks[correct]}}]</b></li>
+			</ul></td>
+		</tr>
+	</table>
+	</div>
+</div>
+<div class="card-footer">
+	<!--<a href="/quiz" class="btn btn-default" style="float:left;" value="Again"/>-->
+	<input type="submit" class="btn btn-default" style="float:left;" value="Again" ng-click="again();"/>
+	<a href="/quiz" class="btn btn-default" style="float:right;" value="End"/>
+</div>
+</div>
+
+<script src="quiz.js"></script>
+</body>
+
+</html>
