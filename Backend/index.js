@@ -46,8 +46,8 @@ app.post('/', function(req, res){
 });
 */ 
 
-var quiz = require('./quiz.js');
-app.use('/quiz', quiz)
+var quiz = require('./RESTful_API.js');
+app.use('/RESTAPI', quiz);
 
 
 app.listen(3000);
