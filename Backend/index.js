@@ -1,14 +1,15 @@
 var express = require('express');
 var app = express();
 
-/*
 var fs = require('fs');
 //var bodyParser = require('body-parser');
 //var multer = require('multer');
 //var upload = multer();
 
+app.use(express.static('public'));
+/*
 app.get('/', function(req,res){
-  fs.readFile('question.html', function (err, data) {
+  fs.readFile('../Webpages/index.html', function (err, data) {
       if (err) {
          console.log(err);
          // HTTP Status: 404 : NOT FOUND
@@ -36,8 +37,6 @@ app.get('/', function(req,res){
 
 //for parsing multipart/form-data
 //app.use(upload.array());
-
-app.use(express.static('public'));
 
 app.post('/', function(req, res){
   console.log(req.body);

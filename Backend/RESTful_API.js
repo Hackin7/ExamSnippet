@@ -130,6 +130,30 @@ router.get('/random/:subject/:type/:topic/:quantity', function(req, res){
 	res.end();	   
 });
 
+/* Work In Progress
+router.post('/random', function(req, res){		   
+	var data = loadQuestions();
+	var possibleQuestions = [];
+	console.log(req.body); // Debugging
+	for (i in data.questionTree[req.body.subject]){ // Papers
+		for (j in data.questionTree[req.body.subject][i].questions){ // Questions
+			console.log([i,j]);
+			var question = data.questionTree[req.body.subject][i].questions[j];
+			//Debugging
+			if (question.type == req.body.type){
+				for (v in question.topics){
+					if (question.topics[v] == req.body.topic){
+						possibleQuestions.push(question);
+						}
+				}
+			}
+		}
+	}
+	res.json(getRandom(possibleQuestions, req.params.quantity));//possibleQuestions);
+	res.end();	   
+});
+*/
+
 router.get('/update', function(req, res){
 });
 

@@ -1,0 +1,32 @@
+<!-- marking -->
+<div class="card" style="margin-top:80px" ng-show="Q.self_mark && Q.step == 2" ng-repeat="Q in questions">
+<div class="card-header">Marking {{Q.id+1}}: From {{Q.paper}}</div>
+<div class="card-body">
+	<div class="container"><div class="row">
+		<!--Image for testing https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg -->
+		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
+		<div class="col">{{Q.q_id}}: {{Q.question}}</div>
+	</div></div>
+
+	<table class="table">
+	<tr><th>Answer</th><th>Marking</th></tr>
+	<tr><td>
+			<p ng-repeat="answer in Q.answer">{{answer}}</p>
+		</td>
+		<td width="40%">
+				<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.images[image]}}"/></div>
+		</td>
+		<td>
+			<span ng-repeat="correct in length(Q.correct)">
+				<input type="checkbox" ng-model="Q.awarded[correct]" value="{{Q.marks[correct]}}"/>
+				{{Q.correct[correct]}}	<b>[{{Q.marks[correct]}}]</b><br></span>
+			Score: {{scoring(Q.awarded, Q.marks)}}
+		</td></tr>
+	</table>
+</div>
+<div class="card-footer">
+	<input type="submit" class="btn btn-default" style="float:left;" value="Quit"/>
+	<input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click="Q.step = Q.step + 1"/>
+	<input type="reset" class="btn btn-default" style="float:right;" value="Reset" ng-click="again();"/>
+</div>
+</div>

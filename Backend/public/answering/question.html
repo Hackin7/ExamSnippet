@@ -1,0 +1,25 @@
+<!-- question.html -->
+<div class="card" style="margin-top:80px" ng-show="Q.step == 1" ng-repeat="Q in questions">
+<div class="card-header">Question {{Q.id+1}}: From {{Q.paper}}</div>
+<div class="card-body">
+	<div class="container"><div class="row">
+		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
+	</div></div>
+	<p>{{Q.q_id}}: {{Q.question}}</p>
+	<!-- Input Types -->
+	<div ng-show="Q.type == 'mcq'" ng-repeat="given in length(Q.given)" >
+		<input name="answer" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>{{Q.given[given]}}<br>
+	</div>
+	<div ng-show="Q.type == 'blank'" ng-repeat="given in length(Q.given)">
+		<input name="answer{{given}}" type='text' ng-model="Q.answer[given]"/><br>
+	</div>
+	<div ng-show="Q.type == 'essay'" ng-repeat="given in length(Q.given)">
+		<textarea name="answer{{given}}" cols="100" ng-model="Q.answer[given]"/></textarea><br>
+	</div>
+</div>
+<div class="card-footer">
+	<input type="submit" class="btn btn-default" style="float:left;" value="Quit"/>
+	<input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click="Q.step = Q.step + 1;marking(Q.id);"/>
+	<input type="reset" class="btn btn-default" style="float:right;" value="Reset" ng-click="again();"/>
+</div>
+</div>

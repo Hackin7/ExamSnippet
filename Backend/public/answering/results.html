@@ -1,0 +1,38 @@
+<div class="card" style="margin-top:80px" ng-show="checkComplete(questions)">
+<div class="card-header">Results</div>
+<div class="card-body">
+	<p><b>Total Score: {{totalScoring(questions)}}</b></p>
+	<!--<div class="container"><div class="row">
+		<div class="col"></div>
+	</div></div>-->
+	
+	<b>Questions:</b>
+	<div ng-repeat="Q in questions">
+	{{Q.paper}} {{Q.q_id}}: {{Q.question}}
+	<table class="table">
+	<tr><th>Images</th><th>Answer</th><th>Correct Answer</th></tr>
+		<tr>
+			<td width="20%">
+					<div ng-repeat="image in length(Q.images)"><img src="{{Q.images[image]}}"/></div>
+			</td>
+			<td><ul>
+				<li ng-repeat="answer in length(Q.answer)">
+				{{Q.answer[answer]}}</li>
+			</ul></td>
+			<td width="20%">
+					<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.images[image]}}"/></div>
+			</td>
+			<td><ul>
+				<li ng-repeat="correct in length(Q.correct)" ng-style="mistakeHighlighting(Q,correct)">
+				{{Q.correct[correct]}}	<b>[{{Q.marks[correct]}}]</b></li>
+			</ul></td>
+		</tr>
+	</table>
+	</div>
+</div>
+<div class="card-footer">
+	<!--<a href="/quiz" class="btn btn-default" style="float:left;" value="Again"/>-->
+	<input type="submit" class="btn btn-default" style="float:left;" value="Again" ng-click="again();"/>
+	<a href="/quiz" class="btn btn-default" style="float:right;" value="End"/>
+</div>
+</div>
