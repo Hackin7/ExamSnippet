@@ -1,27 +1,27 @@
 <div class="card" style="margin-top:80px">
 <div class="card-header">Random Selection Criteria</div>
-<div class="card-body">
+<div class="card-body" ng-init="way={}">
 	<!--<div class="container"><div class="row">
 		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
 	</div></div> -->
 	Amount<br>
-	<input type="number" name="Amount" min="1"><br>
+	<input type="number" name="Amount" min="1" ng-model="way.quantity"><br>
 	Subjects<br>
-	<span ng-repeat="correct in length(subjects)">
-				<input type="radio" ng-model="" value="{{subjects[correct]}}"/>
-				{{subjects[correct]}}<br></span>
+	<span ng-repeat="i in length(subjects)">
+				<input type="radio" ng-model="way.subject" value="{{subjects[i]}}"/>
+				{{subjects[i]}}<br></span>
 	Types<br>
-	<span ng-repeat="correct in length(type)">
-				<input type="radio" ng-model="" value="{{type[correct]}}"/>
-				{{type[correct]}}<br></span>
+	<span ng-repeat="i in length(type)">
+				<input type="radio" ng-model="way.type" value="{{type[i]}}"/>
+				{{type[i]}}<br></span>
 	Topic<br>
-	<span ng-repeat="correct in length(topics)">
-				<input type="radio" ng-model="" value="{{topics[correct]}}"/>
-				{{topics[correct]}}<br></span>
+	<span ng-repeat="i in length(topics)">
+				<input type="radio" ng-model="way.topic" value="{{topics[i]}}"/>
+				{{topics[i]}}<br></span>
 </div>
 <div class="card-footer">
-	<a href="#!" role="button" class="btn btn-light" style="float:left;">Back</a>
+	<a href="#!" role="button" class="btn btn-secondary" style="float:left;">Back</a>
 	<!-- <input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click=""/> -->
-	<a href="#!" role="button" class="btn btn-light" style="float:right;">Add</a>
+	<a href="#!finding/random/listing" role="button" class="btn btn-secondary" style="float:right;" ng-click="chosen.push(way)">Add</a>
 </div>
 </div>

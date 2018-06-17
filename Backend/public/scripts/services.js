@@ -34,4 +34,3 @@ app.service('restAPI', function($http) {
 	}
 	*/
 });
-

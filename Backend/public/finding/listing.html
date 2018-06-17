@@ -1,17 +1,19 @@
 <div class="card" style="margin-top:80px">
 <div class="card-header">Questions</div>
 <div class="card-body">
-	<div class="alert alert-secondary alert-dismissible fade show" role="alert" ng-reepeat="type in chosen">
-  {{type.quantity}} {{type.subject}} {{type.type}} Questions,about {{type.topic}}
+
+<div class="alert alert-secondary alert-dismissible fade show" role="alert" ng-repeat="Q in length(questions)">
+  <span>{{questions[Q].paper}} {{questions[Q].q_id}}: {{questions[Q].question}}</span>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
+  <!--https://www.w3schools.com/js/js_array_methods.asp-->
+    <span aria-hidden="true" ng-click="questions.splice(Q,1);">&times;</span>
   </button>
 </div>
 
 </div>
 <div class="card-footer">
-	<a href="#\!" class="btn btn-light" style="float:left;">Main</a>
-	<a href="#!" role="button" class="btn btn-light" style="float:left;">Add More</a>
-	<a href="#!" role="button" class="btn btn-light" style="float:right;">OK</a>
+	<a href="#\!" class="btn btn-secondary" style="float:left;">Main</a>
+	<a href="#!finding/question" role="button" class="btn btn-secondary" style="float:left;">Add More</a>
+	<a href="#!answering" role="button" class="btn btn-secondary" style="float:right;">OK</a>
 </div>
 </div>

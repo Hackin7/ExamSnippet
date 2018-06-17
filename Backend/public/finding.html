@@ -39,6 +39,18 @@
 <ng-view></ng-view>
 <script>
 var app = angular.module("finding", ['ngRoute']);
+</script>
+<script src="scripts/directives.js"></script>
+<script>
+app.config(function($routeProvider) {
+	$routeProvider
+	.when("/", {
+		template: "<h1>Hi</h1>"
+	})
+	//.when("/start", {
+	//	templateUrl : "finding/start.html"
+	//})
+});
 
 app.controller("search", ['$scope', function($scope) {
 	$scope.length = function(array){
@@ -52,18 +64,8 @@ app.controller("search", ['$scope', function($scope) {
 	$scope.chosen = [{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}]
 }]);
 
-app.config(function($routeProvider) {
-	$routeProvider
-	.when("/", {
-		template: "<h1>Hi</h1>"
-	})
-	//.when("/start", {
-	//	templateUrl : "finding/start.html"
-	//})
-});
 
 </script>
-<script src="scripts/directives.js"></script>
 </body>
 
 </html>

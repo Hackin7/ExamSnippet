@@ -93,4 +93,22 @@ app.controller("answering", function($scope,restAPI) {
 	});
     $scope.questionNo = 0;
 	$scope.again();
+
+	$scope.subjects = ["Chemistry", "Physics"]
+	$scope.type = ["MCQ", "Blanks", "Open-ended"]
+	$scope.topics = ["Magnetism", "Organic Chemistry", "Metals"]
+	$scope.chosen = [{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}]
+
 });
+
+app.controller("finding", ['$scope', function($scope) {
+	$scope.length = function(array){
+		var foo = [];
+		for (var i = 0; i < array.length; i++) {foo.push(i);}
+		return foo
+	}
+	$scope.subjects = ["Chemistry", "Physics"]
+	$scope.type = ["MCQ", "Blanks", "Open-ended"]
+	$scope.topics = ["Magnetism", "Organic Chemistry", "Metals"]
+	$scope.randomTypes = [{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}]
+}]);
