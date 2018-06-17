@@ -13,8 +13,8 @@ app.service('restAPI', function($http) {
     this.papers = function(subject) {
 		return $http({method : 'GET',url : '/RESTAPI/list/'+subject})
 	}
-    this.questions = function(subject,questions) {
-		return $http({method : 'GET',url : '/RESTAPI/list/'+subject+'/'+questions})
+    this.questions = function(subject,paper) {
+		return $http({method : 'GET',url : '/RESTAPI/list/'+subject+'/'+paper})
 	}
     this.topics = function(subject) {
 		return $http({method : 'GET',url : '/RESTAPI/topics/'+subject})

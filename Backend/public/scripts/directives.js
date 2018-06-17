@@ -1,4 +1,4 @@
-
+/*
 // Finding
 app.directive("method", function() {
     return {
@@ -7,10 +7,10 @@ app.directive("method", function() {
     };
 });
 
-app.directive("findquestion", function() {
+app.directive("pick", function() {
     return {
         restrict : "E",
-        templateUrl: "finding/question.html"
+        templateUrl: "finding/pick_subject.html"
     };
 });
 
@@ -34,7 +34,7 @@ app.directive("json", function() {
         templateUrl: "finding/JSON.html"
     };
 });
-
+*/
 
 // Answering
 app.directive("question", function() {

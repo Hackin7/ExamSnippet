@@ -1,4 +1,4 @@
-app.controller("answering", function($scope,restAPI) {
+app.controller("answering", function($scope,restAPI,$routeParams) {
 	//Methods
 	$scope.length = function(array){
 		var foo = [];
@@ -93,15 +93,29 @@ app.controller("answering", function($scope,restAPI) {
 	});
     $scope.questionNo = 0;
 	$scope.again();
-
+	
 	$scope.subjects = ["Chemistry", "Physics"]
-	$scope.type = ["MCQ", "Blanks", "Open-ended"]
-	$scope.topics = ["Magnetism", "Organic Chemistry", "Metals"]
-	$scope.chosen = [{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}]
+	$scope.picking = {}
+	restAPI.subjects().then(function(response) {
+			$scope.picking.subjects = response.data;
+	});
+	$scope.updatePapers = function(subject){restAPI.papers(subject).then(function(response) {
+			$scope.picking.subject = subject;
+			$scope.picking.papers = response.data;
+	});};
+	$scope.updateQuestions = function(subject,paper){restAPI.questions(subject,paper).then(function(response) {
+			$scope.picking.paper = paper;
+			$scope.picking.questions = response.data;
+	});};
+	
+	$scope.type = ["MCQ", "Blanks", "Open-ended"];
+	$scope.topics = ["Magnetism", "Organic Chemistry", "Metals"];
+	$scope.random = {};
+	$scope.random.types = [];//[{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}];
 
 });
 
-app.controller("finding", ['$scope', function($scope) {
+app.controller("finding", function($scope) {
 	$scope.length = function(array){
 		var foo = [];
 		for (var i = 0; i < array.length; i++) {foo.push(i);}
@@ -111,4 +125,12 @@ app.controller("finding", ['$scope', function($scope) {
 	$scope.type = ["MCQ", "Blanks", "Open-ended"]
 	$scope.topics = ["Magnetism", "Organic Chemistry", "Metals"]
 	$scope.randomTypes = [{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}]
-}]);
+});
+
+app.controller("main", function($scope) {
+	$scope.length = function(array){
+		var foo = [];
+		for (var i = 0; i < array.length; i++) {foo.push(i);}
+		return foo
+	}
+});
