@@ -1,12 +1,12 @@
 <div class="card" style="margin-top:80px">
-<div class="card-header">Questions</div>
+<div class="card-header">Selection Criteria of Questions</div>
 <div class="card-body">
 
-<div class="alert alert-secondary alert-dismissible fade show" role="alert" ng-repeat="type in length(random.types)">
-  <span>{{random.types[type].quantity}} {{random.types[type].type}} Questions, about {{random.types[type].topic}} in {{random.types[type].subject}}</span>
+<div class="alert alert-secondary alert-dismissible fade show" role="alert" ng-repeat="type in length(random.criterion)">
+  <span>{{random.criterion[type].quantity}} {{random.criterion[type].type}} Questions, about {{random.criterion[type].topic}} in {{random.criterion[type].subject}}</span>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
   <!--https://www.w3schools.com/js/js_array_methods.asp-->
-    <span aria-hidden="true" ng-click="random.types.splice(type,1);">&times;</span>
+    <span aria-hidden="true" ng-click="random.criterion.splice(type,1);">&times;</span>
   </button>
 </div>
 
@@ -14,6 +14,6 @@
 <div class="card-footer">
 	<a href="#\!" class="btn btn-secondary" style="float:left;">Main</a>
 	<a href="#!" role="button" class="btn btn-secondary" style="float:left;">Add More</a>
-	<a href="#!finding/listing" role="button" class="btn btn-secondary" style="float:right;">OK</a>
+	<a href="#!listing" role="button" class="btn btn-secondary" style="float:right;" ng-click="random.find();">OK</a>
 </div>
 </div>

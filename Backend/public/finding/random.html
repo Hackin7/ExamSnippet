@@ -7,21 +7,21 @@
 	Amount<br>
 	<input type="number" name="Amount" min="1" ng-model="random.way.quantity"><br>
 	Subjects<br>
-	<span ng-repeat="i in length(subjects)">
-				<input type="radio" ng-model="random.way.subject" value="{{subjects[i]}}"/>
-				{{subjects[i]}}<br></span>
+	<span ng-repeat="subjects in picking.subjects">
+				<input type="radio" ng-model="random.way.subject" value="{{subjects}}"/>
+				{{subjects}}<br></span>
 	Types<br>
-	<span ng-repeat="i in length(type)">
-				<input type="radio" ng-model="random.way.type" value="{{type[i]}}"/>
-				{{type[i]}}<br></span>
+	<span ng-repeat="i in length(random.type)">
+				<input type="radio" ng-model="random.way.type" value="{{random.type[i]}}"/>
+				{{random.type[i]}}<br></span>
 	Topic<br>
-	<span ng-repeat="i in length(topics)">
-				<input type="radio" ng-model="random.way.topic" value="{{topics[i]}}"/>
-				{{topics[i]}}<br></span>
+	<span ng-repeat="i in length(random.topics[random.way.subject])">
+				<input type="radio" ng-model="random.way.topic" value="{{random.topics[random.way.subject][i]}}"/>
+				{{random.topics[random.way.subject][i]}}<br></span>
 </div>
 <div class="card-footer">
 	<a href="#!" role="button" class="btn btn-secondary" style="float:left;">Back</a>
 	<!-- <input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click=""/> -->
-	<a href="#!finding/random/listing" role="button" class="btn btn-secondary" style="float:right;" ng-click="random.types.push(random.way);">Add</a>
+	<a href="#!finding/random/listing" role="button" class="btn btn-secondary" style="float:right;" ng-click="random.criterion.push(random.way);">Add</a>
 </div>
 </div>

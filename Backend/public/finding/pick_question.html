@@ -1,11 +1,14 @@
 <div class="card" style="margin-top:80px">
-<div class="card-header">Picking Question</div>
-<div class="list-group">
-      <a ng-click="" class="list-group-item" ng-repeat="Q in picking.questions">{{Q.paper}} {{Q.q_id}}: {{Q.question}} about {{Q.topics}}</a>
+<div class="card-header">Picking Question in {{picking.paper}}</div>
+<div class="list-group checked-list-box">
+      <li class="list-group-item" ng-repeat="Q in length(picking.questions)">
+      <input type="checkbox" ng-model="picking.picked[picking.subject][picking.paper][Q]"/>
+       {{picking.questions[Q].paper}} {{picking.questions[Q].q_id}}: 
+       {{picking.questions[Q].question}} about {{picking.questions[Q].topics}}</li>
      </div>
 <div class="card-footer">
 	<a href="#!finding/pick/subject" class="btn btn-secondary" style="float:left;" role="button">Back</a>
-	<!-- <input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click=""/> -->
-	<a href="#!finding/listing" role="button" class="btn btn-secondary" style="float:right;">OK</a>
+	<input type="button" class="btn btn-secondary" style="float:left;" value="Select All" ng-click="picking.paperAllSelect();"/>
+	<a href="#!listing" role="button" class="btn btn-secondary" style="float:right;" ng-click="picking.showQuestions();">OK</a>
 </div>
 </div>

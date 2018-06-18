@@ -1,4 +1,71 @@
-app.controller("answering", function($scope,restAPI,$routeParams) {
+app.controller("main", function($scope,restAPI) {
+	$scope.questions = [];
+
+	//Picking
+	$scope.picking = {}
+	$scope.picking.picked = {}; //Selected Questions Tree
+	restAPI.subjects().then(function(response) {
+			$scope.picking.subjects = response.data;
+	});
+	restAPI.tree().then(function(response) {
+			$scope.picking.tree = response.data;
+	});
+	$scope.picking.updatePapers = function(subject){restAPI.papers(subject).then(function(response) {
+			$scope.picking.papers = response.data;
+			$scope.picking.subject = subject; //Subject in picking
+			if ($scope.picking.picked[subject] === null){$scope.picking.picked[subject] = {};}
+	});};
+	$scope.picking.updateQuestions = function(subject,paper){restAPI.questions(subject,paper).then(function(response) {
+			$scope.picking.questions = response.data;
+			$scope.picking.paper = paper; //Paper in picking
+			if ($scope.picking.picked[subject][paper] === null){$scope.picking.picked[subject][paper] = [];}
+	});};
+	$scope.picking.paperAllSelect = function(){
+		var selecting = false; //Deselecting
+		var checking = function(value){return value};
+		for (i in $scope.picking.questions){
+			if ($scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] !== true){
+				selecting = true; //Selecting
+			}
+		}
+		for (i in $scope.picking.questions){
+			$scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] = selecting;
+		}
+	};
+	$scope.picking.showQuestions = function(){
+		for (subject in $scope.picking.tree){
+			for (paper in $scope.picking.tree[subject]){
+				for (question in $scope.picking.tree[subject][paper].questions){
+					if ($scope.picking.picked[subject][paper][question]){
+						$scope.questions.push($scope.picking.tree[subject][paper].questions[question]);
+					}
+				}
+			}
+		}
+		$scope.picking.picked = {};
+	};
+		
+	//Random
+	$scope.random = {};
+	$scope.random.type = ["mcq", "blank", "open"];
+	$scope.random.criterion = [];//[{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}];
+	restAPI.topics().then(function(response) {
+			$scope.random.topics = response.data;
+	})
+	$scope.random.find = function(){
+		for (criteria in $scope.random.criterion){
+			restAPI.random($scope.random.criterion[criteria].subject,$scope.random.criterion[criteria].type,$scope.random.criterion[criteria].topic,$scope.random.criterion[criteria].quantity)
+			.then(function(response) {
+				var questions = response.data;
+				//$scope.test.push(questions);//[$scope.random.criterion[criteria].subject,$scope.random.criterion[criteria].type,$scope.random.criterion[criteria].topic,$scope.random.criterion[criteria].quantity]);
+				for (question in questions){
+					$scope.questions.push(questions[question]);
+				}
+			});
+		}
+	};
+
+	//Answering
 	//Methods
 	$scope.length = function(array){
 		var foo = [];
@@ -54,10 +121,8 @@ app.controller("answering", function($scope,restAPI,$routeParams) {
 			$scope.questions[i].awarded = $scope.length($scope.questions[i].marks).map(x => 0); //Array($scope.questions[i].marks.length); //Marks awarded to user
 		}
 	}
-	//Modes and Settings
-	$scope.mode = "Exam";
 	//Data
-	
+	/*
     $scope.questions = [
     {
 		"paper": "Test_Paper",
@@ -88,49 +153,16 @@ app.controller("answering", function($scope,restAPI,$routeParams) {
 		"marks": [1,2],
 		"self_mark": false
 	}];
+	*/
+	
 	restAPI.random().then(function(response) {
 			$scope.test = response.data;
 	});
     $scope.questionNo = 0;
 	$scope.again();
+		
+	$scope.answering = {
+		mode : "Exam"
+	};
 	
-	$scope.subjects = ["Chemistry", "Physics"]
-	$scope.picking = {}
-	restAPI.subjects().then(function(response) {
-			$scope.picking.subjects = response.data;
-	});
-	$scope.updatePapers = function(subject){restAPI.papers(subject).then(function(response) {
-			$scope.picking.subject = subject;
-			$scope.picking.papers = response.data;
-	});};
-	$scope.updateQuestions = function(subject,paper){restAPI.questions(subject,paper).then(function(response) {
-			$scope.picking.paper = paper;
-			$scope.picking.questions = response.data;
-	});};
-	
-	$scope.type = ["MCQ", "Blanks", "Open-ended"];
-	$scope.topics = ["Magnetism", "Organic Chemistry", "Metals"];
-	$scope.random = {};
-	$scope.random.types = [];//[{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}];
-
-});
-
-app.controller("finding", function($scope) {
-	$scope.length = function(array){
-		var foo = [];
-		for (var i = 0; i < array.length; i++) {foo.push(i);}
-		return foo
-	}
-	$scope.subjects = ["Chemistry", "Physics"]
-	$scope.type = ["MCQ", "Blanks", "Open-ended"]
-	$scope.topics = ["Magnetism", "Organic Chemistry", "Metals"]
-	$scope.randomTypes = [{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}]
-});
-
-app.controller("main", function($scope) {
-	$scope.length = function(array){
-		var foo = [];
-		for (var i = 0; i < array.length; i++) {foo.push(i);}
-		return foo
-	}
 });

@@ -25,7 +25,7 @@ app.config(function($routeProvider) {
 	.when("/finding/json", {
 		templateUrl : "finding/JSON.html"
 	})
-	.when("/finding/listing", {
+	.when("/listing", {
 		templateUrl : "finding/listing.html"
 	})
 	.when("/answering", {

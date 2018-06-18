@@ -1,6 +1,9 @@
 //https://howtodoinjava.com/angularjs/angularjs-http-restful-api-example/
 app.service('restAPI', function($http) {
-    this.subjects = function() {
+    this.tree = function(subject,type,topic,quantity) {
+		return $http({method : 'GET',url : '/RESTAPI/listtree'})
+	}
+	this.subjects = function() {
 		//RESTAPI Test
 		return $http({method : 'GET',url : '/RESTAPI/list'})
 		/*.then(function successCallback(response) {
@@ -16,7 +19,10 @@ app.service('restAPI', function($http) {
     this.questions = function(subject,paper) {
 		return $http({method : 'GET',url : '/RESTAPI/list/'+subject+'/'+paper})
 	}
-    this.topics = function(subject) {
+    this.topics = function() {
+		return $http({method : 'GET',url : '/RESTAPI/topics/'})
+	}
+    this.topicsSubject = function(subject) {
 		return $http({method : 'GET',url : '/RESTAPI/topics/'+subject})
 	}
     this.random = function(subject,type,topic,quantity) {

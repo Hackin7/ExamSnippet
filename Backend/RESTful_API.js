@@ -77,6 +77,12 @@ router.get('/', function(req, res){
 	res.end("Hi");	   
 });
 
+router.get('/listtree', function(req, res){		   
+	var data = loadQuestions();
+	res.json(data.questionTree);
+	res.end();
+});
+
 router.get('/list', function(req, res){		   
 	var data = loadQuestions();
 	res.json(data.subjects);
@@ -101,6 +107,12 @@ router.get('/list/:subject/:paper', function(req, res){
 	}
 	res.json(questions);
 	res.end()
+});
+
+router.get('/topics', function(req, res){		   
+	var data = loadQuestions();
+	res.json(data.topicsTree);	   
+	res.end();
 });
 
 router.get('/topics/:subject', function(req, res){		   
@@ -160,5 +172,6 @@ router.get('/update', function(req, res){
 router.post('/log/quizattempt', function(req, res){
 });
 
+router.use('/questionsdata',express.static('../Questions'));
 //export this router to use in our index.js
 module.exports = router;
