@@ -53,28 +53,28 @@
 		<!--Images-->
 		Number of Images Provided: <input type="quantity" ng-model="index.questions[i].noImages"/><br>
 		<div ng-repeat="image in range(index.questions[i].noImages)">
-			For Image {{area+1}}:<br>
-			URL: <input type="Text" ng-model="index.questions[i].images[image]"/><br>
+			&nbsp;For Image {{area+1}}:<br>
+			&nbsp;&nbsp;URL: <input type="Text" ng-model="index.questions[i].images[image]"/><br>
 		</div>
 
 		<!--Answer Images-->
 		Number of Answer Images Provided: <input type="quantity" ng-model="index.questions[i].noAnswerImages"/><br>
 		<div ng-repeat="image in range(index.questions[i].noAnswerImages)">
-			For Image {{area+1}}:<br>
-			URL: <input type="Text" ng-model="index.questions[i].answermages[image]"/><br>
+			&nbsp;For Image {{area+1}}:<br>
+			&nbsp;&nbsp;URL: <input type="Text" ng-model="index.questions[i].answermages[image]"/><br>
 		</div>
 				
 		<!--Answering-->
 		Number of Answering Areas: <input type="quantity" ng-model="index.questions[i].noAnswers"/><br>
 		<div ng-repeat="area in range(index.questions[i].noAnswers)">
-			For Area {{area+1}}:<br>
-			Given Value: <input type="Text" ng-model="index.questions[i].given[area]"/><br>
-			<span ng-show="index.questions[i].type != 'mcq'">Correct Answer: <input type="Text" ng-model="index.questions[i].correct[area]"/><br>
-			Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br></span>
+			&nbsp;For Area {{area+1}}:<br>
+			&nbsp;&nbsp;Given Value: <input type="Text" ng-model="index.questions[i].given[area]"/><br>
+			<span ng-show="index.questions[i].type != 'mcq'">&nbsp;&nbsp;Correct Answer: <input type="Text" ng-model="index.questions[i].correct[area]"/><br>
+			&nbsp;&nbsp;Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br></span>
 		</div>
 			<span ng-show="index.questions[i].type == 'mcq'"> 
-			Correct MCQ Answer: <input type="Text" ng-model="index.questions[i].correct[0]"/><br>
-			Total Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br>
+			&nbsp;Correct MCQ Answer: <input type="Text" ng-model="index.questions[i].correct[0]"/><br>
+			&nbsp;Total Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br>
 			</span>
 		
 		Self-Marking: <input type="checkbox" ng-model="index.questions[i].self_mark" value="true" required/><br>
@@ -104,28 +104,28 @@
 		<!--Images-->
 		Number of Images Provided: <input type="quantity" ng-model="givenTemplate.noImages"/><br>
 		<div ng-repeat="image in range(givenTemplate.noImages)">
-			For Image {{area+1}}:<br>
-			URL: <input type="Text" ng-model="givenTemplate.images[image]"/><br>
+			&nbsp;For Image {{area+1}}:<br>
+			&nbsp;&nbsp;URL: <input type="Text" ng-model="givenTemplate.images[image]"/><br>
 		</div>
 
 		<!--Answer Images-->
 		Number of Answer Images Provided: <input type="quantity" ng-model="givenTemplate.noAnswerImages"/><br>
 		<div ng-repeat="image in range(givenTemplate.noAnswerImages)">
 			For Image {{area+1}}:<br>
-			URL: <input type="Text" ng-model="givenTemplate.answermages[image]"/><br>
+			&nbsp;&nbsp;URL: <input type="Text" ng-model="givenTemplate.answermages[image]"/><br>
 		</div>
 				
 		<!--Answering-->
 		Number of Answering Areas: <input type="quantity" ng-model="givenTemplate.noAnswers"/><br>
 		<div ng-repeat="area in range(givenTemplate.noAnswers)">
-			For Area {{area+1}}:<br>
-			Given Value: <input type="Text" ng-model="givenTemplate.given[area]"/><br>
-			<span ng-show="givenTemplate.type != 'mcq'">Correct Answer: <input type="Text" ng-model="givenTemplate.correct[area]"/><br>
-			Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br></span>
+			&nbsp;For Area {{area+1}}:<br>
+			&nbsp;&nbsp;Given Value: <input type="Text" ng-model="givenTemplate.given[area]"/><br>
+			<span ng-show="givenTemplate.type != 'mcq'">&nbsp;&nbsp;Correct Answer: <input type="Text" ng-model="givenTemplate.correct[area]"/><br>
+			&nbsp;&nbsp;Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br></span>
 		</div>
 			<span ng-show="givenTemplate.type == 'mcq'"> 
-			Correct MCQ Answer: <input type="Text" ng-model="givenTemplate.correct[0]"/><br>
-			Total Marks Given: <input type="quantity" ng-model="givenTemplate.marks[area]"/><br>
+			&nbsp;Correct MCQ Answer: <input type="Text" ng-model="givenTemplate.correct[0]"/><br>
+			&nbsp;Total Marks Given: <input type="quantity" ng-model="givenTemplate.marks[area]"/><br>
 			</span>
 		
 		Self-Marking: <input type="checkbox" ng-model="givenTemplate.self_mark" value="true" required/><br>
@@ -153,6 +153,10 @@ app.controller("generate", function($scope) {
 	}
     $scope.compile = function(){
     	if ($scope.index.noQuestions == 0){$scope.index.questions=[];}
+    	for (i in $scope.index.questions){
+    		$scope.index.questions[i].subject = $scope.index.subject;
+			$scope.index.questions[i].paper = $scope.index.paper;
+    	}
     	alert("Done Compiling!");
     }
 	
