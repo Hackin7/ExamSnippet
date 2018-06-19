@@ -16,7 +16,7 @@
 		"given": ["It's shit","Hi"],
 		"correct": ["It's shit", "Hi"],
 		"marks": [1,2],
-		"self_mark": false
+		"self_mark": true
 	},
 	{
 		"paper": "Test_Paper",
@@ -34,4 +34,4 @@
 		"self_mark": false
 	}
 	]
-	}
+}

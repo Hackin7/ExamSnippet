@@ -1,0 +1,199 @@
+<html>
+
+<!-- Take Note this is entirely standalone and self-contained, not using any other files in the directory-->
+
+<head>
+<title>Exam Snippets index.json Generator Exam Paper processing</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+<style>
+	.card{margin:auto;}
+	@media screen and (min-width: 600px){
+		.card{margin:auto;width: 80%;}
+	}
+	@media screen and (min-width: 800px){
+		.card{margin:auto;width: 60%;}
+	}
+	img{width: 100%;}
+</style>
+</head>
+
+<body ng-app="generator" ng-controller="generate">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <a class="navbar-brand" href="#">Exam Snippets index.json Generator</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#!listing">Questions selected</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#Data">Data</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="card" style="margin-top:80px">
+<div class="card-header">Metadata</div>
+<div class="card-body">
+	Paper Subject: <input type="text" ng-model="index.subject"/><br>
+	Paper Name: <input type="text" ng-model="index.paper"/><br>
+	Number of questions: <input type="quantity" ng-model="index.noQuestions"/><br>
+</div>
+</div>
+
+<div class="card" style="margin-top:80px" ng-repeat="i in range(index.noQuestions)">
+<div class="card-header" ng-init="index.questions[i] = sampleQuestion();">Question {{i+1}}</div>
+<div class="card-body">
+		Question ID: <input type="text" ng-model="index.questions[i].q_id" required/><br>
+		Type<br>
+		<span ng-repeat="type in types">
+				<input type="radio" ng-model="index.questions[i].type" value="{{type}}" required/>
+				{{type}}<br></span>
+
+		<!--Images-->
+		Number of Images Provided: <input type="quantity" ng-model="index.questions[i].noImages"/><br>
+		<div ng-repeat="image in range(index.questions[i].noImages)">
+			For Image {{area+1}}:<br>
+			URL: <input type="Text" ng-model="index.questions[i].images[image]"/><br>
+		</div>
+
+		<!--Answer Images-->
+		Number of Answer Images Provided: <input type="quantity" ng-model="index.questions[i].noAnswerImages"/><br>
+		<div ng-repeat="image in range(index.questions[i].noAnswerImages)">
+			For Image {{area+1}}:<br>
+			URL: <input type="Text" ng-model="index.questions[i].answermages[image]"/><br>
+		</div>
+				
+		<!--Answering-->
+		Number of Answering Areas: <input type="quantity" ng-model="index.questions[i].noAnswers"/><br>
+		<div ng-repeat="area in range(index.questions[i].noAnswers)">
+			For Area {{area+1}}:<br>
+			Given Value: <input type="Text" ng-model="index.questions[i].given[area]"/><br>
+			<span ng-show="index.questions[i].type != 'mcq'">Correct Answer: <input type="Text" ng-model="index.questions[i].correct[area]"/><br>
+			Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br></span>
+		</div>
+			<span ng-show="index.questions[i].type == 'mcq'"> 
+			Correct MCQ Answer: <input type="Text" ng-model="index.questions[i].correct[0]"/><br>
+			Total Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br>
+			</span>
+		
+		Self-Marking: <input type="checkbox" ng-model="index.questions[i].self_mark" value="true" required/><br>
+</div>
+</div>
+<!--<ng-view></ng-view>-->
+<div id="Data" class="card" style="margin-top:80px">
+<div class="card-header">Data, to copy into index.json</div>
+<div class="card-body">
+{{index}}
+</div>
+<div class="card-footer">
+	<input type="button" class="btn btn-secondary" style="float:left;" ng-click="compile();" value="Properly Compile Data"/>
+	<input type="button" class="btn btn-secondary" style="float:right;" ng-click="" value="Download"/>
+</div>
+</div>
+
+<div class="card" style="margin-top:80px">
+<div class="card-header">Template Question</div>
+<div class="card-body">
+		Question ID: <input type="text" ng-model="givenTemplate.q_id" required/><br>
+		Type<br>
+		<span ng-repeat="type in types">
+				<input type="radio" ng-model="givenTemplate.type" value="{{type}}" required/>
+				{{type}}<br></span>
+
+		<!--Images-->
+		Number of Images Provided: <input type="quantity" ng-model="givenTemplate.noImages"/><br>
+		<div ng-repeat="image in range(givenTemplate.noImages)">
+			For Image {{area+1}}:<br>
+			URL: <input type="Text" ng-model="givenTemplate.images[image]"/><br>
+		</div>
+
+		<!--Answer Images-->
+		Number of Answer Images Provided: <input type="quantity" ng-model="givenTemplate.noAnswerImages"/><br>
+		<div ng-repeat="image in range(givenTemplate.noAnswerImages)">
+			For Image {{area+1}}:<br>
+			URL: <input type="Text" ng-model="givenTemplate.answermages[image]"/><br>
+		</div>
+				
+		<!--Answering-->
+		Number of Answering Areas: <input type="quantity" ng-model="givenTemplate.noAnswers"/><br>
+		<div ng-repeat="area in range(givenTemplate.noAnswers)">
+			For Area {{area+1}}:<br>
+			Given Value: <input type="Text" ng-model="givenTemplate.given[area]"/><br>
+			<span ng-show="givenTemplate.type != 'mcq'">Correct Answer: <input type="Text" ng-model="givenTemplate.correct[area]"/><br>
+			Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br></span>
+		</div>
+			<span ng-show="givenTemplate.type == 'mcq'"> 
+			Correct MCQ Answer: <input type="Text" ng-model="givenTemplate.correct[0]"/><br>
+			Total Marks Given: <input type="quantity" ng-model="givenTemplate.marks[area]"/><br>
+			</span>
+		
+		Self-Marking: <input type="checkbox" ng-model="givenTemplate.self_mark" value="true" required/><br>
+</div>
+<div class="card-footer">
+	<input type="button" class="btn btn-secondary" style="float:left;" ng-click="$scope.useGivenTemplate = true;$scope.givenTemplate = $scope.templateQuestion();" value="Use Original Template"/>
+	<input type="button" class="btn btn-secondary" style="float:right;" ng-click="switchTemplateGiven();" value="Use This Template"/>
+</div></div>
+</div>
+
+
+<!--<script src="scripts/app.js"></script>
+<script src="scripts/directives.js"></script>
+<script src="scripts/routes.js"></script>
+<script src="scripts/services.js"></script>
+<script src="scripts/controllers.js"></script>-->
+
+<script>
+var app = angular.module("generator",[]);
+app.controller("generate", function($scope) {
+    $scope.range = function(n){
+		var foo = [];
+		for (var i = 0; i < n; i++) {foo.push(i);}
+		return foo
+	}
+    $scope.compile = function(){
+    	if ($scope.index.noQuestions == 0){$scope.index.questions=[];}
+    	alert("Done Compiling!");
+    }
+	
+	$scope.types=["mcq", "blank", "open"];
+	//Data and fields
+	$scope.index = {};
+	$scope.index.subject = "";
+	$scope.index.paper = "";
+	$scope.index.noQuestions = 0;
+	$scope.index.questions=[];
+	
+	$scope.templateQuestion = function(){
+	return {
+		"subject": $scope.index.subject,
+		"paper": $scope.index.paper,
+		"q_id": "", 
+		"topics":[],
+		"images":[],
+		"answerImages":[],
+		"question": "",
+		"type": "blank",
+		"given": [],
+		"correct": [],
+		"marks": [],
+		"self_mark": false
+	}
+	};
+	$scope.useGivenTemplate = true;
+	$scope.givenTemplate = $scope.templateQuestion();
+	$scope.switchTemplateGiven = function(){
+		$scope.givenTemplate.subject = $scope.index.subject;
+		$scope.givenTemplate.paper = $scope.index.paper;
+		$scope.useGivenTemplate = false;
+	};
+	$scope.sampleQuestion = function(){
+		if ($scope.useGivenTemplate == true){return $scope.templateQuestion();}
+		else{return $scope.givenTemplate;}
+	};
+
+});
+</script>
+
+</body>
+</html>

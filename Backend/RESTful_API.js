@@ -39,6 +39,10 @@ function getRandom(arr, n) {
 var fs = require('fs');
 var loadQuestions = function(){
 	var path = "../Questions/";
+	/*fs.rmdir(path+'.*', (err) => {
+	  if (err) throw err;
+	  console.log('Questions/.DS_Store was deleted');
+	});*/
 	var subjects = fs.readdirSync(path);
 	var questionTree = {};
 	var topicsTree = {};

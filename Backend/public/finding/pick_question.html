@@ -1,5 +1,5 @@
 <div class="card" style="margin-top:80px">
-<div class="card-header">Picking Question in {{picking.paper}}</div>
+<div class="card-header">Picking Question in {{picking.paper}}, {{picking.subject}}</div>
 <div class="list-group checked-list-box">
       <li class="list-group-item" ng-repeat="Q in length(picking.questions)">
       <input type="checkbox" ng-model="picking.picked[picking.subject][picking.paper][Q]"/>

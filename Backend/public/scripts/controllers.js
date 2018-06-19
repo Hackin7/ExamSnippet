@@ -47,6 +47,7 @@ app.controller("main", function($scope,restAPI) {
 		
 	//Random
 	$scope.random = {};
+	$scope.random.way = {}; // For 1 criteria
 	$scope.random.type = ["mcq", "blank", "open"];
 	$scope.random.criterion = [];//[{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	},{subject:"Test_Subject",type:"blank",topic:"None",quantity:2	}];
 	restAPI.topics().then(function(response) {
@@ -65,6 +66,13 @@ app.controller("main", function($scope,restAPI) {
 		}
 	};
 
+	//JSON data
+	$scope.saveData = {};
+	$scope.saveData.input = ""; //Input Save Data 
+	$scope.saveData.load = function(){
+		$scope.questions = JSON.parse($scope.saveData.input);
+	};
+	
 	//Answering
 	//Methods
 	$scope.length = function(array){
@@ -121,6 +129,10 @@ app.controller("main", function($scope,restAPI) {
 			$scope.questions[i].awarded = $scope.length($scope.questions[i].marks).map(x => 0); //Array($scope.questions[i].marks.length); //Marks awarded to user
 		}
 	}
+	$scope.again();
+	$scope.answering = {
+		mode : "Exam"
+	};
 	//Data
 	/*
     $scope.questions = [
@@ -154,15 +166,10 @@ app.controller("main", function($scope,restAPI) {
 		"self_mark": false
 	}];
 	*/
-	
+	/* Debugging
 	restAPI.random().then(function(response) {
 			$scope.test = response.data;
 	});
-    $scope.questionNo = 0;
-	$scope.again();
-		
-	$scope.answering = {
-		mode : "Exam"
-	};
-	
+    //$scope.questionNo = 0;
+	*/
 });
