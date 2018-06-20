@@ -8,7 +8,7 @@
 	
 	<b>Questions:</b>
 	<div ng-repeat="Q in questions">
-	{{Q.paper}} {{Q.q_id}}: {{Q.question}}
+	<b>{{Q.paper}} {{Q.q_id}}: {{Q.question}}</b>
 	<table class="table">
 	<tr><th>Images</th><th>Answer</th><th>Correct Answer</th></tr>
 		<tr>
@@ -28,11 +28,12 @@
 			</ul></td>
 		</tr>
 	</table>
+	Comments: {{Q.markerComments}}
 	</div>
 </div>
 <div class="card-footer">
 	<!--<a href="/quiz" class="btn btn-default" style="float:left;" value="Again"/>-->
-	<input type="submit" class="btn btn-default" style="float:left;" value="Again" ng-click="again();"/>
-	<a href="/quiz" class="btn btn-default" style="float:right;" value="End"/>
+	<input type="submit" class="btn btn-secondary" style="float:left;" value="Again" ng-click="again();"/>
+	<!--<a href="/quiz" class="btn btn-default" style="float:right;" value="End"/>-->
 </div>
 </div>

@@ -9,11 +9,13 @@ Just a Personal Project to test the MEAN stack
 ## How to use
 1. Prepare the exam papers and Generate an index.json for the papers
 2. Put Papers in Questions/[Subject]/[Paper]
-3. Run ```cd Backend && node index.json```
-4. Open up localhost:3000/index.html
+3. Run ```npm start```
+4. Open up localhost:8080
+
+This could work too I guess: 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## TODOs (If possible)
-* JSON Save File Mode
 * Username
 * Work on accounts system and logging of quiz attempts (Preferably using MongoDB)
 * Reorganise the entire repository to be more professional and neater

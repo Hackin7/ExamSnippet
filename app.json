@@ -1,0 +1,7 @@
+{
+  "name": "Exam Snippets",
+  "description": "A Quiz App for examination guestions",
+  "repository": "https://github.com/Hackin7/ExamSnippet",
+  "logo": "",
+  "keywords": ["node", "express", "static", "quiz"]
+}
