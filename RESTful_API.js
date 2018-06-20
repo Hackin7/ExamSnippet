@@ -38,7 +38,7 @@ function getRandom(arr, n) {
 //https://gist.github.com/kethinov/6658166
 var fs = require('fs');
 var loadQuestions = function(){
-	var path = "../Questions/";
+	var path = "./Questions/";
 	/*fs.rmdir(path+'.*', (err) => {
 	  if (err) throw err;
 	  console.log('Questions/.DS_Store was deleted');
@@ -176,6 +176,6 @@ router.get('/update', function(req, res){
 router.post('/log/quizattempt', function(req, res){
 });
 
-router.use('/questionsdata',express.static('../Questions'));
+router.use('/questionsdata',express.static('Questions'));
 //export this router to use in our index.js
 module.exports = router;

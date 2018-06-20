@@ -1,12 +1,12 @@
 {
-  "name": "Backend",
+  "name": “Exam “Snippets,
   "version": "0.0.0",
   "description": "Server and RESTful API for Exam Snippets Quiz Web App",
   "main": "index.js",
   "scripts": {
     "test": "echo \"No test command\""
   },
-  "author": "",
+  "author": “Hackin7”,
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",

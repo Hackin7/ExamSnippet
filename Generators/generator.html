@@ -24,10 +24,10 @@
   <a class="navbar-brand" href="#">Exam Snippets index.json Generator</a>
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#!listing">Questions selected</a>
+      <a class="nav-link" href="#Data">Data</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#Data">Data</a>
+      <a class="nav-link" href="#settings">Settings</a>
     </li>
   </ul>
 </nav>
@@ -42,7 +42,7 @@
 </div>
 
 <div class="card" style="margin-top:80px" ng-repeat="i in range(index.noQuestions)">
-<div class="card-header" ng-init="index.questions[i] = sampleQuestion();">Question {{i+1}}</div>
+<div class="card-header" ng-init="if (index.questions[i] == null){index.questions[i] = sampleQuestion();}">Question {{i+1}}</div>
 <div class="card-body">
 		Question ID: <input type="text" ng-model="index.questions[i].q_id" required/><br>
 		Type<br>
@@ -61,7 +61,7 @@
 		Number of Answer Images Provided: <input type="quantity" ng-model="index.questions[i].noAnswerImages"/><br>
 		<div ng-repeat="image in range(index.questions[i].noAnswerImages)">
 			&nbsp;For Image {{area+1}}:<br>
-			&nbsp;&nbsp;URL: <input type="Text" ng-model="index.questions[i].answermages[image]"/><br>
+			&nbsp;&nbsp;URL: <input type="Text" ng-model="index.questions[i].answerImages[image]"/><br>
 		</div>
 				
 		<!--Answering-->
@@ -93,6 +93,21 @@
 </div>
 
 <div class="card" style="margin-top:80px">
+<div class="card-header">Existing index.json Data</div>
+<div class="card-body">
+<textarea name="JSONData" cols="75" ng-model="saveData.input"/></textarea><br>
+OR<br>
+
+<!--<input type="file" file-model="saveData.uploaded"/>-->
+
+</div>
+<div class="card-footer">
+	<!-- <input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click=""/> -->
+	<input type="submit" class="btn btn-secondary" style="float:right;" ng-click="saveData.load()" value="Load"/>
+</div>
+</div>
+
+<div class="card" style="margin-top:80px" id="settings">
 <div class="card-header">Template Question</div>
 <div class="card-body">
 		Question ID: <input type="text" ng-model="givenTemplate.q_id" required/><br>
@@ -145,6 +160,23 @@
 
 <script>
 var app = angular.module("generator",[]);
+/*
+app.directive('fileModel', ['$parse', function ($parse) {
+	return {
+		restrict: 'A',
+        link: function(scope, element, attrs) {
+        var model = $parse(attrs.fileModel);
+        var modelSetter = model.assign;
+                  
+        element.bind('change', function(){
+        scope.$apply(function(){
+        modelSetter(scope, element[0].files[0]);
+        });
+    });
+}
+};
+}]);*/
+         
 app.controller("generate", function($scope) {
     $scope.range = function(n){
 		var foo = [];
@@ -195,7 +227,19 @@ app.controller("generate", function($scope) {
 		if ($scope.useGivenTemplate == true){return $scope.templateQuestion();}
 		else{return $scope.givenTemplate;}
 	};
-
+	
+	$scope.saveData = {};
+	$scope.saveData.input = ""; //Input Save Data 
+	$scope.saveData.load = function(){
+		$scope.index = JSON.parse($scope.saveData.input);
+		if ($scope.saveData.uploaded != null){$scope.index = JSON.parse($scope.saveData.uploaded);}
+		$scope.index.noQuestions = $scope.index.questions.length;
+		for (i in $scope.index.questions){
+			$scope.index.questions[i].noImages = $scope.index.questions[i].images.length;
+			$scope.index.questions[i].noAnswerImages = $scope.index.questions[i].answerImages.length;
+			$scope.index.questions[i].noAnswers = $scope.index.questions[i].given.length;
+		}	
+	};
 });
 </script>
 
