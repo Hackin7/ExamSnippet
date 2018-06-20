@@ -3,7 +3,7 @@ var app = express();
 
 var fs = require('fs');
 
-app.get('/', function(req.res){
+app.get('/', function(req,res){
 	res.send("hi");
 //	res.redirect('/quiz/index.html')
 });
