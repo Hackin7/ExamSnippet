@@ -13,8 +13,8 @@
 	<div ng-show="Q.type == 'blank'" ng-repeat="given in length(Q.given)">
 		<input name="answer{{given}}" type='text' ng-model="Q.answer[given]"/><br>
 	</div>
-	<div ng-show="Q.type == 'essay'" ng-repeat="given in length(Q.given)">
-		<textarea name="answer{{given}}" cols="100" ng-model="Q.answer[given]"/></textarea><br>
+	<div ng-show="Q.type == 'open'" ng-repeat="given in length(Q.given)">
+		<textarea name="answer{{given}}" cols="75" ng-model="Q.answer[given]"/></textarea><br>
 	</div>
 </div>
 <div class="card-footer">

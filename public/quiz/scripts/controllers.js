@@ -83,7 +83,7 @@ app.controller("main", function($scope,restAPI) {
 	$scope.scoring = function(awarded, marks){
 		var sum = 0;
 		for(var i=0; i< awarded.length; i++) {
-			sum += awarded[i]*marks[i];
+			sum += awarded[i]*Number(marks[i]);
 		}
 		return sum//awarded.map(x => Number(x)).reduce(function(acc, val) { return acc + val; }); 
 	}

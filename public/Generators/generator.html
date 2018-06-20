@@ -42,9 +42,10 @@
 </div>
 
 <div class="card" style="margin-top:80px" ng-repeat="i in range(index.noQuestions)">
-<div class="card-header" ng-init="if (index.questions[i] == null){index.questions[i] = sampleQuestion();}">Question {{i+1}}</div>
+<div class="card-header" ng-init="indexQuestionGenerator(i)">Question {{i+1}}</div>
 <div class="card-body">
 		Question ID: <input type="text" ng-model="index.questions[i].q_id" required/><br>
+		Question: <input type="text" ng-model="index.questions[i].question" required/><br>
 		Type<br>
 		<span ng-repeat="type in types">
 				<input type="radio" ng-model="index.questions[i].type" value="{{type}}" required/>
@@ -54,30 +55,36 @@
 		Number of Images Provided: <input type="quantity" ng-model="index.questions[i].noImages"/><br>
 		<div ng-repeat="image in range(index.questions[i].noImages)">
 			&nbsp;For Image {{area+1}}:<br>
-			&nbsp;&nbsp;URL: <input type="Text" ng-model="index.questions[i].images[image]"/><br>
+			&nbsp;&nbsp;URL: <input type="text" ng-model="index.questions[i].images[image]"/><br>
 		</div>
 
 		<!--Answer Images-->
 		Number of Answer Images Provided: <input type="quantity" ng-model="index.questions[i].noAnswerImages"/><br>
 		<div ng-repeat="image in range(index.questions[i].noAnswerImages)">
 			&nbsp;For Image {{area+1}}:<br>
-			&nbsp;&nbsp;URL: <input type="Text" ng-model="index.questions[i].answerImages[image]"/><br>
+			&nbsp;&nbsp;URL: <input type="text" ng-model="index.questions[i].answerImages[image]"/><br>
 		</div>
 				
+		<!--Topics-->
+		Number of Topics: <input type="quantity" ng-model="index.questions[i].noTopics"/><br>
+		<div ng-repeat="topic in range(index.questions[i].noTopics)">
+			&nbsp;Topic {{area+1}}: <input type="text" ng-model="index.questions[i].topics[topic]"/><br>
+		</div>
+		
 		<!--Answering-->
 		Number of Answering Areas: <input type="quantity" ng-model="index.questions[i].noAnswers"/><br>
 		<div ng-repeat="area in range(index.questions[i].noAnswers)">
 			&nbsp;For Area {{area+1}}:<br>
-			&nbsp;&nbsp;Given Value: <input type="Text" ng-model="index.questions[i].given[area]"/><br>
-			<span ng-show="index.questions[i].type != 'mcq'">&nbsp;&nbsp;Correct Answer: <input type="Text" ng-model="index.questions[i].correct[area]"/><br>
+			&nbsp;&nbsp;Given Value: <input type="text" ng-model="index.questions[i].given[area]"/><br>
+			<span ng-show="index.questions[i].type != 'mcq'">&nbsp;&nbsp;Correct Answer: <input type="text" ng-model="index.questions[i].correct[area]"/><br>
 			&nbsp;&nbsp;Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br></span>
 		</div>
 			<span ng-show="index.questions[i].type == 'mcq'"> 
-			&nbsp;Correct MCQ Answer: <input type="Text" ng-model="index.questions[i].correct[0]"/><br>
-			&nbsp;Total Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br>
+			&nbsp;Correct MCQ Answer: <input type="text" ng-model="index.questions[i].correct[0]"/><br>
+			&nbsp;Total Marks Given: <input type="quantity" ng-model="index.questions[i].marks[0]"/><br>
 			</span>
 		
-		Self-Marking: <input type="checkbox" ng-model="index.questions[i].self_mark" value="true" required/><br>
+		Self-Marking: <input type="checkbox" ng-model="index.questions[i].self_mark"/><br>
 </div>
 </div>
 <!--<ng-view></ng-view>-->
@@ -96,9 +103,8 @@
 <div class="card-header">Existing index.json Data</div>
 <div class="card-body">
 <textarea name="JSONData" cols="75" ng-model="saveData.input"/></textarea><br>
-OR<br>
-
-<!--<input type="file" file-model="saveData.uploaded"/>-->
+<!--OR<br>
+<input type="file" file-model="saveData.uploaded"/>-->
 
 </div>
 <div class="card-footer">
@@ -111,6 +117,7 @@ OR<br>
 <div class="card-header">Template Question</div>
 <div class="card-body">
 		Question ID: <input type="text" ng-model="givenTemplate.q_id" required/><br>
+		Question: <input type="text" ng-model="givenTemplate.question" required/><br>
 		Type<br>
 		<span ng-repeat="type in types">
 				<input type="radio" ng-model="givenTemplate.type" value="{{type}}" required/>
@@ -120,30 +127,36 @@ OR<br>
 		Number of Images Provided: <input type="quantity" ng-model="givenTemplate.noImages"/><br>
 		<div ng-repeat="image in range(givenTemplate.noImages)">
 			&nbsp;For Image {{area+1}}:<br>
-			&nbsp;&nbsp;URL: <input type="Text" ng-model="givenTemplate.images[image]"/><br>
+			&nbsp;&nbsp;URL: <input type="text" ng-model="givenTemplate.images[image]"/><br>
 		</div>
 
 		<!--Answer Images-->
 		Number of Answer Images Provided: <input type="quantity" ng-model="givenTemplate.noAnswerImages"/><br>
 		<div ng-repeat="image in range(givenTemplate.noAnswerImages)">
-			For Image {{area+1}}:<br>
-			&nbsp;&nbsp;URL: <input type="Text" ng-model="givenTemplate.answermages[image]"/><br>
+			&nbsp;For Image {{area+1}}:<br>
+			&nbsp;&nbsp;URL: <input type="text" ng-model="givenTemplate.answerimages[image]"/><br>
 		</div>
 				
+		<!--Topics-->
+		Number of Topics: <input type="quantity" ng-model="givenTemplate.noTopics"/><br>
+		<div ng-repeat="topic in range(givenTemplate.noTopics)">
+			&nbsp;Topic {{area+1}}: <input type="text" ng-model="givenTemplate.topics[topic]"/><br>
+		</div>
+		
 		<!--Answering-->
 		Number of Answering Areas: <input type="quantity" ng-model="givenTemplate.noAnswers"/><br>
 		<div ng-repeat="area in range(givenTemplate.noAnswers)">
 			&nbsp;For Area {{area+1}}:<br>
-			&nbsp;&nbsp;Given Value: <input type="Text" ng-model="givenTemplate.given[area]"/><br>
-			<span ng-show="givenTemplate.type != 'mcq'">&nbsp;&nbsp;Correct Answer: <input type="Text" ng-model="givenTemplate.correct[area]"/><br>
+			&nbsp;&nbsp;Given Value: <input type="text" ng-model="givenTemplate.given[area]"/><br>
+			<span ng-show="givenTemplate.type != 'mcq'">&nbsp;&nbsp;Correct Answer: <input type="text" ng-model="givenTemplate.correct[area]"/><br>
 			&nbsp;&nbsp;Marks Given: <input type="quantity" ng-model="index.questions[i].marks[area]"/><br></span>
 		</div>
 			<span ng-show="givenTemplate.type == 'mcq'"> 
-			&nbsp;Correct MCQ Answer: <input type="Text" ng-model="givenTemplate.correct[0]"/><br>
-			&nbsp;Total Marks Given: <input type="quantity" ng-model="givenTemplate.marks[area]"/><br>
+			&nbsp;Correct MCQ Answer: <input type="text" ng-model="givenTemplate.correct[0]"/><br>
+			&nbsp;Total Marks Given: <input type="quantity" ng-model="givenTemplate.marks[0]"/><br>
 			</span>
 		
-		Self-Marking: <input type="checkbox" ng-model="givenTemplate.self_mark" value="true" required/><br>
+		Self-Marking: <input type="checkbox" ng-model="givenTemplate.self_mark"/><br>
 </div>
 <div class="card-footer">
 	<input type="button" class="btn btn-secondary" style="float:left;" ng-click="$scope.useGivenTemplate = true;$scope.givenTemplate = $scope.templateQuestion();" value="Use Original Template"/>
@@ -184,15 +197,48 @@ app.controller("generate", function($scope) {
 		return foo
 	}
     $scope.compile = function(){
-    	if ($scope.index.noQuestions == 0){$scope.index.questions=[];}
+    	if ($scope.index.noQuestions < $scope.index.questions.length){
+    		$scope.index.questions.splice($scope.index.questions.length-1,$scope.index.questions.length-$scope.index.noQuestions);
+    	}
+     	if ($scope.index.noQuestions > $scope.index.questions.length){
+     		$scope.index.noQuestions = $scope.index.questions.length;
+     	}
+     	
+    	//TODO, Add more validation and processing for index.correct and index.marks here
+    	//Update page
     	for (i in $scope.index.questions){
     		$scope.index.questions[i].subject = $scope.index.subject;
 			$scope.index.questions[i].paper = $scope.index.paper;
+			//Images
+  	   		if ($scope.index.questions[i].noImages < $scope.index.questions[i].images.length){
+    			$scope.index.questions[i].images.splice($scope.index.questions[i].images.length-1,$scope.index.questions[i].images.length-$scope.index.questions[i].noImages);
+    		}
+     		if ($scope.index.questions[i].noImages > $scope.index.questions[i].images.length){
+     			$scope.index.questions[i].noImages = $scope.index.questions[i].images.length;
+     		}
+     		//Answer Images
+     		if ($scope.index.questions[i].noAnswerImages < $scope.index.questions[i].answerImages.length){
+    			$scope.index.questions[i].answerImages.splice($scope.index.questions[i].answerImages.length-1,$scope.index.questions[i].answerImages.length-$scope.index.questions[i].noAnswerImages);
+    		}
+     		if ($scope.index.questions[i].noAnswerImages > $scope.index.questions[i].answerImages.length){
+     			$scope.index.questions[i].noAnswerImages = $scope.index.questions[i].answerImages.length;
+     		}
+     		//Answer Areas
+     		if ($scope.index.questions[i].noAnswers < $scope.index.questions[i].given.length){
+    		$scope.index.questions[i].given.splice($scope.index.questions[i].given.length-1,$scope.index.questions[i].given.length-$scope.index.questions[i].noAnswers);
+//    			$scope.index.correct=[];
+//   			$scope.index.marks=[];
+    		}
+    		if ($scope.index.questions[i].noAnswers == 0){$scope.index.questions[i].given=[];$scope.index.questions[i].correct=[];$scope.index.questions[i].marks=[];}
+    		for (j in $scope.index.questions[i].marks){$scope.index.questions[i].marks[j] = Number($scope.index.questions[i].marks[j]);}
     	}
     	alert("Done Compiling!");
     }
 	
 	$scope.types=["mcq", "blank", "open"];
+	$scope.indexQuestionGenerator = function(i){
+		if ($scope.index.questions[i] == null){$scope.index.questions[i] = $scope.sampleQuestion();}
+	}
 	//Data and fields
 	$scope.index = {};
 	$scope.index.subject = "";

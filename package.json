@@ -1,15 +1,25 @@
 {
-  "name": “Exam Snippets",
+  "name": "examsnippet",
   "version": "0.0.0",
-  "description": "Server and RESTful API for Exam Snippets Quiz Web App",
+  "description": "A Node js and Express Server and REST API for an AngularJS based Quiz application for examination questions",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"No test command\""
-  },
-  "author": “Hackin7”,
-  "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
     "mongodb": "^3.0.10"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"No Tests or Test Command\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hackin7/ExamSnippet.git"
+  },
+  "author": "Hackin7",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hackin7/ExamSnippet/issues"
+  },
+  "homepage": "https://github.com/Hackin7/ExamSnippet#readme"
 }
