@@ -45,24 +45,30 @@ var loadQuestions = function(){
 	});*/
 	var subjects = fs.readdirSync(path);
 	var questionTree = {};
-	var topicsTree = {};
-	for (i in subjects){ // Subjects
+	var topicsTree = {"Chemistry":["Periodic Table","Organic Chemistry"], "Test_Subject":["t1","t2","t3"]};//{};
+	//console.log(subjects); //Debugging
+	for (var i = 0; i < subjects.length; i++){ // Subjects
+		console.log(subjects[i]); // Debugging
 		questionTree[subjects[i]] = {};
 		topicsTree[subjects[i]] = [];
 		var papers = fs.readdirSync(path+subjects[i]+"/");
 		for (j in papers){ // Papers
-			console.log(path+subjects[i]+"/"+papers[j]+"/index.json");
+			//console.log(path+subjects[i]+"/"+papers[j]+"/index.json");
 			var paperData = require(path+subjects[i]+"/"+papers[j]+"/index.json");
 			questionTree[subjects[i]][paperData.paper] = paperData;
+			//console.log( [subjects[i],papers[j],questionTree, topicsTree] );
 			// Topics ///////////////////////////////////////////////
 			for (k in paperData.questions){ // Topics
 				for (l in paperData.questions[k].topics){
-					if (!inArray(paperData.questions[k].topics[l],topicsTree[subjects[i]])){
+					if ( !inArray(paperData.questions[k].topics[l], topicsTree[subjects[i]]) ){
+						//console.log([i, paperData.questions[k].topics[l],subjects[i],topicsTree]);
 						topicsTree[subjects[i]].push(paperData.questions[k].topics[l]);
 					}
+					console.log([i,subjects[i],topicsTree[subjects[i]],paperData.questions[k].topics[l]],inArray(paperData.questions[k].topics[l], topicsTree[subjects[i]]));			
 				}
 			}/////////////////////////////////////////////////////
 		}
+		console.log(i);
 	}
 	return {subjects:subjects, questionTree:questionTree, topicsTree: topicsTree};
 };

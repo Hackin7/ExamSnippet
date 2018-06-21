@@ -3,10 +3,10 @@ app.controller("main", function($scope,restAPI) {
 
 	//Picking
 	$scope.picking = {}
-	$scope.picking.picked = {}; //Selected Questions Tree
 	restAPI.subjects().then(function(response) {
 			$scope.picking.subjects = response.data;
 	});
+	$scope.picking.picked = {}; //Selected Questions Tree
 	restAPI.tree().then(function(response) {
 			$scope.picking.tree = response.data;
 	});
@@ -24,7 +24,7 @@ app.controller("main", function($scope,restAPI) {
 		var selecting = false; //Deselecting
 		var checking = function(value){return value};
 		for (i in $scope.picking.questions){
-			if ($scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] !== true){
+			if ($scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] != true){
 				selecting = true; //Selecting
 			}
 		}
@@ -33,9 +33,16 @@ app.controller("main", function($scope,restAPI) {
 		}
 	};
 	$scope.picking.showQuestions = function(){
-		for (subject in $scope.picking.tree){
-			for (paper in $scope.picking.tree[subject]){
-				for (question in $scope.picking.tree[subject][paper].questions){
+		//$scope.test = [Object.keys($scope.picking.tree)];
+		var subject = "";
+		for (subject in $scope.picking.picked){
+			//alert(subject);
+			//subject = Object.keys($scope.picking.tree)[i];
+			//$scope.test.push(i,subject);
+			for (paper in $scope.picking.picked[subject]){
+				//$scope.test.push(paper);
+				for (question in $scope.picking.picked[subject][paper]){
+					//$scope.test.push($scope.picking.picked[subject][paper][question]);
 					if ($scope.picking.picked[subject][paper][question]){
 						$scope.questions.push($scope.picking.tree[subject][paper].questions[question]);
 					}
