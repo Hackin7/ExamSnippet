@@ -8,13 +8,13 @@
 	<p>{{Q.q_id}}: {{Q.question}}</p>
 	<!-- Input Types -->
 	<div ng-show="Q.type == 'mcq'" ng-repeat="given in length(Q.given)" >
-		<input name="answer" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>{{Q.given[given]}}<br>
+		<input name="{{Q.id}}_" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>{{Q.given[given]}}<br>
 	</div>
 	<div ng-show="Q.type == 'blank'" ng-repeat="given in length(Q.given)">
-		<input name="answer{{given}}" type='text' ng-model="Q.answer[given]"/><br>
+		<input name="{{Q.id}}_{{given}}" type='text' ng-model="Q.answer[given]"/><br>
 	</div>
 	<div ng-show="Q.type == 'open'" ng-repeat="given in length(Q.given)">
-		<textarea name="answer{{given}}" cols="75" ng-model="Q.answer[given]"/></textarea><br>
+		<textarea name="{{Q.id}}_{{given}}" cols="75" ng-model="Q.answer[given]"/></textarea><br>
 	</div>
 </div>
 <div class="card-footer">

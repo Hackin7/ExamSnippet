@@ -10,12 +10,15 @@
 </div>
 </div>
 
+<!-- https://itsolutionstuff.com/post/how-to-copy-to-clipboard-without-flash-in-angularjs-example.html-->
 <div class="card" style="margin-top:80px">
 <div class="card-header">Current Save Data. Copy down and paste into next session</div>
 <div class="card-body">
-{{questions}}
+<input id="savedata" value="{{questions}}"/><!--{{questions}}-->
 </div>
-<!--<div class="card-footer">
-	<input type="button" class="btn btn-secondary" style="float:right;" ng-click="" value="Download"/>
-</div>-->
+<div class="card-footer">
+	<!--<input type="button" class="btn btn-secondary" style="float:right;" ng-click="" value="Download"/>-->
+	<button class="btn btn-secondary" ngclipboard data-clipboard-target="#savedata">Copy to clipboard
+	</button>
+</div>
 </div>
