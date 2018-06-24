@@ -11,6 +11,11 @@ index = {
 topics = input("Topics: ").split(',')
 MainURL = input("Main URL for images (eg. /RESTAPI/questiondata/Chemistry/1000_MCQ/: ")
 answerimage = input("Enter answer image name (eg ans.jpg): ")
+
+images = []
+n = int(input("Number of images: "))
+for i in range(n):
+	images.append(MainURL+input("Enter image "+str(n)+":"))
 	
 n = int(input("Number of questions: "))
 for i in range(n):
@@ -40,8 +45,9 @@ for i in range(n):
 array = []
 for i in range(n):
 	index["questions"][i]["images"] = input("Enter image name of Question "+ str(i+1)+" (eg 1.jpg): ").split()
-	for j in range(len(index["questions"][i]["images"])): index["questions"][i]["images"][j] = MainURL + index["questions"][i]["images"][j]
-	print(index["questions"][i]["images"][j])
+	for j in range(len(index["questions"][i]["images"])):
+		index["questions"][i]["images"][j] = images[ int(index["questions"][i]["images"][j])-1 ]# MainURL + index["questions"][i]["images"][j]
+	#print(index["questions"][i]["images"][j])
 	#array.append(i)
 	#print(question["images"])
 print(array)
