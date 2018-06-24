@@ -44,7 +44,7 @@ for i in range(n):
 
 array = []
 for i in range(n):
-	index["questions"][i]["images"] = input("Enter image name of Question "+ str(i+1)+" (eg 1.jpg): ").split()
+	index["questions"][i]["images"] = input("Enter image number of Question "+ str(i+1)+" (eg 1): ").split()
 	for j in range(len(index["questions"][i]["images"])):
 		index["questions"][i]["images"][j] = images[ int(index["questions"][i]["images"][j])-1 ]# MainURL + index["questions"][i]["images"][j]
 	#print(index["questions"][i]["images"][j])
