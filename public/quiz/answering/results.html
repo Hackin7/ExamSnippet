@@ -20,7 +20,7 @@
 				{{Q.answer[answer]}}</li>
 			</ul></td>
 			<td width="20%">
-					<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.images[image]}}"/></div>
+					<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.answerImages[image]}}"/></div>
 			</td>
 			<td><ul>
 				<li ng-repeat="correct in length(Q.correct)" ng-style="mistakeHighlighting(Q,correct)">
@@ -28,6 +28,7 @@
 			</ul></td>
 		</tr>
 	</table>
+	Working Given: {{Q.workingArea}} <br>
 	Comments: {{Q.markerComments}}
 	</div>
 </div>

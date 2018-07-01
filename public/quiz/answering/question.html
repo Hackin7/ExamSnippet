@@ -5,7 +5,7 @@
 	<div class="container"><div class="row">
 		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
 	</div></div>
-	<p>{{Q.q_id}}: {{Q.question}}</p>
+	<p>{{Q.q_id}}: {{Q.question}} <b>[{{questionScore(Q.marks)}}]</b></p>
 	<!-- Input Types -->
 	<div ng-show="Q.type == 'mcq'" ng-repeat="given in length(Q.given)" >
 		<input name="{{Q.id}}_" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>{{Q.given[given]}}<br>
@@ -16,6 +16,8 @@
 	<div ng-show="Q.type == 'open'" ng-repeat="given in length(Q.given)">
 		<textarea name="{{Q.id}}_{{given}}" cols="75" ng-model="Q.answer[given]"/></textarea><br>
 	</div>
+	Working Area:<br>
+	<textarea cols="75" ng-model="Q.workingArea"/></textarea><br>
 </div>
 <div class="card-footer">
 	<input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>

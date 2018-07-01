@@ -87,6 +87,13 @@ app.controller("main", function($scope,restAPI) {
 		for (var i = 0; i < array.length; i++) {foo.push(i);}
 		return foo
 	}
+	$scope.questionScore = function(marks){
+		var total = 0;
+		for (var i in marks){
+			total += marks[i]
+		}
+		return total;
+	}
 	$scope.scoring = function(awarded, marks){
 		var sum = 0;
 		for(var i=0; i< awarded.length; i++) {

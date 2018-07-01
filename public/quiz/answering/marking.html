@@ -7,14 +7,13 @@
 		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
 		<div class="col">{{Q.q_id}}: {{Q.question}}</div>
 	</div></div>
-
 	<table class="table">
 	<tr><th>Answer</th><th>Marking</th></tr>
 	<tr><td>
 			<p ng-repeat="answer in Q.answer">{{answer}}</p>
 		</td>
 		<td width="40%">
-				<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.images[image]}}"/></div>
+				<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.answerImages[image]}}"/></div>
 		</td>
 		<td>
 			<span ng-repeat="correct in length(Q.correct)">
@@ -23,6 +22,7 @@
 			Score: {{scoring(Q.awarded, Q.marks)}}
 		</td></tr>
 	</table>
+	Working Given: {{Q.workingArea}} <br>
 	Comments:<br>
 	<textarea cols="75" ng-model="Q.markerComments"/></textarea><br>
 </div>
