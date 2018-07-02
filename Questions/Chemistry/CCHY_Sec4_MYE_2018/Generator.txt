@@ -125,7 +125,7 @@ Metals
 Acids and Bases
 Metals
 Metals,Qualitative Analysis
-Comparison
+Comparison,Bonding
 Comparison,Bonding
 Bonding
 Organic Chemistry
