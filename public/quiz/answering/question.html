@@ -2,9 +2,14 @@
 <div class="card" style="margin-top:80px" ng-show="Q.step == 1" ng-repeat="Q in questions">
 <div class="card-header">Question {{Q.id+1}}: From {{Q.paper}}</div>
 <div class="card-body">
-	<div class="container"><div class="row">
-		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
-	</div></div>
+	<!-- https://stackoverflow.com/questions/4853898/display-pdf-within-web-browser -->
+	<object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)" data="{{Q.pdf[pdf]}}" type='application/pdf' width="100%" height="100%"></object>
+	<div ng-repeat="pdf in length(Q.pdf)">
+		<a href="{{Q.pdf[pdf]}}" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
+	</div>
+	<!-- <div class="container"><div class="row"> -->
+		<div ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
+	<!-- </div></div> -->
 	<p>{{Q.q_id}}: {{Q.question}} <b>[{{questionScore(Q.marks)}}]</b></p>
 	<!-- Input Types -->
 	<div ng-show="Q.type == 'mcq'" ng-repeat="given in length(Q.given)" >
@@ -14,10 +19,10 @@
 		<input name="{{Q.id}}_{{given}}" type='text' ng-model="Q.answer[given]"/><br>
 	</div>
 	<div ng-show="Q.type == 'open'" ng-repeat="given in length(Q.given)">
-		<textarea name="{{Q.id}}_{{given}}" cols="75" ng-model="Q.answer[given]"/></textarea><br>
+		<textarea name="{{Q.id}}_{{given}}" ng-model="Q.answer[given]"/></textarea><br>
 	</div>
 	Working Area:<br>
-	<textarea cols="75" ng-model="Q.workingArea"/></textarea><br>
+	<textarea ng-model="Q.workingArea"/></textarea><br>
 </div>
 <div class="card-footer">
 	<input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>

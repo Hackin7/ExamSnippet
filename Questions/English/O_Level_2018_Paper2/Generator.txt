@@ -60,8 +60,8 @@ Factual
 Inferential
 Own Words
 Factual
-Conversation,Example
-Conversation,Support 
+Conversation,Evidence
+Conversation 
 Summary
 1
 1

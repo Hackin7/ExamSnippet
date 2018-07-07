@@ -147,6 +147,7 @@ app.controller("main", function($scope,restAPI) {
 	$scope.answering = {
 		mode : "Exam"
 	};
+	//document.getElementById("0_pdf").src = "https://c176.pcloud.com/dHZXyaKmVZh07JjVZZZL27TU7Z1ZZsR8ZXZ7hiy7ZvOWUjVnn0KBiqwfTb8cMm47kYIEV/2016%20Sec%204%20Express%20English%20SA2%20Dunman%20High%20School.pdf";
 	//Data
 	/*
     $scope.questions = [

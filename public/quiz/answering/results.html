@@ -14,6 +14,9 @@
 		<tr>
 			<td width="20%">
 					<div ng-repeat="image in length(Q.images)"><img src="{{Q.images[image]}}"/></div>
+					<div ng-repeat="pdf in length(Q.pdf)">
+					<a href="{{Q.pdf[pdf]}}" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
+					</div>
 			</td>
 			<td><ul>
 				<li ng-repeat="answer in length(Q.answer)">
@@ -21,6 +24,9 @@
 			</ul></td>
 			<td width="20%">
 					<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.answerImages[image]}}"/></div>
+					<div ng-repeat="pdf in length(Q.anspdf)">
+					<a href="{{Q.anspdf[pdf]}}" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
+					</div>
 			</td>
 			<td><ul>
 				<li ng-repeat="correct in length(Q.correct)" ng-style="mistakeHighlighting(Q,correct)">
