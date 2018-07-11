@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_St_Margaret's_Sec
+1
+https://drive.google.com/uc?id=105e8PHYnasLuMiSf0exbF1SXHMHvSeot
+0
+0
+0
+5
+1a,6,SBQ,Inference_Purpose
+1b,7,SBQ,Surprise
+1c,7,SBQ,Reliability
+1d,7,SBQ,Proving
+1e,8,SBQ,Comparison
+Study Source A. Why do you think the cartoonist drew this cartoon? Explain your answer.
+Study Source B. Are you surprised by what the source says about the South China Sea dispute? Explain your answer.
+Study Source C.  Explain your answer.
+Study Source D. Singapore is not one of the claimant countries of the disputed islands and territories i the South China Sea. Does it  mean that the source is useless in what it says?  Explain your answer.
+Study Sources E and F. How different are these two sources? Explain your answer.
+ 

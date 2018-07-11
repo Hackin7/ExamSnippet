@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Zhenghua_Sec
+1
+https://drive.google.com/uc?id=1HO02sdaxfl0GPK329lCshKcWYbGISqft
+0
+0
+0
+5
+1a,6,SBQ,Inference_Purpose
+1b,7,SBQ,Comparison
+1c,7,SBQ,Useful
+1d,8,SBQ,Reliability
+1e,7,SBQ,Proving
+Study Source A. Why did the cartoonist draw this cartoon? Explain your answer.
+Study Sources B and C. How different are Sources B and C? Explain your answer.
+Study Source D. How useful is Source D in helping you to understan the threat of ISIS? Explain your answer.
+Study Source E. How far can you trust Source E about the threat posed by ISIS? Explain your answer.
+Study Sources F. Can Source F prove that ISIS is a big threat to the world? Explain your answer.
+ 

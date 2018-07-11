@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Anglican_High
+1
+https://drive.google.com/uc?id=1biN8o0zoKnGROGXgZM9J3cCUv-ehkbxk
+0
+0
+0
+5
+1a,5,SBQ,Inference
+1b,7,SBQ,Useful
+1c,8,SBQ,Surprise
+1d,7,SBQ,Inference_Purpose
+1e,8,SBQ,Proving
+Study Source A. Does the cartoonist approve of Singapore's immigration policy? Explain your answer.
+Study Source B. How useful is this source as evidence about immigration of immigrants in Singapore? Explain your answer.
+Study Sources C and D. After reading Source C, are you surprised by Source D? Explain your answer.
+Study Source E. Why was the exhibition carried out? Explain your answer.
+Study Sources F. Does Source F prove that Singaporeans are anti-foreigners? Explain your answer.
+ 

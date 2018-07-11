@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Anglo_Chinese
+1
+https://drive.google.com/uc?id=1L6t-2LzZ2GH3jfVZPzt_91oUkALZJRIm
+0
+0
+0
+5
+1a,6,SBQ,Inference_Purpose
+1b,7,SBQ,Reliability
+1c,7,SBQ,Useful
+1d,7,SBQ,Proving
+1e,8,SBQ,Surprise
+Study Source A. Why do you think the cartoon was drawn? Explain your answer, referring to the details of the cartoon.
+Study Source B. Can we trust what the source says regarding the role that Israel played in worsening the Palestinian-Israeli conflict?  Explain your answer.
+Study Source C. How useful would this source be to your understanding of the Palestinian-Israeli conflict? Explain your answer.
+Study Source D. How far does Source D prove that the Palestinians would never accept Jewish rule? Explain your answer.
+Study Sources E and F. Having read Source E, are you surprised by Source F? Explain your answer.
+ 

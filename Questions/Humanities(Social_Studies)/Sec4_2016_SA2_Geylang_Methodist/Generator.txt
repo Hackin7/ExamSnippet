@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Geylang_Methodist
+1
+https://drive.google.com/open?id=1zUlB-6xfoLC19PtMrwxz39TKBozt8UNM
+0
+0
+0
+5
+1a,5,SBQ,Inference
+1b,7,SBQ,Inference
+1c,8,SBQ,Surprise
+1d,7,SBQ,Inference_Purpose
+1e,8,SBQ,Approve
+Study Source A. What can you tell from this source about the tension in Xinjiang? Explain your answer.
+Study Source B. Which side do you think the cartoonist supports, the Chinese authorities or the Uighurs? Explain your answer.
+Study Source C. Are you surprised by what the Uighur girl said? Explain your answer.
+Study Source D. Why was this source published? Explain your answer.
+Study Sources E and F. Having read Source E, do you think the Chinese authorities would have approved of the publication of Source F Explain your answer.
+ 

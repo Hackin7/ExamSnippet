@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Bukit_Panjang_Government_High
+1
+https://drive.google.com/uc?id=1JmUcqVGvRyWriQhxt1Fgz-lCy-T8jiu5
+0
+0
+0
+5
+1a,6,SBQ,Inference
+1b,7,SBQ,Comparison
+1c,7,SBQ,Inference_Purpose
+1d,7,SBQ,Useful
+1e,8,SBQ,Surprise
+Study Source A. Do you think the cartoonist approved of China's behaviour in the oil-rig dispute? Explain your answer.
+Study Sources B and C. How far does the Chinese government in Source B agree with the Vietnamese government in Source C? Explain your answer.
+Study Source D. Why did the United States make this statement? Explain your answer.
+Study Source E. How useful is this source as evidence of the Vietnamese actions towards Chinese nationals? Explain your answer.
+Study Source F. Are you surprised by this source? Explain your answer.
+ 

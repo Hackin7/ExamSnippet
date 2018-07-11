@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Naval_Base_Sec
+1
+https://drive.google.com/uc?id=1Hq0i0UjOFehvf-M3beSKYotnQLFny2Eh
+0
+0
+0
+5
+1a,5,SBQ,Inference
+1b,7,SBQ,Inference_Purpose
+1c,7,SBQ,Reliability
+1d,8,SBQ,Comparison
+1e,8,SBQ,Useful
+Study Source A. What is the message of the source? Explain your answer.
+Study Source B. Why did the Tamil Eelam Liberation organisation publish this cartoon? Explain your answer.
+Study Source C. How reliable is this source in showing the life of the Tamils in post-war Sri Lanka? Explain your answer.
+Study Sources D and E. How similar are they? Explain your answer.
+Study Source F. How useful is the source in showing that the government was commited to reconciliation with the Tamil minorities? Explain your answer.
+ 

@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_
+1
+https://drive.google.com/uc?id=
+0
+0
+0
+5
+1a,6,SBQ,Inference
+1b,7,SBQ,Inference_Purpose
+1c,7,SBQ,Useful
+1d,7,SBQ,Surprise
+1e,8,SBQ,Reliability
+Study Source A.  Explain your answer.
+Study Source B.  Explain your answer.
+Study Source C.  Explain your answer.
+Study Source D.  Explain your answer.
+Study Sources E and F.  Explain your answer.
+ 

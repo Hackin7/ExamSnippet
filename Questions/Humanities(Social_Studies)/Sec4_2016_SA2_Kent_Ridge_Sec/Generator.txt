@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Kent_Ridge_Sec
+1
+https://drive.google.com/uc?id=184DIxFK9E73ST4eLKHvkpcskxue-ebZg
+0
+0
+0
+5
+1a,7,SBQ,Inference_Purpose
+1b,7,SBQ,Surprise
+1c,5,SBQ,Inference_Purpose
+1d,8,SBQ,Proving
+1e,8,SBQ,Useful
+Study Source A. Why did the blogger make such a comparison in Source A? Explain your answer.
+Study Source B. Are you surprised Explain your answer.
+Study Source C. Who do you think is the author of this source? Explain your answer.
+Study Sources D and E. Can Source E prove Source D wrong about the employabililty of Singaporeans> Explain your answer.
+Study Source F. How useful is Source F as an indication of Singapore's education system? Explain your answer.
+ 

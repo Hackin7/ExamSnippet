@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Macpherson_Sec
+1
+https://drive.google.com/open?id=1wN3Rkku0y8uxM1snq6_WfJA2Oq56afbi
+0
+0
+0
+5
+1a,7,SBQ,Inference_Purpose
+1b,7,SBQ,Comparison
+1c,6,SBQ,Inference_Purpose
+1d,8,SBQ,Useful
+1e,7,SBQ,Surprise
+Study Source A. Why do you think the cartoon was published on the internet? Explain your answer.
+Study Sources B and C. How different are Sources B and C about the November Paris terror attacks? Explain your answer.
+Study Source D. Why do you think the French President made this speech after the November Paris terror attacks? Explain your answer.
+Study Source E. How useful is Source E as evidence about the threat of terrorism? Explain your answer.
+Study Source F. Are you surprised by the cartoonist's view of the November Paris terror attacks? Explain your answer.
+ 

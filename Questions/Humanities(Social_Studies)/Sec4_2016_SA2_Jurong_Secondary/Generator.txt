@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Jurong_Secondary
+1
+https://drive.google.com/uc?id=1kJ4b7qUKNPFt4J85jSbmSBrC85f9eDrv
+0
+0
+0
+5
+1a,6,SBQ,Inference
+1b,7,SBQ,Comparison
+1c,7,SBQ,Inference_Purpose
+1d,7,SBQ,Surprise
+1e,8,SBQ,Useful
+Study Source A. Who is the cartoonist siding with-the extremists or Charlie hebdo? Explain your answer.
+Study Sources B and C. How far do you think the Muslim in Source C would have agreed with the American cartoonist in Source B? Explain your answer.
+Study Source D. Why is this article published? Explain your answer.
+Study Source E. Are you surprised by this source? Explain your answer.
+Study Source F. How useful is this source as evidence about the attitudes of the French community towards the Muslim in France? Explain your answer.
+ 

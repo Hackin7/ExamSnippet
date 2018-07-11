@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Punggol_Sec
+1
+https://drive.google.com/uc?id=1O6ZviWbTi6lR_ul0or1KYLQtVCHQrwIk
+0
+0
+0
+5
+1a,6,SBQ,Inference
+1b,7,SBQ,Proving
+1c,8,SBQ,Comparison
+1d,7,SBQ,Surprise
+1e,7,SBQ,Useful
+Study Source A. What is the message of this cartoon Explain your answer using details of the cartoon.
+Study Source B. Does this source prove that President Bush was right in approving the Patriot Act? Explain your answer.
+Study Sources C and D. How different are these sources? Explain your answer.
+Study Source E. Are you surprised by Source E? Explain your answer.
+Study Source F. How useful is this source to show you that the Patriot act should be removed as a law? Explain your answer.
+ 

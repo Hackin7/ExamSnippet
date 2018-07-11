@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Singapore_Chinese_Girl's
+1
+https://drive.google.com/uc?id=1DkCV9nDChmCyyoqjM-0-LIZVwVNWcnjR
+0
+0
+0
+5
+1a,6,SBQ,Inference
+1b,7,SBQ,Surprise
+1c,7,SBQ,Comparison
+1d,8,SBQ,Useful
+1e,7,SBQ,Inference
+Study Source A. What can you tell from this source about how Singapore manages international relations? Explain your answer.
+Study Source B. Are you surprised by Source B? Explain your answer.
+Study Sources C and D. How similar are the sources as evidence that Singapore can stay relevant on the international stage? Explain your answer.
+Study Source E. How useful is this source as evidence that Singapore can stay relevant on the international stage? Explain your answer.
+Study Source F. What is the message of this source? Explain your answer.
+ 

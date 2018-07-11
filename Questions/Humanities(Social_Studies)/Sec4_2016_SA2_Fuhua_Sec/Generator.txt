@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_Fuhua_Sec
+1
+https://drive.google.com/uc?id=1gsRBVgRh_U5hbPKh520uK0CSvlYpBimb
+0
+0
+0
+5
+1a,6,SBQ,Inference
+1b,8,SBQ,Surprise
+1c,8,SBQ,Reliability
+1d,5,SBQ,Inference
+1e,8,SBQ,Useful
+Study Source A. Do you think the cartoonist is a supporter of Singapore's foreign talent policy? Explain your answer.
+Study Sources B and C. Having read Source B, are you surprised by Source C? Explain your answer.
+Study Source D. Can you trust what it says? Explain your answer.
+Study Source E. What can you tell from this source? Explain your answer.
+Study Source F. How useful is this source in aiding your understanding of the foreign talent policy in Singapore? Explain your answer.
+ 

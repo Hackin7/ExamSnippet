@@ -1,0 +1,20 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Sec4_2016_SA2_St_Hilda's_Sec
+1
+https://drive.google.com/uc?id=1qgLhGvAKYUWzPtWoPDw2nGeCMBEveiLV
+0
+0
+0
+5
+1a,6,SBQ,Inference_Purpose
+1b,7,SBQ,Reliability
+1c,7,SBQ,Useful
+1d,7,SBQ,Surprise
+1e,8,SBQ,Evaluation
+Study Source A. Why do you think the cartoon was drawn? Explain your answer.
+Study Sources B and C. The two sources have contrasting views on Singapore's public transport system. Does it mean one of them is unreliable? Explain your answer.
+Study Source D. How useful is Source D as evidence about the rail transport system? Explain your answer.
+Study Source E. Are you surprised by what the source says> Explain your answer.
+Study Sources A-F. How far do the sources agree that Singapore's public transport system is effective? Explain your answer.
+ 
