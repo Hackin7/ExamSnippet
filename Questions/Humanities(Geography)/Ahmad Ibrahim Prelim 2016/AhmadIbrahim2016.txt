@@ -1,0 +1,92 @@
+# For Typical Question Generator
+Humanities(Geography)
+Ahmad Ibrahim Prelim 2016
+0
+0
+8
+https://drive.google.com/uc?id=1WIQspm-jXPDmNo7FFq-miFsntqsibJSx
+https://drive.google.com/uc?id=1vMDaPnEYS-QpgHyM9AFyM7th98ILr1nN
+https://drive.google.com/uc?id=1HkuN71jBwWFFbneeMeiljk3aKqyHhX-8
+https://drive.google.com/uc?id=1bef1H3jxJfwcRWG1jQncUdsrQnHDqvV9
+https://drive.google.com/uc?id=1IPovknkmSBZwAmh1c7JPOJsKoX7YFa-_
+https://drive.google.com/uc?id=14f1bsObQHuTqA66dj8zNFmQhUTNKGuyD
+https://drive.google.com/uc?id=1b3cgKKfyJtiHQe0JBQ-F8Dxv861dma1L
+https://drive.google.com/uc?id=15EJWxC9BuTC1ed01h3jjcy5XAmp6lUMs
+11
+https://drive.google.com/uc?id=1jz0nC4EGd1ITz6SAMN_G2WFvYSdy7POi
+https://drive.google.com/uc?id=1jNj6I4iIrEbqQ2jA-gGkhbDU5Gvc1-gS
+https://drive.google.com/uc?id=14L4uKkk0uH4vQexPVaWohalElsxoFePJ
+https://drive.google.com/uc?id=1sDWcVeOLfaFDFOYtTuGuk8U0kheATMeY
+https://drive.google.com/uc?id=1Mdin6F4JtZqSabLVUD3uQ9hJyom8UlNP
+https://drive.google.com/uc?id=1_lx0l_MJipYJM3XoKUyaZVIFEsRkDfw_
+https://drive.google.com/uc?id=16KqLXYKfz_244jBa-QVdSWjoVhViNhJv
+https://drive.google.com/uc?id=19ixqvsBolkrDCsf6b9SiXrr3LsN3JHMc
+https://drive.google.com/uc?id=1qndcCj5crBOc7J-QnpM5Ro4CJE-yvD2n
+https://drive.google.com/uc?id=1IDSfVIix6odElMjZI2VzCXShAqrfGXtm
+https://drive.google.com/uc?id=1b7wwEX1y-nbwhvrIRUoSzYNouzBvQp5m
+23
+1a,1,Tourism Fieldwork
+1b,3,Tourism Fieldwork
+1c,4,Tourism Fieldwork
+1d,5,Tourism Fieldwork
+2a,1,Weather and Climate Fieldwork
+2b,3,Weather and Climate Fieldwork
+2c,4,Weather and Climate Fieldwork
+2d,1,Weather and Climate Fieldwork
+2e,4,Weather and Climate Fieldwork
+3a,4,Describe/Compare Data
+3b,8,Open Ended Question,Weather and Climate Strategies
+4a,4,Describe/Compare Data,Tourism Types and Factors
+4b,8,Open Ended Question,Tourism Impacts
+5a,5,Describe/Compare Data,Tectonic Types and Factors
+5b,4,Tectonic Types and Factors
+5c,4,Tectonic Types and Factors
+5d,4,Tectonic Impacts
+5e,8,Open Ended Question,Tectonic Strategies
+6ai,5,Describe/Compare Data
+6aii,4,Food Demand/Supply Factors
+6bi,4,Describe/Compare Data
+6bii,4,Food Demand/Supply Factors
+6c,8,Open Ended Question,Tectonic Impacts
+1a,1b,1c,1d
+2a,2b.2c,2d,2e
+3a,3b
+4a,4b
+5a,5b
+5c,5d,5e
+6ai,6aii,6bi,6bii,6c
+5b
+1a,1b,1c,1d
+2a,2b,2c,2d,2e,3a,3b
+3b
+3b,4a
+4b
+4b
+4b,5a,5b,5c
+5c,5d,5e
+5e
+5e,6ai,6aii,6bi,6bii,6c
+6c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

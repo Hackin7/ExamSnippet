@@ -1,0 +1,85 @@
+# For Typical Question Generator
+Humanities(Geography)
+Gan Eng Seng Prelim 2016
+0
+0
+7
+https://drive.google.com/uc?id=11od_Bu04wyGBSn0Q8hW-46D7KSyAHaOa
+https://drive.google.com/uc?id=1zMLBvCFfwwAUUFn_NHydX7jqa3obo0Qf
+https://drive.google.com/uc?id=1m6q0JR7J31ONKPn23qlMBnN4GH1OAsYX
+https://drive.google.com/uc?id=1bvAdyC3nCXT1BAVJ-270SgISVpE8C9dw
+https://drive.google.com/uc?id=1m3zaEX3DHmKwwgGrkmtLmH7YanJotEZW
+https://drive.google.com/uc?id=1atj4WR3qZGAiJ3SO8xfQe1qtj3sg-qjB
+https://drive.google.com/uc?id=1eqdQ6UEgUeVVWmKXDFmMSV3-xGxvml-C
+8
+https://drive.google.com/uc?id=14AB5arsXMLMUYQVIc-x83wJWa1Qj8D8V
+https://drive.google.com/uc?id=1J_5ySQ8xpU-WO8hyPYlnKHxG0qdULGC0
+https://drive.google.com/uc?id=1cYPtuO4uWc2Ci2ZvSyBu3JjXVUtwvCfE
+https://drive.google.com/uc?id=1Vjy85Jt0EqD3i8Kr0z46DYyLUN8Yi3t3
+https://drive.google.com/uc?id=1oqaveexkQyOSFznw97Lc5G2TkIeVAozU
+https://drive.google.com/uc?id=1023O2ujeOFGpCrG2R9LL4VxMcTsg0YBW
+https://drive.google.com/uc?id=1uT2hsu5eIDPzp4xvIHeX2Z4LB7P9IgJ3
+https://drive.google.com/uc?id=15K9Y5fnkMc8JIJa61Tbzbh5lz6-iP_9m
+18
+1a,1,Tourism Fieldwork
+1b,3,Tourism Fieldwork
+1c,4,Tourism Fieldwork
+1d,5,Tourism Fieldwork
+2a,1,Weather and Climate Fieldwork
+2b,3,Weather and Climate Fieldwork
+2c,4,Weather and Climate Fieldwork
+2d,1,Weather and Climate Fieldwork
+2e,4,Weather and Climate Fieldwork
+3a,4,Tourism Impacts
+3b,8,Weather and Climate Types and Factors
+4a,4,Tourism Types and Factors
+4b,8,Tourism Impacts,Open Ended Question
+5a,5,Describe/Compare Data,Tectonic Types and Factors
+5bi,4,Tectonic Types and Factors
+5bii,4,Tectonic Impacts
+5c,4,Tectonic Impacts
+5d,8,Open Ended Question,Tectonic Strategies
+1a,1b,1c,1d
+1a,1b,1c,1d
+1a,1b,1c,1d
+2a,2b,2c,2d,2e
+3a,3b,4a,4b
+5a,5bi,5bii
+5c,5d
+1a,1b,1c,1d
+2a,2b,2c,2d,2e,3a,3b
+3b,4a,4b
+4b,5a,5bi,5bii,5c
+5d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+# For Typical Question Generator
+Humanities(Geography)
+Dunman Secondary Prelim 2016
+0
+0
+7
+https://drive.google.com/uc?id=1wNVPHnyTKty6KFxOvrSfVsXwLePx3e4B
+https://drive.google.com/uc?id=1ZgOWyyL9zfdRdKhCOYUwGCEn4Ql3l8gX
+https://drive.google.com/uc?id=1-hAZ3oeV1Nq47Jqj9D2wX3cP5xiHwih8
+https://drive.google.com/uc?id=1wCdyVG09_QIWQKeTM3dwBiynCLldEYL9
+https://drive.google.com/uc?id=1_PBzP9hAA7UnzkJzWTcUm5MoROD6307R
+https://drive.google.com/uc?id=1uhJfkdqPEjMr6SjqI4ZpqwzqjP1a2lsi
+https://drive.google.com/uc?id=1ZfdNyfLW7lUhBjvEjUeQmEY5bQv7IM8S
+6
+https://drive.google.com/uc?id=1nfnt5fRJDfIhpAJgLYN9sr25735-R6Ef
+https://drive.google.com/uc?id=10ncJFuVHIl8mMepdpvOzqgU1VWrViSoq
+https://drive.google.com/uc?id=1Y-4UC5dmr-jicMdE7dxaOThZ09kEP8Pk
+https://drive.google.com/uc?id=18Fm-i8_AhksajDmB-lVVeuLVzf-2J6eu
+https://drive.google.com/uc?id=1LdiOBw9W0qkfeguTpmysMWsj_2nYyXJo
+https://drive.google.com/uc?id=1hr9am6JZXeSE5wmxLBAXp4RMiw0YhB2K
+24
+1a,1,Tourism Fieldwork
+1b,4,Tourism Fieldwork
+1c,4,Tourism Fieldwork
+1d,4,Tourism Fieldwork
+2a,1,Weather and Climate Fieldwork
+2b,4,Weather and Climate Fieldwork
+2c,4,Weather and Climate Fieldwork
+2d,4,Weather and Climate Fieldwork
+3a,1,Tourism Impacts
+3b,3,Tourism Strategies
+3c,8,Open Ended Question,Weather and Climate Impacts
+4a,1,Weather and Climate Types and Factors
+4b,3,Weather and Climate Types and Factors
+4c,8,Weather and Climate Strategies,Open Ended Question
+5a,4,Describe/Compare Data
+5bi,3,Describe/Compare Data
+5bii,4,Food Impacts
+5c,6,Tectonic Types and Factors
+5d,8,Tectonic Impacts,Open Ended Question
+6a,4,Describe/Compare Data
+6bi,3,Describe/Compare Data
+6bii,4,Food Demand/Supply Factors
+6c,6,Food Production Impacts
+6d,8,Food Demand/Supply Factors,Open Ended Question
+1a,1b,1c,1d
+1c,1d,2a,2b,2c,2d
+2a,2b,2c,2d
+3a,3b,3c
+4a.4b.4c
+5a,5bi,5bii,5c,5d
+6a,6bi,6bii,6c,6d
+1a,1b,1c,1d,2a,2b,2c,2d,3a,3b,3c
+3c,4a,4b,4c
+4c,5a,5bi,5bii
+5c,5d
+5d,6a,6bi,6bii,6c,6d
+6d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

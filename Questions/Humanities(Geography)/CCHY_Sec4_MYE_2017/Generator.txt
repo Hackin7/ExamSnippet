@@ -33,14 +33,14 @@ Tourism Fieldwork
 Tourism Fieldwork
 Tourism Fieldwork
 Tourism Fieldwork
-Tourism Trends,Data
-Tourism Factors,Explain
+Describe/Compare Data
+Tourism Types and Factors
 Tourism Impacts,Open Ended Question
-Food Trends,Compare
-Food,Explain
-Food Trends,Describe
-Food Factors,Explain
-Food Impacts, Open Ended Question
+Describe/Compare Data
+Food Demand/Supply Factors
+Describe/Compare Data
+Food Demand/Supply Factors,Explain
+Food Impacts,Open Ended Question
 1
 4
 3

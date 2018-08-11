@@ -1,0 +1,91 @@
+# For Typical Question Generator
+Humanities(Geography)
+Temasek Secondary Prelim 2016
+0
+0
+8
+https://drive.google.com/uc?id=1zB_FFtYY8qAnFTmdu1s6U7f3meEl94iC
+https://drive.google.com/uc?id=1GU_RhP7-2PxuawW9Djw87OAY-KemLgAX
+https://drive.google.com/uc?id=1FbcfsO3wViEb7mNGkyoJyqIkf9JyplGU
+https://drive.google.com/uc?id=1TmNJX3Yn6lL3CPGvh0RomRPVR8VF_SBp
+https://drive.google.com/uc?id=1YmVX8leWUv8YJwyQa2dWyddpeWlZKfol
+https://drive.google.com/uc?id=16tQeXHQu-vFOI3i4ZIa7KZn8EiQg7iTv
+https://drive.google.com/uc?id=1OyTBhOGMPdxxwKs8ICV3qFpSkKf3QeNI
+https://drive.google.com/uc?id=1Ybx-2TsJTHlwB4Ld6c804D8rFwAIUJgf
+8
+https://drive.google.com/uc?id=1N-0c8dWluEDgzFf40JsvmtbUWrsI02Cv
+https://drive.google.com/uc?id=17HUL8N7pGm4Nw42Mxf7rfnZiNMTC7xAN
+https://drive.google.com/uc?id=1kxb20_dA-z1yJ6yuFsoGtaU6uYKhCr77
+https://drive.google.com/uc?id=1gCkn9BXm6yPom_z2Agw_nWCtD3_Iig-c
+https://drive.google.com/uc?id=1OghK0sQoS3j5Bn0YhIZoaUG5zLvhIGoA
+https://drive.google.com/uc?id=1kghmNjaTFG3zPHUjY_WfNWWj8sNkZUKM
+https://drive.google.com/uc?id=1jdbAO7Sc-qvXwTrKO81UV5aL8AsQSL2f
+https://drive.google.com/uc?id=1j9bcdyDqiqf-zssPeZA_TZelcqVBvKUO
+22
+1a,3,Weather and Climate Fieldwork
+1bi,3,Weather and Climate Fieldwork
+1bii,3,Weather and Climate Fieldwork
+1c,4,Weather and Climate Fieldwork
+2a,3,Tourism Fieldwork
+2b,4,Tourism Fieldwork
+2ci,3,Tourism Fieldwork
+2cii,3,Tourism Fieldwork
+3a,4,Tourism Types and Factors
+3b,8,Open Ended Question,Weather and Climate Types and Factors
+4a,4,Tourism Strategies
+4b,8,Open Ended Question,Tourism Impacts
+5ai,5,Tectonic Types and Factors
+5aii,4,Tectonic Impacts
+5b,4,Tectonic Types ad Factors
+5c,4,Food Demand/Supply Factors
+5d,8,Open Ended Question,Tectonic Impacts
+6ai,5,Describe/Compare Data,Food Demand/Supply Factors
+6aii,4,Food Impacts
+6b,4,Food Demand/Supply Factors
+6c,4,Food Demand/Supply Factors
+6d,8,Open Ended Question,Food Demand/Supply Factors
+1a,1bi,1bii,1c
+2a,2b,2ci,2cii
+3a,3b,4a,4b
+5ai,5aii,5b
+5a,5c
+6ai,6aii,6b
+6c,6d
+1a,1bi,1bii,1c
+1a,1bi,1bii
+1c,2a,2b,2ci,2cii
+3a,3b
+3b,4a,4b
+4b,5ai,5aii,5b
+5b,5c,5d
+5d,6ai,6aii,6b
+6c,6d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

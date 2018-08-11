@@ -1,0 +1,98 @@
+# For Typical Question Generator
+Humanities(Geography)
+St Hilda's Secondary Prelim 2016
+0
+0
+10
+https://drive.google.com/uc?id=1St5soWEnK5fvkqc7eSgii5TkJOuSG2rc
+https://drive.google.com/uc?id=1QUXc7ozp89wTN7ibi9TOK2xWnCgY2aeX
+https://drive.google.com/uc?id=1NHleywKbLFJMTwB21UZXU48mhSiBcsSk
+https://drive.google.com/uc?id=1tQIxG0spMNfXt3EeZcinL2tR8QkTAO4m
+https://drive.google.com/uc?id=1FVpW3Xzoxm1ljgEBa4XQ4FZ-ZvpV2YpF
+https://drive.google.com/uc?id=1MDnJT8VC7091aO0qEBdtWFKwVKSJoWDU
+https://drive.google.com/uc?id=1qBQvc5FLZjBr-jVfIkJ_z153hVyVSXak
+https://drive.google.com/uc?id=1Xv-5HY1gmf5OAsXTpOI6JQITp0sji5oV
+https://drive.google.com/uc?id=1bkTfNRCrTV28KUbuYvswabsAjq08rXgQ
+https://drive.google.com/uc?id=1JUniJRp_NhRlAA5J3iSRUBsYue4TRLeo
+8
+https://drive.google.com/uc?id=1d28CTL8lNWlM4mkW_ZHUaazp67_cYLRm
+https://drive.google.com/uc?id=1tbLH5s6XZWfrHqRMs-gK_PxjEYFst-wV
+https://drive.google.com/uc?id=1e3CWRoZEZnotJWC8BNvskT11_kyCA5s8
+https://drive.google.com/uc?id=1KSpXB9htXHctSdT3W2ipZZ295uNPb_gR
+https://drive.google.com/uc?id=1ELaIHF284IaEl6r55A2cTH-u95eiEk2U
+https://drive.google.com/uc?id=1JQlmtUK-2_azlPfd0oVOoPRufzsOcf5j
+https://drive.google.com/uc?id=1oIbTIWbENTwIBiBYPo9Zi9cRAvb4h51_
+https://drive.google.com/uc?id=19v8307ERbhqc6qpQr_EQ7WwD_yZLsano
+24
+1a,1,Tourism Fieldwork
+1b,3,Tourism Fieldwork
+1c,2,Tourism Fieldwork
+1d,3,Tourism Fieldwork
+1e,4,Tourism Fieldwork
+2a,3,Weather and Climate Fieldwork
+2b,3,Weather and Climate Fieldwork
+2c,3,Weather and Climate Fieldwork
+2d,4,Weather and Climate Fieldwork
+3a,2,Describe/Compare Data
+3b,2,Weather and Climate Types and Factors
+3c,8,Open Ended Question,Weather and Climate Strategies
+4a,4,Describe/Compare Data
+4b,8,Open Ended Question,Tourism Strategies
+5ai,3,Describe/Compare Data
+5aii,4,Food Demand/Supply Factors
+5bi,5,Describe/Compare Data,Tectonic Types and Factors
+5bii,5,Tectonic Types and Factors
+5c,8,Open Ended Question,Tectonic Strategies
+6ai,4,Describe/Compare Data
+6aii,4,Food Demand/Supply Factors
+6bi,5,Describe/Compare Data
+6bii,4,Food Production
+6c,8,Open Ended Question,Food Demand/Supply Factors
+1a,1b,1c,1d,1e
+1a,1b,1c,1d,1e,2a,2b,2c,2d
+3a,3b,3c,4a,4b
+5ai,5aii,5bi,5bii,5c
+6ai,6aii
+6bi,6bii,6c
+1a,1b,1c,1d,1e
+2a,2b,2c,2d
+4a
+5ai,5aii,5bi,5bii,5c
+1a,1b,1c,1d,1e,2a,2b
+2b,2c,2d,3a,3b,3c
+3c,4a,4b
+4b
+4b,5ai,5aii,5bi,5bii,5c
+5d,6ai,6aii,6bi
+6bi,6bii,6c
+6c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

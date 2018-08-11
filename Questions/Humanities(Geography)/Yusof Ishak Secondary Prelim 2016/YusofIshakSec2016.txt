@@ -1,0 +1,107 @@
+# For Typical Question Generator
+Humanities(Geography)
+Yusof Ishak Secondary Prelim 2016
+0
+0
+12
+https://drive.google.com/uc?id=1Tu1zpiATwYLcv5d2m7Vt1fNW5thaqznQ
+https://drive.google.com/uc?id=177OZpOqETZpod1JBK3X52509DPAPO1_2
+https://drive.google.com/uc?id=1YSwp7hTTmnvKmBMoLCxTXRVLlldFTUSe
+https://drive.google.com/uc?id=1NYIWzjFMEc3i4pEC7paSEhPmjmq1trKT
+https://drive.google.com/uc?id=1yAbna5ZrSVAWG7MdHnlx6x14DDliZLjH
+https://drive.google.com/uc?id=1hIWPB45-AMKP6EG8Naca7_FaRHGUYAKz
+https://drive.google.com/uc?id=1IiAa2ciYV-zvQ5g58t-3GIrVSKTvq8_8
+https://drive.google.com/uc?id=1ypj__ge2G1kJNjdEZeEs47g_UtQWSzb5
+https://drive.google.com/uc?id=1rhA1bd8oeSMvNEz_W1h77XlFeRdD2qBS
+https://drive.google.com/uc?id=18vIOKhCo194f8xxeMeFeFJiuk94PrzJb
+https://drive.google.com/uc?id=1EXothTyB73C-yLU3C28an4oIKMuG8rP7
+https://drive.google.com/uc?id=13GmmVcTMtvDb2LWuAUUIVy7ePXmYt4Bw
+10
+https://drive.google.com/uc?id=1hsNMHXPVoi3bi-C_t096A4dJTgghaITZ
+https://drive.google.com/uc?id=1NabqSHdSR-HjVReXsCTE9wm3HnBxT_XS
+https://drive.google.com/uc?id=1NNlKwgRxtrjtEkQsunAmEF9WukXwOX70
+https://drive.google.com/uc?id=1urVRDc0s0Z2cHFVKpg0ObZ3IhdERcYX4
+https://drive.google.com/uc?id=10sm-p6oWX5w52kShkjSxwbEMLUX3KiBh
+https://drive.google.com/uc?id=1tuyoXjgxsY5zT0zhA-EuCsbS6IvAoqAZ
+https://drive.google.com/uc?id=1YbNlqqnrgu4ven5KXtgls0B9UkG5pK5r
+https://drive.google.com/uc?id=1a3FXefiro9uoh7NaCLeY9DifvffeDMnD
+https://drive.google.com/uc?id=1SC14aXfsP252ndWcB96Twxu3F9xu6XWA
+https://drive.google.com/uc?id=1wD-Z4-g9RM70Gcn2T4EpDW4y4_k1eDbx
+26
+1a,1,Weather and Climate Fieldwork
+1b,3,Weather and Climate Fieldwork
+1c,3,Weather and Climate Fieldwork
+1d,4,Weather and Climate Fieldwork
+1e,2,Weather and Climate Fieldwork
+2a,1,Tourism Fieldwork
+2b,2,Tourism Fieldwork
+2c,3,Tourism Fieldwork
+2d,3,Tourism Fieldwork
+2e,4,Tourism Fieldwork
+3ai,1,Weather and Climate Types and Factors
+3aii,3,Weather and Climate Types and Factors
+3b,8,Open Ended Question,Weather and Climate Strategies
+4ai,1,Describe/Compare Data
+4aii,3,Tourism Types and Factors
+4b,8,Open Ended Question,Tourism Strategies
+5a,5,Tectonic Types and Factors
+5b,4,Tectonic Types and Factors
+5c,4,Tectonic Strategies
+5d,4,Food Production
+5e,8,Open Ended Question,Tectonic Strategies
+6a,5,Describe/Compare Data,Food Demand/Supply Factors
+6b,4,Food Impacts
+6c,4,Food Demand/Supply Factors
+6d,4,Food Demand/Supply Factors
+6e,8,Open Ended Question,Food Production
+1a,1b,1c,1d,1e
+1a,1b,1c,1d,1e
+2a,2b,2c,2d,2e
+2a,2b,2c,2d,2e
+2d,2e
+3ai,3aii,3b
+4ai,4aii,4b
+5a,5b,5c,5d,5e
+6a,6b
+6c,6d,6e
+5a,5b
+6d
+1a,1b,1c,1d,1e
+2a,2b,2c,2d,2e,3ai,3aii,3b
+3b
+3b,4ai,4aii,4b
+4b,5a
+5a,5b,5c,5d
+5d,5e
+5e,6a,6b,6c,6d
+6d,6e
+6e
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

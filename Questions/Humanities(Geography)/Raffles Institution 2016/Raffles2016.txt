@@ -1,0 +1,99 @@
+# For Typical Question Generator
+Humanities(Geography)
+Raffles Institution 2016
+0
+0
+11
+https://drive.google.com/uc?id=1YJHTPft1hc8b5LzaToLBvbCkJrZbe-tI
+https://drive.google.com/uc?id=1xGYP5xxHbNaDFpjPkP16xWwZJyCpj7mt
+https://drive.google.com/uc?id=1AC_IWGbVG0yoSdFBPT_ydGpF_baXtqJw
+https://drive.google.com/uc?id=1odRv4UFX_pkMVrHSQKiOLPaPKJiRgygM
+https://drive.google.com/uc?id=1OOjHL8-WCii7r86pric7aMvj8XqIOJ6y
+https://drive.google.com/uc?id=1qHzOktGEJM3DhcPpzluPCxxUX1I7ZvE6
+https://drive.google.com/uc?id=12Nn3d_yLPnzUCt89v89EBtTvOdeGuxcf
+https://drive.google.com/uc?id=13NLHTTs7gienNEq8zpCk6jcPhjB86wzR
+https://drive.google.com/uc?id=1ErLNXaZHdnyJ55jNdap0ykgYgfMc-zhV
+https://drive.google.com/uc?id=1_EwVqLHRzljwyjKUnRszZIxvTcB7zgH6
+https://drive.google.com/uc?id=1e1Jxryt9KMG1PQB1f2P0hAtc0T8FPgAv
+7
+https://drive.google.com/uc?id=1q9zBHQlC4FNRhiB9LEhJ3ATDqV2IfSi8
+https://drive.google.com/uc?id=1aegvWdSJIFkd9tIJnqJL6jN6Ndz30HlB
+https://drive.google.com/uc?id=1IuiJehPji5paCROT5XPn_HgApjxcubIm
+https://drive.google.com/uc?id=18JjRqNiGFpk2ErLePyxZDHams4hZQi2A
+https://drive.google.com/uc?id=1OXNngdeXxL1GV1BQcbi5BqVyZOrwyUvC
+https://drive.google.com/uc?id=1w62CyBGsv7kGWVNUXCyLNrvOzLZ2Y11y
+https://drive.google.com/uc?id=12CoZOAQr596re8_P0e3VgDdKag55H8QC
+24
+1a,2,Tourism Fieldwork
+1b,2,Tourism Fieldwork
+1c,1,Tourism Fieldwork
+1d,4,Tourism Fieldwork
+1e,4,Tourism Fieldwork
+2a,2,Weather and Climate Fieldwork
+2b,1,Weather and Climate Fieldwork
+2c,4,Weather and Climate Fieldwork
+2d,2,Weather and Climate Fieldwork
+2e,4,Weather and Climate Fieldwork
+3a,4,Weather and Climate Types and Factors
+3b,8,Open Ended Question,Tourism Types and Factors
+4a,4,Weather and Climate Types and Factors
+4b,8,Open Ended Question,Weather and Climate Impacts
+5ai,3,Tectonic Types and Factors
+5aii,5,Tectonic Types and Factors
+5bi,4,Describe/Compare Data
+5bii,5,Food Demand/Supply Factors
+5c,8,Tectonic Impacts,Open Ended Question
+6ai,3,Describe/Compare Data
+6aii,5,Food Demand/Supply Factors
+6bi,4,Food Production
+6bii,5,Food Production Impacts
+6c,8,Open Ended Question
+1a,1b,1c,1d,1e
+1a,1b,1c,1d,1e
+2a,2b,2c,2d,2e
+2a,2b,2c,2d,2e
+2a,2b,2c,2d,2e
+3a,3b
+4a,4b
+5ai,5aii
+5bi,5bii,5c
+6ai,6aii
+6bi,6bii,6c
+1a,1b,1c,1d,1e,2a
+2a,2b,2c,2d,2e,3a,3b
+3b,4a,4b
+4b,5ai,5aii
+5bi,5bii,5c
+5c,6ai,6aii,6bi,6bii
+6c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

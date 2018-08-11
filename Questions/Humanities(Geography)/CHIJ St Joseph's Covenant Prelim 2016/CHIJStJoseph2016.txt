@@ -1,0 +1,104 @@
+# For Typical Question Generator
+Humanities(Geography)
+CHIJ St Joseph's Covenant Prelim 2016
+0
+0
+9
+https://drive.google.com/uc?id=1_DZgUyRw54lg989Glj0Y11bI54smf6gk
+https://drive.google.com/uc?id=1xcbafF0M_e8vQDwLznqRA9ECSl4-4_2U
+https://drive.google.com/uc?id=1Lx-C23KrAFOBzqPxgijBLAjQQ5Y7aRkP
+https://drive.google.com/uc?id=1b73aHrqPcJBG7jfozjmaLNWVzflEEJOi
+https://drive.google.com/uc?id=1YJQlaYiUgl1PmA2HljmVtptX0RV0Azvz
+https://drive.google.com/uc?id=1EeCv5waZTDp9c_Xmpo1-BvL2wCrnsgFs
+https://drive.google.com/uc?id=1LZ5MPkP84EVRD0YHtSAKCni77KxN7vLr
+https://drive.google.com/uc?id=1y6SKdVcF6MyIRy_cSi0KnuqDXFikDRCM
+https://drive.google.com/uc?id=1C0e-g2_lVepmUMM6R__ae6ThmjZt6WOq
+10
+https://drive.google.com/uc?id=1ckkrYKsNAYr0pgnpDVAapiH7HRTfhafc
+https://drive.google.com/uc?id=1aly6Dv8CII-eDGmqFrcxLbkEeruf2wzR
+https://drive.google.com/uc?id=1534ruuQX7vYM8Y6Kuxx7O5B-mSoCvJDs
+https://drive.google.com/uc?id=116t0APGHmlN35K08XQNpQiaNMP-7r_g8
+https://drive.google.com/uc?id=1WPhMoZu_WSB5zqWqqn_SzvBxw2jn5MXD
+https://drive.google.com/uc?id=13ABd7ocLj1INdR_jDUBwQEByc8rN4Ss6
+https://drive.google.com/uc?id=11q77c2HXLbQBIPtJDBkdKVd9xWVugg2N
+https://drive.google.com/uc?id=168WjR3ranXRsaIRAmHk2ubYA0RCpccFY
+https://drive.google.com/uc?id=1abqJnuiOSJWgJbPFih5r8Gk_359_gnbl
+https://drive.google.com/uc?id=1AKKCGkepDvUqxuLrGcr9tcNooF_7SS3F
+22
+1a,1,Tourism Fieldwork
+1b,4,Tourism Fieldwork
+1c,3,Tourism Fieldwork
+1d,3,Tourism Fieldwork
+1e,2,Tourism Fieldwork
+2a,1,Weather and Climate Fieldwork
+2b,4,Weather and Climate Fieldwork
+2c,2,Weather and Climate Fieldwork
+2di,3,Weather and Climate Fieldwork
+2dii,3,Weather and Climate Fieldwork
+3a,4,Weather and Climate Impacts
+3b,8,Tourism Strategies,Open Ended Question
+4a,4,Weather and Climate Types and Factors
+4b,8,Weather and Climate Strategies,Open Ended Question
+5a,6,Describe/Compare Data,Food Demand/Supply Factors
+5b,6,Food Impacts
+5c,5,Tectonic Types and Factors
+5d,8,Open Ended Question,Tectonic Strategies
+6a,6,Describe,Food Demand/Supply Factors
+6b,6,Food Production
+6c,5,Food Production Impacts
+6d,8,Open Ended Question,Food Demand/Supply Factors 
+1a,1b,1c,1d,1e
+1a,1b,1c,1d,1e
+2a,2b,2c,2d,2dii
+3a,3b,4a,4b
+5a,5b,5c,5d
+6a,6b,6c,6d
+1a,1b,1c,1d,1e
+1a,1b,1c,1d,1e
+2a,2b,2c,2d,2dii
+1a,1b
+1b,1c,1d,1e
+2a,2b,2c,2di,2dii,3a
+3a,3b,4a,4b
+4b,5a,5b
+5b,5c,5d
+5d
+5d,6a
+6a,6b
+6c,6d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
