@@ -11,11 +11,16 @@
 				<input type="radio" ng-model="random.way.subject" value="{{subjects}}"/>
 				{{subjects}}<br></span>
 	Types<br>
-	<span ng-repeat="i in length(random.type)" ng-init="random.way.type='open';">
+	<input type="radio" ng-model="random.way.type" value="-"/>
+	Nil<br>
+	<span ng-repeat="i in length(random.type)" ng-init="random.way.type='-';">
 				<input type="radio" ng-model="random.way.type" value="{{random.type[i]}}"/>
 				{{random.type[i]}}<br></span>
 	Topic<br>
-	<span ng-repeat="i in length(random.topics[random.way.subject])">
+	<input type="radio" ng-model="random.way.topic" value="-"/>
+	Nil<br>
+	<b>OR</b><br>
+	<span ng-repeat="i in length(random.topics[random.way.subject])" ng-init="random.way.topic='-';">
 				<input type="radio" ng-model="random.way.topic" value="{{random.topics[random.way.subject][i]}}"/>
 				{{random.topics[random.way.subject][i]}}<br></span>
 </div>

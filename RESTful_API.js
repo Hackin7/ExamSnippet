@@ -35,6 +35,11 @@ function getRandom(arr, n) {
     return result;
 }
 
+var haveEscapeCharacters = function(string){
+	escapeCharacters = ["\r","\n"]
+	return inArray(string.slice(-1),escapeCharacters)
+}
+
 //https://gist.github.com/kethinov/6658166
 var fs = require('fs');
 var loadQuestions = function(){
@@ -56,10 +61,18 @@ var loadQuestions = function(){
 			//console.log(path+subjects[i]+"/"+papers[j]+"/index.json");
 			var paperData = require(path+subjects[i]+"/"+papers[j]+"/index.json");
 			questionTree[subjects[i]][paperData.paper] = paperData;
+			//Remove escape characters
+			if ( haveEscapeCharacters(questionTree[subjects[i]][paperData.paper].paper) ){
+						questionTree[subjects[i]][paperData.paper].paper = questionTree[subjects[i]][paperData.paper].paper.slice(0,-1);
+			}
 			//console.log( [subjects[i],papers[j],questionTree, topicsTree] );
 			// Topics ///////////////////////////////////////////////
 			for (k in paperData.questions){ // Topics
 				for (l in paperData.questions[k].topics){
+					//Remove escape characters
+					if ( haveEscapeCharacters(paperData.questions[k].topics[l]) ){
+						paperData.questions[k].topics[l] = paperData.questions[k].topics[l].slice(0,-1);
+					}
 					if ( !inArray(paperData.questions[k].topics[l], topicsTree[subjects[i]]) ){
 						//console.log([i, paperData.questions[k].topics[l],subjects[i],topicsTree]);
 						topicsTree[subjects[i]].push(paperData.questions[k].topics[l]);
@@ -129,6 +142,58 @@ router.get('/topics/:subject', function(req, res){
 	var data = loadQuestions();
 	res.json(data.topicsTree[req.params.subject]);	   
 	res.end();
+});
+
+router.get('/random/:subject/-/-/:quantity', function(req, res){		   
+	var data = loadQuestions();
+	var possibleQuestions = [];
+	for (i in data.questionTree[req.params.subject]){ // Papers
+		for (j in data.questionTree[req.params.subject][i].questions){ // Questions
+			console.log([i,j]);
+			var question = data.questionTree[req.params.subject][i].questions[j];
+			for (v in question.topics){
+				possibleQuestions.push(question);
+			}
+		}
+	}
+	res.json(getRandom(possibleQuestions, req.params.quantity));//possibleQuestions);
+	res.end();	   
+});
+
+
+router.get('/random/:subject/:type/-/:quantity', function(req, res){		   
+	var data = loadQuestions();
+	var possibleQuestions = [];
+	for (i in data.questionTree[req.params.subject]){ // Papers
+		for (j in data.questionTree[req.params.subject][i].questions){ // Questions
+			console.log([i,j]);
+			var question = data.questionTree[req.params.subject][i].questions[j];
+			//Debugging
+			if (question.type == req.params.type){
+					possibleQuestions.push(question);
+			}
+		}
+	}
+	res.json(getRandom(possibleQuestions, req.params.quantity));//possibleQuestions);
+	res.end();	   
+});
+
+router.get('/random/:subject/-/:topic/:quantity', function(req, res){		   
+	var data = loadQuestions();
+	var possibleQuestions = [];
+	for (i in data.questionTree[req.params.subject]){ // Papers
+		for (j in data.questionTree[req.params.subject][i].questions){ // Questions
+			console.log([i,j]);
+			var question = data.questionTree[req.params.subject][i].questions[j];
+			for (v in question.topics){
+				if (question.topics[v] == req.params.topic){
+					possibleQuestions.push(question);
+				}
+			}
+		}
+	}
+	res.json(getRandom(possibleQuestions, req.params.quantity));//possibleQuestions);
+	res.end();	   
 });
 
 router.get('/random/:subject/:type/:topic/:quantity', function(req, res){		   
