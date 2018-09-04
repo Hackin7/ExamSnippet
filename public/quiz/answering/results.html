@@ -13,17 +13,21 @@
 	<tr><th>Images</th><th>Answer</th><th>Correct Answer</th></tr>
 		<tr>
 			<td width="20%">
-					<div ng-repeat="image in length(Q.images)"><img src="{{Q.images[image]}}"/></div>
+					<div ng-repeat="image in length(Q.images)">
+						<a href="{{Q.images[image]}}" target="_blank"><img src="{{Q.images[image]}}"/></a>
+					</div>
 					<div ng-repeat="pdf in length(Q.pdf)">
 					<a href="{{Q.pdf[pdf]}}" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
 					</div>
 			</td>
 			<td><ul>
 				<li ng-repeat="answer in length(Q.answer)">
-				{{Q.answer[answer]}}</li>
+				<p>{{Q.answer[answer]}}</p></li>
 			</ul></td>
 			<td width="20%">
-					<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.answerImages[image]}}"/></div>
+					<div ng-repeat="image in length(Q.answerImages)">
+						<a href="{{Q.answerImages[image]}}" target="_blank"><img src="{{Q.answerImages[image]}}"/></a>
+					</div>
 					<div ng-repeat="pdf in length(Q.anspdf)">
 					<a href="{{Q.anspdf[pdf]}}" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
 					</div>

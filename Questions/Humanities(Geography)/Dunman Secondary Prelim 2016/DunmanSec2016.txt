@@ -47,7 +47,7 @@ https://drive.google.com/uc?id=1hr9am6JZXeSE5wmxLBAXp4RMiw0YhB2K
 1c,1d,2a,2b,2c,2d
 2a,2b,2c,2d
 3a,3b,3c
-4a.4b.4c
+4a,4b,4c
 5a,5bi,5bii,5c,5d
 6a,6bi,6bii,6c,6d
 1a,1b,1c,1d,2a,2b,2c,2d,3a,3b,3c

@@ -8,7 +8,9 @@
 	</div>
 	<div class="container"><div class="row">
 		<!--Image for testing https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg -->
-		<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
+		<div class="col" ng-repeat="image in Q.images">
+			<a href="{{Q.images[image]}}" target="_blank"><img src="{{image}}" alt="No Related image of question here"/></a>
+		</div>
 		<div class="col">{{Q.q_id}}: {{Q.question}}</div>
 	</div></div>
 	Answers:
@@ -16,7 +18,9 @@
 	<div ng-repeat="pdf in length(Q.anspdf)">
 		<a href="{{Q.anspdf[pdf]}}" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
 	</div>
-	<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.answerImages[image]}}"/></div>
+	<div ng-repeat="image in length(Q.answerImages)">
+		<a href="{{Q.answerImages[image]}}" target="_blank"><img src="{{Q.answerImages[image]}}"/></a>
+	</div>
 	<table class="table">
 	<tr><th>Answer</th><th>Marking</th></tr>
 	<tr><td>

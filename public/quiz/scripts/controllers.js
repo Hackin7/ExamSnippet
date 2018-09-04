@@ -13,12 +13,15 @@ app.controller("main", function($scope,restAPI) {
 	$scope.picking.updatePapers = function(subject){restAPI.papers(subject).then(function(response) {
 			$scope.picking.papers = response.data;
 			$scope.picking.subject = subject; //Subject in picking
-			if ($scope.picking.picked[subject] === null){$scope.picking.picked[subject] = {};}
+			//console.log(subject);
+			if ($scope.picking.picked[subject] === undefined){$scope.picking.picked[subject] = {};}
+			//console.log($scope.picking.picked[subject]);
 	});};
 	$scope.picking.updateQuestions = function(subject,paper){restAPI.questions(subject,paper).then(function(response) {
 			$scope.picking.questions = response.data;
 			$scope.picking.paper = paper; //Paper in picking
-			if ($scope.picking.picked[subject][paper] === null){$scope.picking.picked[subject][paper] = [];}
+			console.log($scope.picking.picked);
+			if ($scope.picking.picked[subject][paper] === undefined){$scope.picking.picked[subject][paper] = [];}
 	});};
 	$scope.picking.paperAllSelect = function(){
 		var selecting = false; //Deselecting

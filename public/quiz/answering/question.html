@@ -8,7 +8,9 @@
 		<a href="{{Q.pdf[pdf]}}" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
 	</div>
 	<!-- <div class="container"><div class="row"> -->
-		<div ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
+	<div style="overflow-y: scroll;height:80%;width:100%;" ng-repeat="image in Q.images">
+		<a href="{{Q.images[image]}}" target="_blank"><img src="{{image}}" alt="No Related image of question here"/></a>
+	</div>
 	<!-- </div></div> -->
 	<p>{{Q.q_id}}: {{Q.question}} <b>[{{questionScore(Q.marks)}}]</b></p>
 	<!-- Input Types -->
@@ -20,6 +22,7 @@
 	</div>
 	<div ng-show="Q.type == 'open'" ng-repeat="given in length(Q.given)">
 		<textarea name="{{Q.id}}_{{given}}" ng-model="Q.answer[given]"/></textarea><br>
+		<!--<div contenteditable name="{{Q.id}}_{{given}}" ng-bind-html="Q.answer[given]">HI</div>-->
 	</div>
 	Working Area:<br>
 	<textarea ng-model="Q.workingArea"/></textarea><br>
@@ -27,6 +30,6 @@
 <div class="card-footer">
 	<input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>
 	<input type="submit" class="btn btn-secondary" style="float:right;" value="Submit" ng-click="Q.step = Q.step + 1;marking(Q.id);"/>
-	<input type="reset" class="btn btn-secondary" style="float:right;" value="Reset" ng-click="again();"/>
+	<!--<input type="reset" class="btn btn-secondary" style="float:right;" value="Reset" ng-click="again();"/>-->
 </div>
 </div>
