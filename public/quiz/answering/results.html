@@ -1,13 +1,16 @@
 <div class="card" style="margin-top:80px" ng-show="checkComplete(questions)">
 <div class="card-header">Results</div>
 <div class="card-body">
-	<p><b>Total Score: {{totalScoring(questions)}}</b></p>
+
+	<div class="result">
+		<p><b>Total Score: {{totalScoring(questions)}}</b></p>
 	<!--<div class="container"><div class="row">
 		<div class="col"></div>
 	</div></div>-->
+		<b>Questions:</b>
+	</div>
 	
-	<b>Questions:</b>
-	<div ng-repeat="Q in questions">
+	<div ng-repeat="Q in questions" class="result">
 	<b>{{Q.paper}} {{Q.q_id}}: {{Q.question}}</b>
 	<table class="table">
 	<tr><th>Images</th><th>Answer</th><th>Correct Answer</th></tr>
@@ -17,7 +20,7 @@
 						<a href="{{Q.images[image]}}" target="_blank"><img src="{{Q.images[image]}}"/></a>
 					</div>
 					<div ng-repeat="pdf in length(Q.pdf)">
-					<a href="{{Q.pdf[pdf]}}" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
+					<a href="{{Q.pdf[pdf]}}" target="_blank" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
 					</div>
 			</td>
 			<td><ul>
@@ -29,7 +32,7 @@
 						<a href="{{Q.answerImages[image]}}" target="_blank"><img src="{{Q.answerImages[image]}}"/></a>
 					</div>
 					<div ng-repeat="pdf in length(Q.anspdf)">
-					<a href="{{Q.anspdf[pdf]}}" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
+					<a href="{{Q.anspdf[pdf]}}" target="_blank" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
 					</div>
 			</td>
 			<td><ul>
@@ -44,7 +47,8 @@
 </div>
 <div class="card-footer">
 	<!--<a href="/quiz" class="btn btn-default" style="float:left;" value="Again"/>-->
-	<input type="submit" class="btn btn-secondary" style="float:left;" value="Again" ng-click="again();"/>
+	<input type="submit" class="btn btn-secondary" style="float:right;" value="Again" ng-click="again();"/>
+	<button class="btn btn-secondary" style="float:left;" ng-click="questions = [];">Clear</button>
 	<!--<a href="/quiz" class="btn btn-default" style="float:right;" value="End"/>-->
 </div>
 </div>

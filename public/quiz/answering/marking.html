@@ -2,43 +2,50 @@
 <div class="card" style="margin-top:80px" ng-show="Q.self_mark && Q.step == 2" ng-repeat="Q in questions">
 <div class="card-header">Marking {{Q.id+1}}: From {{Q.paper}}</div>
 <div class="card-body">
-	<object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)" data="{{Q.pdf[pdf]}}" type='application/pdf' width="100%" height="70%"></object>
-	<div ng-repeat="pdf in length(Q.pdf)">
-		<a href="{{Q.pdf[pdf]}}" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
-	</div>
-	<div class="container"><div class="row">
-		<!--Image for testing https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg -->
-		<div class="col" ng-repeat="image in Q.images">
-			<a href="{{Q.images[image]}}" target="_blank"><img src="{{image}}" alt="No Related image of question here"/></a>
+
+	<div class="question-viewing">
+		<object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)" data="{{Q.pdf[pdf]}}" type='application/pdf' width="100%" height="70%"></object>
+		<div ng-repeat="pdf in length(Q.pdf)">
+			<a href="{{Q.pdf[pdf]}}" target="_blank" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
 		</div>
-		<div class="col">{{Q.q_id}}: {{Q.question}}</div>
-	</div></div>
+			<!--Image for testing https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg -->
+			<a href="{{Q.images[image]}}" target="_blank" ng-repeat="image in Q.images" style="height:50%">
+				<img src="{{image}}" alt="No Related image of question here"/>
+			</a>
+	</div>
+	<div class="col">{{Q.q_id}}: {{Q.question}}</div>
+	
+	<div class="question-viewing">
 	Answers:
-	<object ng-show="Q.anspdf != None" ng-repeat="pdf in length(Q.anspdf)" data="{{Q.anspdf[pdf]}}" type='application/pdf' width="100%" height="100%"></object>
-	<div ng-repeat="pdf in length(Q.anspdf)">
-		<a href="{{Q.anspdf[pdf]}}" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
+		<object ng-show="Q.anspdf != None" ng-repeat="pdf in length(Q.anspdf)" data="{{Q.anspdf[pdf]}}" type='application/pdf' width="100%" height="100%"></object>
+		<div ng-repeat="pdf in length(Q.anspdf)">
+			<a href="{{Q.anspdf[pdf]}}" target="_blank" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
+		</div>
+		<div ng-repeat="image in length(Q.answerImages)">
+			<a href="{{Q.answerImages[image]}}" target="_blank"><img src="{{Q.answerImages[image]}}"/></a>
+		</div>
 	</div>
-	<div ng-repeat="image in length(Q.answerImages)">
-		<a href="{{Q.answerImages[image]}}" target="_blank"><img src="{{Q.answerImages[image]}}"/></a>
-	</div>
-	<table class="table">
-	<tr><th>Answer</th><th>Marking</th></tr>
-	<tr><td>
-			<p ng-repeat="answer in Q.answer">{{answer}}</p>
+	
+	<div>
+		<table class="table">
+		<tr><th>Answer</th><th>Marking</th></tr>
+		<tr><td>
+				<p ng-repeat="answer in Q.answer">{{answer}}</p>
 		</td>
-<!--	<td width="40%">
-				<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.answerImages[image]}}"/></div>
-		</td> -->
-		<td>
-			<span ng-repeat="correct in length(Q.correct)">
-				<input type="checkbox" ng-model="Q.awarded[correct]" value="{{Q.marks[correct]}}"/>
-				{{Q.correct[correct]}}	<b>[{{Q.marks[correct]}}]</b><br></span>
-			Score: {{scoring(Q.awarded, Q.marks)}}
-		</td></tr>
-	</table>
-	Working Given: {{Q.workingArea}} <br>
-	Comments:<br>
-	<textarea ng-model="Q.markerComments"/></textarea><br>
+	<!--	<td width="40%">
+					<div ng-repeat="image in length(Q.answerImages)"><img src="{{Q.answerImages[image]}}"/></div>
+			</td> -->
+			<td>
+				<span ng-repeat="correct in length(Q.correct)">
+					<input type="checkbox" ng-model="Q.awarded[correct]" value="{{Q.marks[correct]}}"/>
+					{{Q.correct[correct]}}	<b>[{{Q.marks[correct]}}]</b><br></span>
+				Score: {{scoring(Q.awarded, Q.marks)}}
+			</td></tr>
+		</table>
+		Working Given: {{Q.workingArea}} <br>
+		Comments:<br>
+		<textarea ng-model="Q.markerComments"/></textarea><br>
+	</div>
 </div>
 <div class="card-footer">
 	<input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>
