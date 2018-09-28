@@ -137,6 +137,7 @@ app.controller("main", function($scope,restAPI) {
 		if (question.awarded[part] == false){return {'color':'red'};}//true;}
 		return {};//{'color':'blue'};//false; //question.marks[part];
 	}
+	// Set up question to be processed
 	$scope.again = function(){
 		for (var i = 0; i < $scope.questions.length; i++) {
 			$scope.questions[i].id = i; // Ordering
@@ -144,9 +145,19 @@ app.controller("main", function($scope,restAPI) {
 			if ($scope.questions[i].type == "mcq"){$scope.questions[i].answer = [];}
 			else{$scope.questions[i].answer = $scope.questions[i].given;} //Answers by user
 			$scope.questions[i].awarded = $scope.length($scope.questions[i].marks).map(x => 0); //Array($scope.questions[i].marks.length); //Marks awarded to user
+			//$scope.questions[i].hasResources = true;//!($scope.questions[i].pdf[0] == None && $scope.questions[i].images[0] == None);
+			//$scope.questions[i].hasAnswerResources = !($scope.questions[i].answerImages[0] == None && $scope.questions[i].anspdf[0] == None);
 		}
 	}
 	$scope.again();
+	
+	$scope.questionCheckHasResources = function(Q){
+			return !(Q.pdf[0] == undefined && Q.images[0] == undefined)
+	}
+	$scope.questionCheckHasAnswerResources = function(Q){
+			return !(Q.anspdf[0] == undefined && Q.answerImages[0] == undefined);
+	}
+	
 	$scope.answering = {
 		mode : "Exam"
 	};

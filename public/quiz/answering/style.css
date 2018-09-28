@@ -6,11 +6,14 @@
 	.card{margin:auto;width: 90%;}
 	.card-body{
 		display:grid;
-		grid-template-columns: 68% 32%;
+		grid-template-columns: auto 32%;
 		grid-column-gap: 0.5em;
 	}
-	object{width:100%;}
+	object{width:95%;}
 	.result{
+		grid-column:span 2;
+	}
+	.wide{
 		grid-column:span 2;
 	}
 }

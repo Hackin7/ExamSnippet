@@ -3,10 +3,10 @@
 <div class="card-header">Marking {{Q.id+1}}: From {{Q.paper}}</div>
 <div class="card-body">
 
-	<div class="question-viewing">
-		<object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)" data="{{Q.pdf[pdf]}}" type='application/pdf' width="100%" height="70%"></object>
+	<div class="question-viewing" ng-show="questionCheckHasResources(Q)">
+		<object ng-repeat="pdf in length(Q.pdf)" data="{{Q.pdf[pdf]}}" type='application/pdf' width="100%" height="70%"></object>
 		<div ng-repeat="pdf in length(Q.pdf)">
-			<a href="{{Q.pdf[pdf]}}" target="_blank" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
+			<a href="{{Q.pdf[pdf]}}" target="_blank">PDF Link {{pdf+1}}</a>
 		</div>
 			<!--Image for testing https://imagejournal.org/wp-content/uploads/bb-plugin/cache/23466317216_b99485ba14_o-panorama.jpg -->
 			<a href="{{Q.images[image]}}" target="_blank" ng-repeat="image in Q.images" style="height:50%">
@@ -14,19 +14,20 @@
 			</a>
 	</div>
 	<div class="col">{{Q.q_id}}: {{Q.question}}</div>
+	<div ng-show="!questionCheckHasResources(Q)"></div>
 	
-	<div class="question-viewing">
+	<div class="question-viewing" ng-show="questionCheckHasAnswerResources(Q)">
 	Answers:
-		<object ng-show="Q.anspdf != None" ng-repeat="pdf in length(Q.anspdf)" data="{{Q.anspdf[pdf]}}" type='application/pdf' width="100%" height="100%"></object>
+		<object ng-repeat="pdf in length(Q.anspdf)" data="{{Q.anspdf[pdf]}}" type='application/pdf' width="100%" height="100%"></object>
 		<div ng-repeat="pdf in length(Q.anspdf)">
-			<a href="{{Q.anspdf[pdf]}}" target="_blank" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
+			<a href="{{Q.anspdf[pdf]}}" target="_blank">PDF Answers Link {{pdf+1}}</a>
 		</div>
 		<div ng-repeat="image in length(Q.answerImages)">
 			<a href="{{Q.answerImages[image]}}" target="_blank"><img src="{{Q.answerImages[image]}}"/></a>
 		</div>
 	</div>
 	
-	<div>
+	<div class="{{ !questionCheckHasAnswerResources(Q) ? 'wide':'notwide'}}">
 		<table class="table">
 		<tr><th>Answer</th><th>Marking</th></tr>
 		<tr><td>
