@@ -1,0 +1,23 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Presbyterian High School Sec 4 MYE 2018
+1
+https://drive.google.com/uc?id=1aB6IrgCh-KyE9jQ-zWXzTPKAq8G7i5Bj
+0
+0
+0
+7
+1a,5,SBQ,Approve
+1b,6,SBQ,Inference_Purpose
+1c,7,SBQ,Comparison
+1d,7,SBQ,Useful
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+Study Source A. Does the cartoonist approve of Singapore‟s transformation to a cashless society? Explain your answer, using details of the cartoon.  
+Study Source B. Why did the PM Lee make this statement? Explain your answer. 
+Study Sources C and D. How far would Source C agree with Source D? Explain your answer.  
+Study Source E. How useful is Source E as evidence of the impact of disruptive technology? Explain your answer.  
+"Singapore‟s move towards adopting disruptive technologies brings about benefits." Using sources in this case study, explain how far you would agree with this statement.
+Extract 1 shows how the internet has changed our lives. In your opinion, explain how the internet has changed our lives in Singapore. Explain your answer using two consequences.  
+Extract 2 and Extract 3 reflect on the hybridisation and homogenisation of culture. Do you think hybridisation has a greater impact on culture in societies  than homogenisation? Explain your answer.

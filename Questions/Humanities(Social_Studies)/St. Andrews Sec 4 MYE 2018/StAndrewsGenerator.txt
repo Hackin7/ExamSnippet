@@ -1,0 +1,24 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+St. Andrews Sec 4 MYE 2018
+1
+https://drive.google.com/uc?id=1wC4vy5cb0BMJU7MpDVcWaVucRszgScXv
+1
+https://drive.google.com/uc?id=1ZBhN6bT46RvnzMW4640wRwmbN8DIYMxL
+0
+0
+7
+1a,6,SBQ,Inference_Purpose
+1b,6,SBQ,Useful
+1c,7,SBQ,Comparison
+1d,7,SBQ,Surprise
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+Study Source A.  Why is this poster published?  Explain your answer. 
+Study Source B. How useful is source as evidence about elderly care? Explain your answer. 
+Study Sources C and D. How far are they similar? Explain your answer. 
+Study Source E. Are you surprised by this source? Explain your answer 
+“The elderly in Singapore are neglected.” Using sources in this case study, explain how far you would agree with this statement.
+Extract 1 illustrates how different people react to what is meant to be a common good for society. In your opinion, why is it difficult to decide on what is good for society? Explain your answer giving two reasons. 
+Extracts 2 and 3 reflect on how both individuals and organised groups have a part to play in making improvements to society. Do you think individuals are better than organised groups in making improvements to society? Explain your answer

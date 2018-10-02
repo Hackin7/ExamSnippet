@@ -1,0 +1,23 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+Yishun Town Sec 4 MYE 2018
+1
+https://drive.google.com/uc?id=1iwL47jIa_L6uPMe1YvFeJPFcMscw_-Jv
+0
+0
+0
+7
+1a,5,SBQ,Inference
+1b,7,SBQ,Comparison
+1c,6,SBQ,Surprise
+1d,7,SBQ,Useful
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+Study Source A. Is the cartoonist a supporter of Bangladesh garment villages?  Explain your answer using details from the source. 
+Study Sources B and C. How far does Source B agree with Source C? Explain your answer.
+Study Source D. Are you surprised by what the trade minister said? Explain your answer.
+Study Sources E and F. Which source is more useful in showing the impact of garment factories? Explain your answer. 
+"Global trade benefits the poor worker.‟ Using sources in this case study, explain how far you would agree with this statement.
+Extract 1 shows the increasing number of inter-ethnic marriages in Singapore. In your opinion, what are the reasons for this increase? Explain your answer using two reasons.
+Extracts 2 and 3 highlights the different approaches to healthcare adopted by Sweden and Singapore. Do you think that government-financed approach is more effective in meeting the needs of the people than the shared responsibility approach? Explain your answer
