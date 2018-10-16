@@ -1,0 +1,23 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+2018 Sec 4 Prelim St Margaret Sec 4NA
+1
+https://drive.google.com/uc?id=1exvvZGyitGqqD9WWKpqBy33m45_zPmjU
+0
+0
+0
+7
+1a,5,SBQ,Inference_Purpose
+1b,6,SBQ,Useful
+1c,7,SBQ,Proving
+1d,7,SBQ,Reliability
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+
+
+
+
+
+
+

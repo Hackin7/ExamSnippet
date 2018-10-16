@@ -1,0 +1,24 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+2018 Sec 4 Prelim CHIJ Saint Theresa Covenant 4NA
+1
+https://drive.google.com/uc?id=1o_I8upRpm27haw04dbubWXh2IUq7rqDF
+1
+https://drive.google.com/uc?id=1W8waFSBpqcRt-F6yDzv595E2bC9s1w-4
+0
+0
+7
+1a,6,SBQ,Inference_Purpose
+1b,7,SBQ,Comparison
+1c,5,SBQ,Inference
+1d,7,SBQ,Surprise
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+
+
+
+
+
+
+

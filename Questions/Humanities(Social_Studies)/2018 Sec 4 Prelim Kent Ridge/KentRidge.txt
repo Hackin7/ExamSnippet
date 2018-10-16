@@ -1,0 +1,23 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+2018 Sec 4 Prelim Kent Ridge
+1
+https://drive.google.com/uc?id=1bofazolnS0HbrBdQGK5Sv-cWlsjlrlVx
+0
+0
+0
+7
+1a,5,SBQ,Approve
+1b,7,SBQ,Reliable
+1c,7,SBQ,Surprise
+1d,6,SBQ,Comparison
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+
+
+
+
+
+
+

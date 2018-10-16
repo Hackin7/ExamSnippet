@@ -1,0 +1,23 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+2018 Sec 4 Prelim Xinmin Sec 4NA
+1
+https://drive.google.com/uc?id=1cMcxf5-fcYAV731qsmjF0ykYilgLW2f5
+1
+https://drive.google.com/uc?id=1kbKytEXTTV0no861fIYeU7QhupNzK3K2
+0
+0
+7
+1a,5,SBQ,Inference
+1b,7,SBQ,Useful
+1c,7,SBQ,Proving
+1d,6,SBQ,Surprise
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+Study Source A. What is the message of this cartoon? Explain your answer, using details from the source.
+Study Source B. Is the source useful as evidence of racism in Britain? Explain your answer.
+Study Sources C and D. Does Source D prove Source C wrong? Explain your answer.
+Study Source E. How surprised are you by this source about the treatment of Eastern Europeans? Explain your answer.
+How far do the sources in this case study show that Brexit has caused an increase in anti-migrant feelings in the United Kingdom? Explain your answer.
+
