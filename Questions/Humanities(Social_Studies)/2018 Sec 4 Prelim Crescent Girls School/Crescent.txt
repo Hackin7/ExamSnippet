@@ -1,0 +1,24 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+2018 Sec 4 Prelim Crescent Girls School
+1
+https://drive.google.com/uc?id=1s8e4qfACxRtkI8esHoYwn4DpYAwp2oLd
+1
+https://drive.google.com/uc?id=1JoBxqjwraacq00OkGrjJy3dqqhgdnk9v
+0
+0
+7
+1a,5,SBQ,Inference
+1b,6,SBQ,Comparison
+1c,7,SBQ,Useful
+1d,7,SBQ,Proving
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+
+
+
+
+
+
+

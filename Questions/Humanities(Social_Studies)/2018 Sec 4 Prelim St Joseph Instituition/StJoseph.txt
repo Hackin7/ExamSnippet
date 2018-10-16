@@ -1,0 +1,24 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+2018 Sec 4 Prelim St Joseph Instituition
+1
+https://drive.google.com/uc?id=1_0xJ4RmkCQU04vbkhT91GM3u4C_ITazP
+1
+https://drive.google.com/uc?id=1rzdeRSy7fNlI85G9QGEgYQiRx5HRCSyJ
+0
+0
+7
+1a,5,SBQ,Inference
+1b,6,SBQ,Comparison
+1c,7,SBQ,Surprise
+1d,7,SBQ,Useful
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+
+
+
+
+
+
+

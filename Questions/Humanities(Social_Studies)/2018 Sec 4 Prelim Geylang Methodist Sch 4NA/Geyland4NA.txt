@@ -1,0 +1,23 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+2018 Sec 4 Prelim Geylang Methodist Sch 4NA
+1
+https://drive.google.com/uc?id=14rtltZPvzJhrVpLWNnPwvcSb4FF4yJZL
+0
+0
+0
+7
+1a,5,SBQ,Inference
+1b,6,SBQ,Comparison
+1c,7,SBQ,Inference_Purpose
+1d,7,SBQ,Surprise
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+
+
+
+
+
+
+

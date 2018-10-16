@@ -1,0 +1,24 @@
+# Social Studies Paper for Typical Question Generator
+Humanities(Social_Studies)
+2018 Sec 4 Prelim Xinmin Sec 4Exp5NA
+1
+https://drive.google.com/uc?id=1jjDX-FvO9b4HHQ-MHtwUmmQNV5TUvuSd
+1
+https://drive.google.com/uc?id=1SXe_2wY2ZN1N7ziZsfyqRkpQFHEK3k70
+0
+0
+7
+1a,5,SBQ,Attitude
+1b,6,SBQ,Inference_Purpose
+1c,6,SBQ,Useful
+1d,7,SBQ,Surprise
+1e,10,SBQ,Evaluation
+2a,7,SRQa
+2b,8,SRQb
+
+
+
+
+
+
+
