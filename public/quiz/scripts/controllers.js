@@ -154,7 +154,7 @@ app.controller("main", function($scope,restAPI) {
                 }
             }
         }
-        return getRandom(possibleQuestions, req.params.quantity);
+        return getRandom(possibleQuestions, quantity);
     };
     $scope.random.find = function(){
         for (criteria in $scope.random.criterion){
