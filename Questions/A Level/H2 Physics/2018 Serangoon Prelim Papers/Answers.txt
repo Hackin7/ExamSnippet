@@ -1,18 +1,18 @@
 H2 Physics
 2018 Serangoon Prelim
 MCQ
-https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Physics/2018%20Serangoon%20Prelim%20Papers/
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Physics/2018%20Serangoon%20Prelim%20Papers/MCQ/
 
 30
-1.png?raw=true
-2.png?raw=true
-3.png?raw=true
-4.png?raw=true
-5.png?raw=true
-6.png?raw=true
-7.png?raw=true
-8.png?raw=true
-9.png?raw=true
+01.png?raw=true
+02.png?raw=true
+03.png?raw=true
+04.png?raw=true
+05.png?raw=true
+06.png?raw=true
+07.png?raw=true
+08.png?raw=true
+09.png?raw=true
 10.png?raw=true
 11.png?raw=true
 12.png?raw=true
