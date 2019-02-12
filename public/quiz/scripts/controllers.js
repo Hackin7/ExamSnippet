@@ -2,9 +2,10 @@ app.controller("main", function($scope,restAPI) {
     $scope.questions = [];
 
     $scope.data={};
-    $scope.data.url = '/QuestionData/Secondary_School_O_Level';
+    $scope.data.url = '/QuestionData/A_Level';//'/QuestionData/Secondary_School_O_Level';
     $scope.data.sources=
-    {"Secondary School O Level":'/QuestionData/Secondary_School_O_Level'};
+    {"Secondary School O Level":'/QuestionData/Secondary_School_O_Level',
+        "A Level":'/QuestionData/A_Level'};
     $scope.data.sourcesnames=Object.keys($scope.data.sources);
     //'/RESTAPI/listtree';
     //'https://drive.google.com/uc?id=1LzDYh6TA1JPi0jVmV9FPViUrrzWKWmEg';
@@ -45,6 +46,11 @@ app.controller("main", function($scope,restAPI) {
                                     $scope.picking.topics[subject].push(paperData.questions[k].topics[l]);
                                 }
                             }
+                        }
+                        //Remove escape characters
+                        if ( haveEscapeCharacters(paper) ){
+                            $scope.picking.tree[subject][paper.slice(0,-1)] = $scope.picking.tree[subject][paper];
+                            delete $scope.picking.tree[subject][paper]
                         }
                     }
                     /////////////////

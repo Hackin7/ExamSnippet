@@ -29,7 +29,7 @@ var haveEscapeCharacters = function(string){
 //https://gist.github.com/kethinov/6658166
 var fs = require('fs');
 var loadQuestions = function(){
-    var path = "../Questions/";
+    var path = "../Questions/A Level/";
     /*fs.rmdir(path+'.*', (err) => {
       if (err) throw err;
       console.log('Questions/.DS_Store was deleted');
