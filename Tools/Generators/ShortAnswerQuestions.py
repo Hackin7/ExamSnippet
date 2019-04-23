@@ -47,7 +47,7 @@ n = int(input("Number of questions: "))
 for i in range(n):
 '''
 
-input()
+front = input()
 #Questions
 i = 0    
 while True:
@@ -73,7 +73,7 @@ while True:
   if marksgiven == 0: break
   #Marks Given
   question["marks"] = [1 for j in range(int(marksgiven))]
-  question["question"] = input("Question " + str(i+1)+": ")
+  question["question"] = front + input("Question " + str(i+1)+": ")
   for partans in range(marksgiven):
       question["correct"] += [input("Ans:")]
 

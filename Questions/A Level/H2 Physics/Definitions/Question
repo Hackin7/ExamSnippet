@@ -1,0 +1,102 @@
+#Physics Definitions
+H2 Physics
+Physics Definitions
+Definitions
+What is 
+1
+Accuracy
+Accuracy refers to how closely the measured value agrees with the 'true' value
+1
+Precision
+Precision refers to how closely individual measurements agree with each other without reference to any 'true' value
+1
+Systematic Error
+A systematic error is one that occurs according to some fixed rule or pattern such that they yield a consistent over-estimation or under-estimation of the true value of the measured quantity
+1
+Random Error
+A random error is one that occurs without a fixed pattern such that a set of measurements done under the same conditions have an equally likely chance of being greater or less than the true value
+1
+a Scalar
+A scalar is a quantity which has magnitude only
+1
+a Vector
+A vector is a quantity which has both magnitude and direction
+1
+Displacement
+Displacmement of an object is its distance from a fixed point in a specific direction
+1
+Average speed
+Average speed of a body is defined as total distance travelled over total time taken
+1
+Velocity
+The velocity of a body is defined as the rate of change of displacement
+1
+Acceleration
+The acceleration of a body is defined as the rate of change of velocity
+1
+Mass
+The mass of a body is a measure of its resistance to change in state of motion
+1
+Momentum
+The momentum of a body is defined as the product of its mass and its velocity
+1
+Force
+The force exerted by X on Y is defined as the rate of change in the momentum of Y produced by X
+1
+Impulse
+The impulse of a force is defined as the product of the force and the time of impact of the force
+1
+Newton's First Law of Motion
+In the absence of resultant external force acting on it, a body at rest will remain at rest and a body in motion will continue its motion at constant velocity
+1
+Newton's Second Law of Motion
+The rate of change in the momentum of a body is proportional to the resultant external force that acts on it, and the change in momentum is in the direction of the force
+1
+Newton's Third Law of Motion
+When a body A exerts a force on body B, B exerts a reaction force on A that is equal in magnitude and opposite in direction to the action force
+1
+Principle of Conservation of Linear Momentum
+In the absence of external forces, the total momentum of bodies in a system remains constant
+1
+a collision
+An interaction between two or more bodies that is usually short in duration
+1
+Elastic collision
+A collision in which the total kinectic energy after the collision is equal to that before the collision is called a (perfectly) elastic collision
+1
+Inelastic collision
+A collision in which the total kinectic energy after the collision is less than that before the collision
+1
+Perfectly/Completely inelastic collision
+A collision in which the loss in total kinectic energy is so great that the bodies do not seperate, but move together with a constant velocity
+1
+Superelastic collision
+A collision in which the total kinectic energy after a collision is more than that before (like in an explosion)
+1
+Hooke's Law
+Hooke's Law states that extension (or compression) in a material is directly proportional to the applied force, provided that the limit of proportionality is not exceeded
+1
+Pressure
+Pressure is the normal force per unit area
+3
+Upthrust (Archimedes Principle)
+Uptrust is the upward force exerted by a fluid on a submerged or floating object
+It arises due to the difference in pressure between the upper and lower surfaces of the object
+It is equal in magnitude and opposite in direction to the weight of the fluid displaced by a submerged or floating object
+1
+Principle of Flotation 
+Principle of Flotation states that when an object floats in equilibrium, uptrust is equal to the qweight of the object
+1
+the Moment of a Force
+The moment of a force about a pivot is the product of the force and the perpendicular distance from the pivot to the line of action of the force
+1
+Torque
+The torque of a couple is the product of one of the forces and the perpendicular distance between the forces
+1
+Principle of moments
+Principle of moments states that for a body in equilibrium, the sum of clockwise moments about any point is equal to the sum of anti-clockwise moments about the same point
+2
+a body in equilibrium
+It is a body where the resultant force acting on the body is zero (in translational equilibrium)
+and the resultant torque on the body is zero (in rotational equilibrium)
+0
