@@ -17,7 +17,7 @@ index = {
     "pdf":[],
     "questions": []
 }
-
+'''
 PDFs = []
 n = int(input("Number of PDFs: "))
 for i in range(n):
@@ -40,10 +40,10 @@ answerimages = []
 n = int(input("Number of answer images: "))
 for i in range(n):
     answerimages.append(filtering(input("Enter answer image {}:".format(i+1))))
-
-n = int(input("Number of questions: "))
+'''
 #Question ID
-for i in range(n):
+i=0
+while input() != "0":
   print("For Question ", i + 1)
   #Sample Question
   question = {
@@ -53,8 +53,8 @@ for i in range(n):
     "topics": [], #[]
     "images": [],
     "answerImages": [],
-    "pdf": PDFs,
-    "anspdf": ansPDFs,
+    "pdf": [],#PDFs,
+    "anspdf": [],#ansPDFs,
     "question": "",
     "type": "open",
     "given": [""],
@@ -62,44 +62,20 @@ for i in range(n):
     "marks": [],
     "self_mark": True
   }
-  question["q_id"],marksgiven, *question["topics"] = input("Question {} Number/ID, Number of marks given, Topics: ".format(i+1)).split(",")
+  question["q_id"] = str(i+1)
+  marksgiven, *question["topics"] = input("Number of marks given, Topics: ".format(i+1)).split(",")
   marksgiven = filtering(marksgiven)
   for topic in range(len(question["topics"])):
       question["topics"][topic] = filtering(question["topics"][topic])
   #Marks Given
   question["correct"] = ["" for j in range(int(marksgiven))]
   question["marks"] = [1 for j in range(int(marksgiven))]
-  print(index)
+  
+  question["question"] = input("Question " + str(i+1)+": ")
+  question["correct"][0] = input("Question " + str(i+1)+": ")
   index["questions"].append(question)
+  i+=1
 
-#Images
-for i in range(len(images)):
-    questionIDs = input("Enter Questions for Image {}: ".format(i+1)).split(',')
-    for j in range(len(index["questions"])):
-        # Remove Escape Characters
-        index["questions"][j]["q_id"] = filtering(index["questions"][j]["q_id"])
-        for k in questionIDs:
-            qid = k
-            # Remove Escape Characters
-            qid = filtering(qid)
-            if qid == index["questions"][j]["q_id"]:
-                index["questions"][j]["images"].append(images[i])
-                
-#Answer Images
-for i in range(len(answerimages)):
-    questionIDs = input("Enter Questions for Answer Image {}: ".format(i+1)).split(',')
-    for j in range(len(index["questions"])):
-        index["questions"][j]["q_id"] = filtering(index["questions"][j]["q_id"])
-        for k in questionIDs:
-            qid = k
-            # Remove Escape Characters
-            qid = filtering(qid)
-            if qid == index["questions"][j]["q_id"]:
-                index["questions"][j]["answerImages"].append(answerimages[i])
-    
-#Questions
-for i in range(n):
-    index["questions"][i]["question"] = input("Question " + str(i+1)+": ")
 
     
 import json
@@ -108,3 +84,4 @@ r = json.dumps(index)
 with open('index.json', 'w') as outfile:
     print(json.dumps(index))
     outfile.write(json.dumps(index))
+input()
