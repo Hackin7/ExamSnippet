@@ -2,53 +2,53 @@
 H2 Economics
 NYJC Chapter 4 Tutorial
 1
-https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/NYJC%20Chapter%204%20Tutorial/Tutorial.pdf
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/NYJC%20Chapter%204%20Tutorial/Tutorial.pdf?raw=true
 0
 0
 0
 42
-CSQ 1a,2,Microeconomic Case Study
-CSQ 1b,4,Microeconomic Case Study
-CSQ 1ci,2,Microeconomic Case Study
-CSQ 1cii,2,Microeconomic Case Study
-CSQ 1d,2,Microeconomic Case Study
-CSQ 1e,8,Microeconomic Case Study
-CSQ 2ai,2,Microeconomic Case Study
-CSQ 2aii,2,Microeconomic Case Study
-CSQ 2b,2,Microeconomic Case Study
-CSQ 2c,2,Microeconomic Case Study
-CSQ 2d,8,Microeconomic Case Study
-3A 1a,10,Microeconomic Essays
-3A 2a,10,Microeconomic Essays
-3B 1a,10,Microeconomic Essays
-3B 1b,15,Microeconomic Essays
-3B 2a,10,Microeconomic Essays
-3B 2b,15,Microeconomic Essays
-3B 3a,10,Microeconomic Essays
-3B 3b,15,Microeconomic Essays
-3B 4a,10,Microeconomic Essays
-3B 4b,15,Microeconomic Essays
-3B 5a,10,Microeconomic Essays
-3B 5b,15,Microeconomic Essays
-3C 1,25,Microeconomic Essays
-3C 2,25,Microeconomic Essays
-3C 3a,10,Microeconomic Essays
-3C 3b,15,Microeconomic Essays
-Exam 1a,10,Microeconomic Essays
-Exam 1b,15,Microeconomic Essays
-Exam 2,25,Microeconomic Essays
-Exam 3,25,Microeconomic Essays
-Exam 4,25,Microeconomic Essays
-Exam 5,25,Microeconomic Essays
-Exam 6a,10,Microeconomic Essays
-Exam 6b,15,Microeconomic Essays
-Exam 7,25,Microeconomic Essays
-Exam 8,25,Microeconomic Essays
-Exam 9,25,Microeconomic Essays
-Exam 10a,10,Microeconomic Essays
-Exam 10b,15,Microeconomic Essays
-Exam 11a,10,Microeconomic Essays
-Exam 11b,15,Microeconomic Essays
+CSQ 1a,2,Microeconomics Case Study
+CSQ 1b,4,Microeconomics Case Study
+CSQ 1ci,2,Microeconomics Case Study
+CSQ 1cii,2,Microeconomics Case Study
+CSQ 1d,2,Microeconomics Case Study
+CSQ 1e,8,Microeconomics Case Study
+CSQ 2ai,2,Microeconomics Case Study
+CSQ 2aii,2,Microeconomics Case Study
+CSQ 2b,2,Microeconomics Case Study
+CSQ 2c,2,Microeconomics Case Study
+CSQ 2d,8,Microeconomics Case Study
+3A 1a,10,Microeconomics Essays
+3A 2a,10,Microeconomics Essays
+3B 1a,10,Microeconomics Essays
+3B 1b,15,Microeconomics Essays
+3B 2a,10,Microeconomics Essays
+3B 2b,15,Microeconomics Essays
+3B 3a,10,Microeconomics Essays
+3B 3b,15,Microeconomics Essays
+3B 4a,10,Microeconomics Essays
+3B 4b,15,Microeconomics Essays
+3B 5a,10,Microeconomics Essays
+3B 5b,15,Microeconomics Essays
+3C 1,25,Microeconomics Essays
+3C 2,25,Microeconomics Essays
+3C 3a,10,Microeconomics Essays
+3C 3b,15,Microeconomics Essays
+Exam 1a,10,Microeconomics Essays
+Exam 1b,15,Microeconomics Essays
+Exam 2,25,Microeconomics Essays
+Exam 3,25,Microeconomics Essays
+Exam 4,25,Microeconomics Essays
+Exam 5,25,Microeconomics Essays
+Exam 6a,10,Microeconomics Essays
+Exam 6b,15,Microeconomics Essays
+Exam 7,25,Microeconomics Essays
+Exam 8,25,Microeconomics Essays
+Exam 9,25,Microeconomics Essays
+Exam 10a,10,Microeconomics Essays
+Exam 10b,15,Microeconomics Essays
+Exam 11a,10,Microeconomics Essays
+Exam 11b,15,Microeconomics Essays
 Compare  the  trends  in  the  number  of  visitors  from  the  different  regions  to  Singapore between 2010 and 2013
 Using Extract 1, comment on the possible relationships between air travel and the cruise industry.
 With reference to Table 2, explain why all the ‘own price elasticities’ are negative.
