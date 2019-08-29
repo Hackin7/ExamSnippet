@@ -1,0 +1,15 @@
+#Social Studies Paper for Typical Question Generator
+H2 Economics
+NYJC Chapter 3 Tutorial
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/NYJC%20Chapter%203%20Tutorial/Tutorial.pdf?raw=true
+0
+0
+0
+3
+3 1a,10,Microeconomics Essays
+3 2a,10,Microeconomics Essays
+3 3a,10,Microeconomics Essays
+1.   Prices of agricultural products increased by 14% in recent years, compared with only 3% for manufactured goods.(a)   Using  economic  analysis,  account  for  the  differences  in  prices  of  agricultural  and  manufactured products. [10][Suggested Answer on Page 3-10T]
+2.    (a) Distinguish    between    price    elasticity    of    demand,    income    elasticity    of          demand and cross elasticity of demand. [10][Suggested Answer on Page 3-12T]
+3.    Governments  frequently  impose  indirect  taxes  in  order  to  influence  the  pattern  of  consumers’ expenditure. The effectiveness of such policy measures, however, depends crucially on how consumers respond.(a)  Explain  with  the  help  of  examples  the  concepts  of  price  elasticity  of  demand  and  price elasticity of supply. [10][Suggested Answer on Page 3-13T]

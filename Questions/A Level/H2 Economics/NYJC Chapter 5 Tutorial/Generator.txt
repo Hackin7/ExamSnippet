@@ -1,0 +1,25 @@
+#Social Studies Paper for Typical Question Generator
+H2 Economics
+NYJC Chapter 5 Tutorial
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/NYJC%20Chapter%205%20Tutorial/Tutorial.pdf?raw=true
+0
+0
+0
+16
+CSQ 1ai,2,Macroeconomics Case Study
+CSQ 1aii,3,Macroeconomics Case Study
+CSQ 1aiii,2,Macroeconomics Case Study
+CSQ 1aiv,4,Macroeconomics Case Study
+CSQ 1b,4,Macroeconomics Case Study
+CSQ 2a,1,Macroeconomics Case Study
+CSQ 2bi,2,Macroeconomics Case Study
+CSQ 2bii,2,Macroeconomics Case Study
+CSQ 2c,8,Macroeconomics Case Study
+3A 1,8,Macroeconomics Essays
+3A 2,10,Macroeconomics Essays
+3B 1,25,Macroeconomics Essays
+3B 2,25,Macroeconomics Essays
+3B 3,25,Macroeconomics Essays
+3C 1,25,Macroeconomics Essays
+3C 2,25,Macroeconomics Essays
