@@ -1,0 +1,28 @@
+#Social Studies Paper for Typical Question Generator
+H2 Economics
+NYJC Chapter 2 Tutorial
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/NYJC%20Chapter%202%20Tutorial/Tutorial.pdf?raw=true
+0
+0
+0
+9
+CSQ 1ai,1,Microeconomics Case Study
+CSQ 1aii,3,Microeconomics Case Study
+CSQ 1b,2,Microeconomics Case Study
+CSQ 1ci,2,Microeconomics Case Study
+CSQ 1cii,4,Microeconomics Case Study
+3 1a,10,Microeconomics Essays
+3 2a,10,Microeconomics Essays
+3 3a,10,Microeconomics Essays
+3 4a,10,Microeconomics Essays
+
+
+
+
+
+1.   “Motorists   face   more   misery   at   petrol   pumps   as   oil   prices   hit   record   high.   The   government has proposed to use price controls and subsidies to curb the problem.”   (a)  Explain why the price of oil would increase.  [10][Suggested Answer on Page 2-16T] 
+2. Demand and supply shocks are likely to create shortages and surpluses in a market.    (a)   Explain how the price mechanism attempts to solve the above imbalances faced in a free market. [10][Suggested Answer on Page 2-20T] 
+3.   A look at global unit sales makes clear that no region is being spared the sharp decline in automobile markets, especially luxury cars.http://motoring.asiaone.com. (a)  Using demand and supply analysis, explain why there is a sharp decline in the luxury car market in 2009. [10] [Suggested Answer on Page 2-22T] 
+4. Outsourcing  and  the  influx  of  foreign  labour  have  hurt  the  low  skilled  Singaporeans  in  terms of falling wages, worsening inequality in Singapore.(a)  Using economic analysis, explain why the wages of low skilled Singaporean workers have been falling. [10] [Suggested Answer on Page 2-26T] 
+

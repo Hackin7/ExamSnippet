@@ -12,12 +12,7 @@ MongoClient.connect(url, function(err, db) {
 });
 */
 
-var inArray = function(item,array){
-    for (i in array){
-        if (array[i] == item){return true;}
-    }
-    return false;
-};
+
 
 //https://stackoverflow.com/questions/19269545/how-to-get-n-no-elements-randomly-from-an-array?lq=1
 //var item = items[Math.floor(Math.random()*items.length)];
