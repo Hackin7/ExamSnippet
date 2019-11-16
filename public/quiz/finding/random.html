@@ -1,34 +1,36 @@
+<style>
+</style>
+
 <div class="card" style="margin-top:80px">
 <div class="card-header">Random Selection Criteria</div>
 <div class="card-body" ng-init="random.way = {};">
-    <!--<div class="container"><div class="row">
-        <div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
-    </div></div> -->
-    Amount<br>
-    <input type="number" name="Amount" min="1" ng-model="random.way.quantity" ng-init="random.way.quantity=1;"><br>
-    Subjects<br>
-    <span ng-repeat="subjects in picking.subjects">
-                <input type="radio" ng-model="random.way.subject" value="{{subjects}}"/>
-                {{subjects}}<br></span>
-    Types<br>
+    <h5 style="display:inline;white-space:pre-wrap;">Amount  </h5>
+    <input type="number" name="Amount" min="1" 
+    ng-model="random.way.quantity" ng-init="random.way.quantity=1;">
+    <hr/>
+    <h5>Types</h5>
     <input type="radio" ng-model="random.way.type" value="-"/>
     Nil<br>
     <span ng-repeat="i in length(random.type)" ng-init="random.way.type='-';">
                 <input type="radio" ng-model="random.way.type" value="{{random.type[i]}}"/>
                 {{random.type[i]}}<br></span>
-    Topic<br>
-    <input type="radio" ng-model="random.way.topic" value="-"/>
-    Nil<br>
-    <b>OR</b><br>
-    <span ng-repeat="i in length(picking.topics[random.way.subject])" ng-init="random.way.topic='-';">
-                <input type="radio" ng-model="random.way.topic" value="{{picking.topics[random.way.subject][i]}}"/>
-                {{picking.topics[random.way.subject][i]}}<br></span>
+    <hr/>
+    <h5>Filters</h5>
+    <div  ng-init="search.updateTags();">
+        <div ng-repeat="tag in findKeys(search.tags)">
+            <b>{{tag}}</b><br>
+            <span ng-repeat="name in search.tags[tag]">
+                <input type='checkbox' 
+                ng-model="search.tagSelect[tag][name]"/>  {{name}}<br>
+            </span>
+        </div>
+    </div>
+
 </div>
 <div class="card-footer">
     <a href="#!" role="button" class="btn btn-secondary" style="float:left;">Back</a>
     <!-- <input type="submit" class="btn btn-default" style="float:right;" value="Submit" ng-click=""/> -->
-    <a href="#!finding/random/listing" role="button" class="btn btn-secondary"
-     style="float:right;" ng-click="random.criterion.push(random.way);">Add</a>
+    <a href="#!listing" role="button" class="btn btn-secondary" style="float:right;" ng-click="random.find();">Find</a>
 </div>
 </div>
 

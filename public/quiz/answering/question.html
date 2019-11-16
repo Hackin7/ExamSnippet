@@ -3,7 +3,7 @@
 
 
 <div class="card" style="margin-top:80px" ng-show="Q.step == 1" ng-repeat="Q in questions">
-<div class="card-header"><b>Question {{Q.id+1}}:</b> {{Q.paper}}: {{Q.q_id}}</div>
+<div class="card-header"><b>Question {{Q.id+1}}</b></div>
 <div class="card-body">
 
     <div class="question-viewing" ng-show="questionCheckHasResources(Q)"> <!--Viewing-->
@@ -18,7 +18,9 @@
     </div>
     
     <div class="question-answering {{!questionCheckHasResources(Q) ? 'wide':''}}" > <!-- Answering-->
-        <p>{{Q.q_id}}: {{Q.question}} <b>[{{questionScore(Q.marks)}}]</b></p>
+        <p>{{Q.q_id}}: {{Q.question}} <b>[{{questionScore(Q.marks)}}]</b>
+        <br>Tagged: {{Q.tags}}
+        </p>
         <!-- Input Types -->
         <div ng-show="Q.type == 'mcq'" ng-repeat="given in length(Q.given)" >
             <p><input name="{{Q.id}}_" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>  {{Q.given[given]}}</p>
@@ -33,13 +35,13 @@
         Working Area:<br>
         <textarea ng-model="Q.workingArea"/></textarea><br>
         <div class="fs-container">
-          <div id="lc">drawing</div>
+          <div id="lc"></div>
         </div>
     </div>
     
 </div>
 <div class="card-footer">
-    <input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>
+    <!--<input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>-->
     <input type="submit" class="btn btn-secondary" style="float:right;" value="Submit" ng-click="Q.step = Q.step + 1;marking(Q.id);"/>
     <!--<input type="reset" class="btn btn-secondary" style="float:right;" value="Reset" ng-click="again();"/>-->
 </div>

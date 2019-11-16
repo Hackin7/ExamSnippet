@@ -13,6 +13,86 @@ app.controller("main", function($scope,restAPI) {
     $scope.picking = {}
     $scope.picking.picked = {}; //Selected Questions Tree
     
+    //Tag selecting
+    $scope.allQuestions = [
+        {"question":"What is life?","tags":{"topic":["hi"],"subject":["hello singapore"]} },
+        {"question":"What is up?","tags":{"topic":["hi","not hi"]} },
+        {"question":"What is down?","tags":{"topic":["You are a failure"]} }
+    ];
+    $scope.search = {};
+    $scope.search.query="";
+    $scope.search.found = {};
+    $scope.search.selected = {};
+    $scope.search.tags = {}; //Selected Questions Tree
+    $scope.search.tagSelect = {}; //Selected Questions Tree
+    $scope.findKeys = function(object){
+        return Object.keys(object);
+    }
+    $scope.search.updateTags = function(){
+        allTags = {}
+        for (q in $scope.allQuestions){
+            SkipQuestion = false;
+            questionTags = $scope.allQuestions[q].tags;
+            for (cat in questionTags){
+                if (allTags[cat] == undefined){
+                    allTags[cat] = [];
+                }
+                for (tag in questionTags[cat]){
+                    if (!inArray(questionTags[cat][tag],allTags[cat]) ){
+                        allTags[cat].push(questionTags[cat][tag])
+                    } 
+                }
+            }
+        }
+        $scope.search.tags = allTags;
+    }
+    $scope.search.searchQuestions = function(){
+        query = $scope.search.query;
+        givenTags = $scope.search.tagSelect;
+        meetCondition = [];
+        for (q in $scope.allQuestions){
+            if (!$scope.allQuestions[q].question.includes(query)){
+                continue;
+            }
+            SkipQuestion = false;
+            questionTags = $scope.allQuestions[q].tags;
+            //Categories
+            for (cat in givenTags){
+                //All tags
+                for (tag in givenTags[cat]){
+                    console.log(tag);
+                    if (givenTags[cat][tag] && !inArray(tag,questionTags[cat]) ){
+                        //Skip This Question
+                        SkipQuestion = true;
+                        break;
+                    }
+                }
+                if (SkipQuestion){break;}
+            }
+            if (!SkipQuestion){
+                meetCondition.push(q);//AllQuestions[q]);
+            }
+        }
+        $scope.search.found =  meetCondition;
+    }
+    $scope.search.addQuestions = function(){
+        for (i in $scope.search.selected){
+            if ($scope.search.selected[i]){
+                $scope.questions.push($scope.allQuestions[i]);}
+        }
+    }
+    $scope.search.selectAll = function(){
+        var selecting = false; //Deselecting
+        var checking = function(value){return value};
+        for (i in $scope.search.found){
+            if ($scope.search.selected[$scope.search.found[i]] != true){
+                selecting = true; //Selecting
+            }
+        }
+        for (i in $scope.search.found){
+            $scope.search.selected[$scope.search.found[i]] = selecting;
+        }
+    };
     
     var inArray = function(item,array){
         for (i in array){
@@ -81,12 +161,6 @@ app.controller("main", function($scope,restAPI) {
         $scope.picking.questions=$scope.picking.tree[subject][paper].questions;
         $scope.picking.paper = paper; //Paper in picking
         if ($scope.picking.picked[subject][paper] === undefined){$scope.picking.picked[subject][paper] = [];}
-        /*restAPI.questions(subject,paper).then(function(response) {
-            $scope.picking.questions = response.data;
-            $scope.picking.paper = paper; //Paper in picking
-            console.log($scope.picking.picked);
-            if ($scope.picking.picked[subject][paper] === undefined){$scope.picking.picked[subject][paper] = [];}
-        });*/
     };
     
     $scope.picking.paperAllSelect = function(){
@@ -101,6 +175,7 @@ app.controller("main", function($scope,restAPI) {
             $scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] = selecting;
         }
     };
+    
     $scope.picking.showQuestions = function(){
         //$scope.test = [Object.keys($scope.picking.tree)];
         var subject = "";
@@ -125,13 +200,7 @@ app.controller("main", function($scope,restAPI) {
     $scope.random = {};
     $scope.random.way = {}; // For 1 criteria
     $scope.random.type = ["mcq", "blank", "open"];
-    $scope.random.criterion = [];//[{subject:"Test_Subject",type:"blank",topic:"None",quantity:2    },{subject:"Test_Subject",type:"blank",topic:"None",quantity:2  }];
-    /*
-    restAPI.topics().then(function(response) {
-            $scope.random.topics = response.data;
-    })*/
-    //https://stackoverflow.com/questions/19269545/how-to-get-n-no-elements-randomly-from-an-array?lq=1
-    //var item = items[Math.floor(Math.random()*items.length)];
+    $scope.random.criterion = [];
     function getRandom(arr, n) {
         var result = new Array(n),
             len = arr.length,
@@ -146,38 +215,24 @@ app.controller("main", function($scope,restAPI) {
         return result;
     }
 
-    randomPick = function(subject,type,topic,quantity){
-        var possibleQuestions = [];
-        for (i in $scope.picking.tree[subject]){ // Papers
-            for (j in $scope.picking.tree[subject][i].questions){ // Questions
-                var question = $scope.picking.tree[subject][i].questions[j];
-                if (question.type == type || type == "-"){
-                    for (v in question.topics){
-                        if (question.topics[v] == topic || topic == "-"){
-                            possibleQuestions.push(question);
-                        }
-                    }
-                }
-            }
-        }
-        return getRandom(possibleQuestions, quantity);
-    };
     $scope.random.find = function(){
-        for (criteria in $scope.random.criterion){
-            var questions = randomPick($scope.random.criterion[criteria].subject,$scope.random.criterion[criteria].type,$scope.random.criterion[criteria].topic,$scope.random.criterion[criteria].quantity)
-            for (question in questions){
-                    $scope.questions.push(questions[question]);
-            }
-            /*
-            restAPI.random($scope.random.criterion[criteria].subject,$scope.random.criterion[criteria].type,$scope.random.criterion[criteria].topic,$scope.random.criterion[criteria].quantity)
-            .then(function(response) {
-                var questions = response.data;
-                //$scope.test.push(questions);//[$scope.random.criterion[criteria].subject,$scope.random.criterion[criteria].type,$scope.random.criterion[criteria].topic,$scope.random.criterion[criteria].quantity]);
-                for (question in questions){
-                    $scope.questions.push(questions[question]);
-                }
-            });*/
+        n = $scope.random.way.quantity;
+        $scope.search.searchQuestions();
+
+        //Deselect all
+        for (i in $scope.search.found){
+            $scope.search.selected[$scope.search.found[i]] = false;
+        } 
+        //Random Selection
+        len = $scope.search.found.length;
+        for (var i=0;i<n;i++){
+            if (i>=len)break;
+            var x = Math.floor(Math.random() * len);
+            while ($scope.search.selected[x]){var x = Math.floor(Math.random() * len);}
+            $scope.search.selected[x]=true;
         }
+        
+        
     };
 
     //JSON data
@@ -306,3 +361,4 @@ app.controller("main", function($scope,restAPI) {
     //$scope.questionNo = 0;
     */
 });
+
