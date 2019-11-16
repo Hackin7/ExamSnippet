@@ -138,63 +138,6 @@ app.controller("main", function($scope,restAPI) {
         });
     };
     $scope.data.refresh($scope.data.url);
-    /*
-    restAPI.subjects().then(function(response) {
-            $scope.picking.subjects = response.data;
-    });
-    */
-    $scope.picking.updatePapers = function(subject){
-        $scope.picking.papers=$scope.picking.tree[subject];
-        $scope.picking.subject = subject; //Subject in picking
-        if ($scope.picking.picked[subject] === undefined){$scope.picking.picked[subject] = {};}
-        /*
-        restAPI.papers(subject).then(function(response) {
-            $scope.picking.papers = response.data;
-            $scope.picking.subject = subject; //Subject in picking
-            //console.log(subject);
-            if ($scope.picking.picked[subject] === undefined){$scope.picking.picked[subject] = {};}
-            //console.log($scope.picking.picked[subject]);
-        });
-        */
-    };
-    $scope.picking.updateQuestions = function(subject,paper){
-        $scope.picking.questions=$scope.picking.tree[subject][paper].questions;
-        $scope.picking.paper = paper; //Paper in picking
-        if ($scope.picking.picked[subject][paper] === undefined){$scope.picking.picked[subject][paper] = [];}
-    };
-    
-    $scope.picking.paperAllSelect = function(){
-        var selecting = false; //Deselecting
-        var checking = function(value){return value};
-        for (i in $scope.picking.questions){
-            if ($scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] != true){
-                selecting = true; //Selecting
-            }
-        }
-        for (i in $scope.picking.questions){
-            $scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] = selecting;
-        }
-    };
-    
-    $scope.picking.showQuestions = function(){
-        //$scope.test = [Object.keys($scope.picking.tree)];
-        var subject = "";
-        for (subject in $scope.picking.picked){
-            //alert(subject);
-            //subject = Object.keys($scope.picking.tree)[i];
-            //$scope.test.push(i,subject);
-            for (paper in $scope.picking.picked[subject]){
-                //$scope.test.push(paper);
-                for (question in $scope.picking.picked[subject][paper]){
-                    //$scope.test.push($scope.picking.picked[subject][paper][question]);
-                    if ($scope.picking.picked[subject][paper][question]){
-                        $scope.questions.push($scope.picking.tree[subject][paper].questions[question]);
-                    }
-                }
-            }
-        }
-        $scope.picking.picked = {};
-    };
         
     //Random
     $scope.random = {};
