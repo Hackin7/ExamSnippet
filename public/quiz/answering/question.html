@@ -8,8 +8,9 @@
 
     <div class="question-viewing" ng-show="questionCheckHasResources(Q)"> <!--Viewing-->
         <!-- https://stackoverflow.com/questions/4853898/display-pdf-within-web-browser -->
+        <!-- Use Google Drive embed https://stackoverflow.com/questions/14690000/how-to-embed-a-pdf-->
         <object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)"
-         data="{{Q.pdf[pdf]}}"></object>
+         data="http://docs.google.com/gview?url={{Q.pdf[pdf]}}&embedded=true"></object>
          
          
          
