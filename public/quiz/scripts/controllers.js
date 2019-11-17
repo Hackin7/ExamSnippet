@@ -1,6 +1,11 @@
 app.controller("main", function($scope,restAPI) {
     $scope.questions = [];
-
+    //Dummy Data
+    $scope.allQuestions = [
+        {"question":"What is life?","tags":{"Topic":["hi"],"Subject":["hello singapore"]} },
+        {"question":"What is up?","tags":{"Topic":["hi","not hi"]} },
+        {"question":"What is down?","tags":{"Topic":["You are a failure"]} }
+    ];
     $scope.data={};
     $scope.data.url = '/QuestionData/A_Level';//'/QuestionData/Secondary_School_O_Level';
     $scope.data.sources=
@@ -9,30 +14,83 @@ app.controller("main", function($scope,restAPI) {
     $scope.data.sourcesnames=Object.keys($scope.data.sources);
     //'/RESTAPI/listtree';
     //'https://drive.google.com/uc?id=1LzDYh6TA1JPi0jVmV9FPViUrrzWKWmEg';
-    //Picking
-    $scope.picking = {}
-    $scope.picking.picked = {}; //Selected Questions Tree
     
-    //Tag selecting
-    $scope.allQuestions = [
-        {"question":"What is life?","tags":{"topic":["hi"],"subject":["hello singapore"]} },
-        {"question":"What is up?","tags":{"topic":["hi","not hi"]} },
-        {"question":"What is down?","tags":{"topic":["You are a failure"]} }
-    ];
-    $scope.search = {};
-    $scope.search.query="";
-    $scope.search.found = {};
-    $scope.search.selected = {};
-    $scope.search.tags = {}; //Selected Questions Tree
-    $scope.search.tagSelect = {}; //Selected Questions Tree
+    ////Helpful Methods/////////////////////////////////////////////////
+    var inArray = function(item,array){
+        for (i in array){
+            if (array[i] == item){return true;}
+        }
+        return false;
+    };
+    var haveEscapeCharacters = function(string){
+        escapeCharacters = ["\r","\n"]
+        return inArray(string.slice(-1),escapeCharacters);
+    }
+    var removeEscapeCharacters = function(string){
+        if (haveEscapeCharacters(string)){
+            return string.slice(0,-1);
+        }
+        return string;
+    }
+    var legacyToNew = function(Qn){
+        if (Qn.tags == null){
+            if (Qn.q_id != null)Qn.q_id = Qn.paper+" "+Qn.q_id;
+            Qn.tags={
+                "Type":[removeEscapeCharacters(Qn.type)],
+                "Subject":[removeEscapeCharacters(Qn.subject)], 
+                "Paper":[removeEscapeCharacters(Qn.paper)],
+                "Topics":Qn.topics.map(removeEscapeCharacters)
+            };
+        }
+        return Qn;
+    }
     $scope.findKeys = function(object){
         return Object.keys(object);
     }
+    ////Getting Data/////////////////////////////////////////////////////
+    $scope.picking = {}
+    $scope.picking.picked = {}; //Selected Questions Tree
+    $scope.data.refresh = function(url){
+        $scope.allQuestions=[];
+        restAPI.tree(url).then(function(response) {
+                $scope.picking.tree = response.data;
+                for (subject in $scope.picking.tree){
+                    for (paper in $scope.picking.tree[subject]){
+                        var paperData = $scope.picking.tree[subject][paper];
+                        for (k in paperData.questions){ // Topics
+                            //Legacy support
+                            Qn = legacyToNew(paperData.questions[k]);
+                            $scope.allQuestions.push(Qn);
+                        }
+                    }
+                    /////////////////
+                }
+        });
+    };
+    $scope.data.refresh($scope.data.url);
+     
+    ////Searching////////////////////////////////////////////////////////
+    
+    $scope.search = {};
+    $scope.search.query="";
+    $scope.search.found = {};// Index of found questions
+    $scope.search.selected = {};
+    $scope.search.tags = {}; //Selected Questions Tree
+    $scope.search.tagSelect = {}; //Selected Questions Tree
+    
     $scope.search.updateTags = function(){
-        allTags = {}
-        for (q in $scope.allQuestions){
+        allTags = {};
+        $scope.search.searchQuestions();
+        questionIndex = $scope.search.found;
+        //alert($scope.search.found);
+        
+        questionList = $scope.allQuestions;
+        
+        //for (q in questionList){
+        for (i in questionIndex){
+            q = questionIndex[i];
             SkipQuestion = false;
-            questionTags = $scope.allQuestions[q].tags;
+            questionTags = questionList[q].tags;
             for (cat in questionTags){
                 if (allTags[cat] == undefined){
                     allTags[cat] = [];
@@ -94,51 +152,7 @@ app.controller("main", function($scope,restAPI) {
         }
     };
     
-    var inArray = function(item,array){
-        for (i in array){
-            if (array[i] == item){return true;}
-        }
-        return false;
-    };
-    var haveEscapeCharacters = function(string){
-        escapeCharacters = ["\r","\n"]
-        return inArray(string.slice(-1),escapeCharacters);
-    }
-    $scope.data.refresh = function(url){
-        $scope.picking.subjects=[];
-        $scope.picking.topics={};
-        restAPI.tree(url).then(function(response) {
-                $scope.picking.tree = response.data;
-                //Subjects
-                for (subject in $scope.picking.tree){
-                    $scope.picking.subjects.push(subject);
-                    //Topics
-                    $scope.picking.topics[subject]=[];
-                    for (paper in $scope.picking.tree[subject]){
-                        var paperData = $scope.picking.tree[subject][paper];
-                        for (k in paperData.questions){ // Topics
-                            for (l in paperData.questions[k].topics){
-                                //Remove escape characters
-                                if ( haveEscapeCharacters(paperData.questions[k].topics[l]) ){
-                                    paperData.questions[k].topics[l] = paperData.questions[k].topics[l].slice(0,-1);
-                                }
-                                if ( !inArray(paperData.questions[k].topics[l], $scope.picking.topics[subject]) ){
-                                    $scope.picking.topics[subject].push(paperData.questions[k].topics[l]);
-                                }
-                            }
-                        }
-                        //Remove escape characters
-                        if ( haveEscapeCharacters(paper) ){
-                            $scope.picking.tree[subject][paper.slice(0,-1)] = $scope.picking.tree[subject][paper];
-                            delete $scope.picking.tree[subject][paper]
-                        }
-                    }
-                    /////////////////
-                }
-        });
-    };
-    $scope.data.refresh($scope.data.url);
-        
+       
     //Random
     $scope.random = {};
     $scope.random.way = {}; // For 1 criteria
@@ -157,20 +171,20 @@ app.controller("main", function($scope,restAPI) {
         }
         return result;
     }
-
     $scope.random.find = function(){
         n = $scope.random.way.quantity;
         $scope.search.searchQuestions();
 
         //Deselect all
-        for (i in $scope.search.found){
-            $scope.search.selected[$scope.search.found[i]] = false;
+        for (i in $scope.search.selected){
+            $scope.search.selected[i] = false;
         } 
         //Random Selection
         len = $scope.search.found.length;
+        if (n>=len)$scope.search.selectAll();
+        //No questions
         for (var i=0;i<n;i++){
-            if (i>=len)break;
-            var x = Math.floor(Math.random() * len);
+            var x = $scope.search.found[Math.floor(Math.random() * len)];
             while ($scope.search.selected[x]){var x = Math.floor(Math.random() * len);}
             $scope.search.selected[x]=true;
         }
@@ -183,6 +197,9 @@ app.controller("main", function($scope,restAPI) {
     $scope.saveData.input = ""; //Input Save Data 
     $scope.saveData.load = function(){
         $scope.questions = JSON.parse($scope.saveData.input);
+        for (i in $scope.questions){
+            $scope.questions[i] = legacyToNew($scope.questions[i]);
+        }
     };
     
     //Answering
@@ -260,9 +277,6 @@ app.controller("main", function($scope,restAPI) {
             return !(Q.anspdf[0] == undefined && Q.answerImages[0] == undefined);
     }
     
-    $scope.answering = {
-        mode : "Exam"
-    };
     //document.getElementById("0_pdf").src = "https://c176.pcloud.com/dHZXyaKmVZh07JjVZZZL27TU7Z1ZZsR8ZXZ7hiy7ZvOWUjVnn0KBiqwfTb8cMm47kYIEV/2016%20Sec%204%20Express%20English%20SA2%20Dunman%20High%20School.pdf";
     //Data
     /*
@@ -296,12 +310,6 @@ app.controller("main", function($scope,restAPI) {
         "marks": [1,2],
         "self_mark": false
     }];
-    */
-    /* Debugging
-    restAPI.random().then(function(response) {
-            $scope.test = response.data;
-    });
-    //$scope.questionNo = 0;
     */
 });
 

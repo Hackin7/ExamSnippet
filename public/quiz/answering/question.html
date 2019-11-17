@@ -22,13 +22,13 @@
         <br>Tagged: {{Q.tags}}
         </p>
         <!-- Input Types -->
-        <div ng-show="Q.type == 'mcq'" ng-repeat="given in length(Q.given)" >
+        <div ng-show="Q.tags.Type[0] == 'mcq'" ng-repeat="given in length(Q.given)" >
             <p><input name="{{Q.id}}_" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>  {{Q.given[given]}}</p>
         </div>
-        <div ng-show="Q.type == 'blank'" ng-repeat="given in length(Q.given)">
+        <div ng-show="Q.tags.Type[0] == 'blank'" ng-repeat="given in length(Q.given)">
             <input name="{{Q.id}}_{{given}}" type='text' ng-model="Q.answer[given]"/><br>
         </div>
-        <div ng-show="Q.type == 'open'" ng-repeat="given in length(Q.given)">
+        <div ng-show="Q.tags.Type[0] == 'open'" ng-repeat="given in length(Q.given)">
             <textarea name="{{Q.id}}_{{given}}" ng-model="Q.answer[given]"/></textarea><br>
             <!--<div contenteditable name="{{Q.id}}_{{given}}" ng-bind-html="Q.answer[given]">HI</div>-->
         </div>
