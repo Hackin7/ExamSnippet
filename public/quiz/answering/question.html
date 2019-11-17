@@ -3,7 +3,7 @@
 
 
 <div class="card" style="margin-top:80px" ng-show="Q.step == 1" ng-repeat="Q in questions">
-<div class="card-header"><b>Question {{Q.id+1}}</b></div>
+<div class="card-header"><b>Question {{Q.id+1}}: {{Q.q_id}}</b></div>
 <div class="card-body">
 
     <div class="question-viewing" ng-show="questionCheckHasResources(Q)"> <!--Viewing-->
