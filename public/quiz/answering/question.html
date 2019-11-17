@@ -12,8 +12,6 @@
         <object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)"
          data="http://docs.google.com/gview?url={{Q.pdf[pdf]}}&embedded=true"></object>
          
-         
-         
         <div ng-repeat="pdf in length(Q.pdf)">
             <a href="{{Q.pdf[pdf]}}" target="_blank" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
         </div>
