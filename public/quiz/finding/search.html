@@ -1,0 +1,98 @@
+<style>
+    .search-header { grid-area: header; }
+    .search-menu { grid-area: menu; max-height:50vh; }
+    .search-main { grid-area: main; max-height:50vh;}
+    .search-random { grid-area: random; }
+    .search-ok { grid-area: ok; }
+    #search-field{width:60%;}
+    .search-container {
+        margin-left:5%;
+        margin-right:5%;
+        
+        display: grid;
+        grid-column-gap: 0.5em;
+        grid-row-gap:1em;
+        grid-template-areas:
+                'header'
+                'menu'
+                'random'
+                'main'
+                'ok';
+    }
+    .search-scrollable-group{
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+    
+    @media screen and (min-width: 600px){
+        .search-scrollable-group{max-height:100%;overflow-y: auto;}
+        .search-container {
+            grid-template-areas:
+                'header header header header header'
+                'menu main main main main'
+                'random main main main main'
+                'random ok ok ok ok';
+        }
+        .search-menu { height:43vh; overflow-y: none;}
+        .search-main { height:53vh; overflow-y: none;}
+    }
+    
+    
+  }
+</style>
+
+<br><br><br>
+<div class="search-container">
+
+<div class="search-header">
+    <h4 style="white-space:pre-wrap;display: inline;">Search:   </h4>
+    <input name='search-field' id="search-field" type='text' ng-model="search.query" ng-change="search.searchQuestions()"/>
+    <hr/>
+</div>
+<div class="search-menu">
+    <h4>Filters</h4>
+    <div class="search-scrollable-group" ng-init="search.updateTags();">
+        <div ng-repeat="tag in findKeys(search.tags)">
+            <b>{{tag}}</b>
+            <!--
+            <span style="float:right; padding-right:0.5em;">
+                AND <input type='radio' name="bool" checked="checked"/>
+                OR <input type='radio' name="bool"/>
+            </span>  
+            --><br>
+            <span ng-repeat="name in search.tags[tag]">
+                <input type='checkbox' ng-change="search.searchQuestions();search.updateTags();"
+                ng-model="search.tagSelect[tag][name]"/>  {{name}}<br>
+            </span>
+        </div>
+    </div>
+</div>
+ 
+<div class="search-random">
+    <hr/>
+    <h4>Random Selection</h4>
+    <span style="display:inline;white-space:pre-wrap;">Amount  </span>
+    <input type="number" name="Amount" min="1" 
+    ng-model="random.way.quantity" ng-init="random.way.quantity=1;">
+    <br><br>
+    <button role="button" class="btn btn-secondary" style="float:left;" ng-click="random.find();">Random Choose</button>
+    <br><br>
+</div>
+
+<div class="search-main" ng-init="search.searchQuestions()" >
+    <h4>Questions</h4>
+        <div class="list-group checked-list-box search-scrollable-group">
+      <li class="list-group-item" ng-repeat="Q in search.found">
+      <input type="checkbox" ng-model="search.selected[Q]"/>
+       <vue-component name="QuestionHeader"
+        v-props-Q="allQuestions[Q]" v-props-marks="questionScore(allQuestions[Q].marks)"></vue-component>
+     </div>
+</div>
+
+<div class="search-ok">
+    <br>
+    <button role="button" class="btn btn-secondary" style="float:left;" ng-click="search.selectAll();">Select All</button>
+    <a href="#!listing" role="button" class="btn btn-secondary" style="float:right;" ng-click="search.addQuestions();">OK</a>
+</div>
+
+</div>

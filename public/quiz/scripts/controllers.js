@@ -1,6 +1,11 @@
 app.controller("main", function($scope,restAPI) {
     $scope.questions = [];
-
+    //Dummy Data
+    $scope.allQuestions = [
+        {"question":"What is life?","tags":{"Topic":["hi"],"Subject":["hello singapore"]} },
+        {"question":"What is up?","tags":{"Topic":["hi","not hi"]} },
+        {"question":"What is down?","tags":{"Topic":["You are a failure"]} }
+    ];
     $scope.data={};
     $scope.data.url = '/QuestionData/A_Level';//'/QuestionData/Secondary_School_O_Level';
     $scope.data.sources=
@@ -9,11 +14,8 @@ app.controller("main", function($scope,restAPI) {
     $scope.data.sourcesnames=Object.keys($scope.data.sources);
     //'/RESTAPI/listtree';
     //'https://drive.google.com/uc?id=1LzDYh6TA1JPi0jVmV9FPViUrrzWKWmEg';
-    //Picking
-    $scope.picking = {}
-    $scope.picking.picked = {}; //Selected Questions Tree
     
-    
+    ////Helpful Methods/////////////////////////////////////////////////
     var inArray = function(item,array){
         for (i in array){
             if (array[i] == item){return true;}
@@ -24,33 +26,47 @@ app.controller("main", function($scope,restAPI) {
         escapeCharacters = ["\r","\n"]
         return inArray(string.slice(-1),escapeCharacters);
     }
+    var removeEscapeCharacters = function(string){
+        if (haveEscapeCharacters(string)){
+            return string.slice(0,-1);
+        }
+        return string;
+    }
+    var legacyToNew = function(Qn){
+        try{
+        if (Qn.tags == null){
+            if (Qn.q_id != null)Qn.q_id = Qn.paper+" "+Qn.q_id;
+            Qn.tags={
+                "Type":[removeEscapeCharacters(Qn.type)],
+                "Subject":[removeEscapeCharacters(Qn.subject)], 
+                "Paper":[removeEscapeCharacters(Qn.paper)],
+                "Topics":[]
+            };
+            if (Qn.topics != null){
+                Qn.tags.Topics = Qn.topics.map(removeEscapeCharacters);
+            }
+        }}
+        catch{}
+        return Qn;
+    }
+    $scope.findKeys = function(object){
+        return Object.keys(object);
+    }
+    ////Getting Data/////////////////////////////////////////////////////
+    $scope.picking = {}
+    $scope.picking.picked = {}; //Selected Questions Tree
+    $scope.search = {};
     $scope.data.refresh = function(url){
-        $scope.picking.subjects=[];
-        $scope.picking.topics={};
+        $scope.allQuestions=[];$scope.search.selected = {};
         restAPI.tree(url).then(function(response) {
                 $scope.picking.tree = response.data;
-                //Subjects
                 for (subject in $scope.picking.tree){
-                    $scope.picking.subjects.push(subject);
-                    //Topics
-                    $scope.picking.topics[subject]=[];
                     for (paper in $scope.picking.tree[subject]){
                         var paperData = $scope.picking.tree[subject][paper];
                         for (k in paperData.questions){ // Topics
-                            for (l in paperData.questions[k].topics){
-                                //Remove escape characters
-                                if ( haveEscapeCharacters(paperData.questions[k].topics[l]) ){
-                                    paperData.questions[k].topics[l] = paperData.questions[k].topics[l].slice(0,-1);
-                                }
-                                if ( !inArray(paperData.questions[k].topics[l], $scope.picking.topics[subject]) ){
-                                    $scope.picking.topics[subject].push(paperData.questions[k].topics[l]);
-                                }
-                            }
-                        }
-                        //Remove escape characters
-                        if ( haveEscapeCharacters(paper) ){
-                            $scope.picking.tree[subject][paper.slice(0,-1)] = $scope.picking.tree[subject][paper];
-                            delete $scope.picking.tree[subject][paper]
+                            //Legacy support
+                            Qn = legacyToNew(paperData.questions[k]);
+                            $scope.allQuestions.push(Qn);
                         }
                     }
                     /////////////////
@@ -58,80 +74,95 @@ app.controller("main", function($scope,restAPI) {
         });
     };
     $scope.data.refresh($scope.data.url);
-    /*
-    restAPI.subjects().then(function(response) {
-            $scope.picking.subjects = response.data;
-    });
-    */
-    $scope.picking.updatePapers = function(subject){
-        $scope.picking.papers=$scope.picking.tree[subject];
-        $scope.picking.subject = subject; //Subject in picking
-        if ($scope.picking.picked[subject] === undefined){$scope.picking.picked[subject] = {};}
-        /*
-        restAPI.papers(subject).then(function(response) {
-            $scope.picking.papers = response.data;
-            $scope.picking.subject = subject; //Subject in picking
-            //console.log(subject);
-            if ($scope.picking.picked[subject] === undefined){$scope.picking.picked[subject] = {};}
-            //console.log($scope.picking.picked[subject]);
-        });
-        */
-    };
-    $scope.picking.updateQuestions = function(subject,paper){
-        $scope.picking.questions=$scope.picking.tree[subject][paper].questions;
-        $scope.picking.paper = paper; //Paper in picking
-        if ($scope.picking.picked[subject][paper] === undefined){$scope.picking.picked[subject][paper] = [];}
-        /*restAPI.questions(subject,paper).then(function(response) {
-            $scope.picking.questions = response.data;
-            $scope.picking.paper = paper; //Paper in picking
-            console.log($scope.picking.picked);
-            if ($scope.picking.picked[subject][paper] === undefined){$scope.picking.picked[subject][paper] = [];}
-        });*/
-    };
+     
+    ////Searching////////////////////////////////////////////////////////
     
-    $scope.picking.paperAllSelect = function(){
-        var selecting = false; //Deselecting
-        var checking = function(value){return value};
-        for (i in $scope.picking.questions){
-            if ($scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] != true){
-                selecting = true; //Selecting
-            }
-        }
-        for (i in $scope.picking.questions){
-            $scope.picking.picked[$scope.picking.subject][$scope.picking.paper][i] = selecting;
-        }
-    };
-    $scope.picking.showQuestions = function(){
-        //$scope.test = [Object.keys($scope.picking.tree)];
-        var subject = "";
-        for (subject in $scope.picking.picked){
-            //alert(subject);
-            //subject = Object.keys($scope.picking.tree)[i];
-            //$scope.test.push(i,subject);
-            for (paper in $scope.picking.picked[subject]){
-                //$scope.test.push(paper);
-                for (question in $scope.picking.picked[subject][paper]){
-                    //$scope.test.push($scope.picking.picked[subject][paper][question]);
-                    if ($scope.picking.picked[subject][paper][question]){
-                        $scope.questions.push($scope.picking.tree[subject][paper].questions[question]);
-                    }
+    $scope.search = {};
+    $scope.search.query="";
+    $scope.search.found = {};// Index of found questions
+    $scope.search.selected = {};
+    $scope.search.tags = {}; //Selected Questions Tree
+    $scope.search.tagSelect = {}; //Selected Questions Tree
+    
+    $scope.search.updateTags = function(){
+        allTags = {};
+        $scope.search.searchQuestions();
+        questionIndex = $scope.search.found;
+        //alert($scope.search.found);
+        
+        questionList = $scope.allQuestions;
+        
+        //for (q in questionList){
+        for (i in questionIndex){
+            q = questionIndex[i];
+            SkipQuestion = false;
+            questionTags = questionList[q].tags;
+            for (cat in questionTags){
+                if (allTags[cat] == undefined){
+                    allTags[cat] = [];
+                }
+                for (tag in questionTags[cat]){
+                    if (!inArray(questionTags[cat][tag],allTags[cat]) ){
+                        allTags[cat].push(questionTags[cat][tag])
+                    } 
                 }
             }
         }
-        $scope.picking.picked = {};
+        $scope.search.tags = allTags;
+    }
+    $scope.search.searchQuestions = function(){
+        query = $scope.search.query;
+        givenTags = $scope.search.tagSelect;
+        meetCondition = [];
+        for (q in $scope.allQuestions){
+            if (!$scope.allQuestions[q].question.includes(query)){
+                continue;
+            }
+            SkipQuestion = false;
+            questionTags = $scope.allQuestions[q].tags;
+            //Categories
+            for (cat in givenTags){
+                //All tags
+                for (tag in givenTags[cat]){
+                    if (givenTags[cat][tag] && !inArray(tag,questionTags[cat]) ){
+                        //Skip This Question
+                        SkipQuestion = true;
+                        break;
+                    }
+                }
+                if (SkipQuestion){break;}
+            }
+            if (!SkipQuestion){
+                meetCondition.push(q);//AllQuestions[q]);
+            }
+        }
+        $scope.search.found =  meetCondition;
+    }
+    $scope.search.addQuestions = function(){
+        for (i in $scope.search.selected){
+            if ($scope.search.selected[i]){
+                $scope.questions.push($scope.allQuestions[i]);}
+        }
+    }
+    $scope.search.selectAll = function(){
+        var selecting = false; //Deselecting
+        var checking = function(value){return value};
+        for (i in $scope.search.found){
+            if ($scope.search.selected[$scope.search.found[i]] != true){
+                selecting = true; //Selecting
+            }
+        }
+        for (i in $scope.search.found){
+            $scope.search.selected[$scope.search.found[i]] = selecting;
+        }
     };
-        
+    
+       
     //Random
     $scope.random = {};
     $scope.random.way = {}; // For 1 criteria
     $scope.random.type = ["mcq", "blank", "open"];
-    $scope.random.criterion = [];//[{subject:"Test_Subject",type:"blank",topic:"None",quantity:2    },{subject:"Test_Subject",type:"blank",topic:"None",quantity:2  }];
-    /*
-    restAPI.topics().then(function(response) {
-            $scope.random.topics = response.data;
-    })*/
-    //https://stackoverflow.com/questions/19269545/how-to-get-n-no-elements-randomly-from-an-array?lq=1
-    //var item = items[Math.floor(Math.random()*items.length)];
+    $scope.random.criterion = [];
     function getRandom(arr, n) {
         var result = new Array(n),
             len = arr.length,
@@ -145,39 +176,25 @@ app.controller("main", function($scope,restAPI) {
         }
         return result;
     }
-
-    randomPick = function(subject,type,topic,quantity){
-        var possibleQuestions = [];
-        for (i in $scope.picking.tree[subject]){ // Papers
-            for (j in $scope.picking.tree[subject][i].questions){ // Questions
-                var question = $scope.picking.tree[subject][i].questions[j];
-                if (question.type == type || type == "-"){
-                    for (v in question.topics){
-                        if (question.topics[v] == topic || topic == "-"){
-                            possibleQuestions.push(question);
-                        }
-                    }
-                }
-            }
-        }
-        return getRandom(possibleQuestions, quantity);
-    };
     $scope.random.find = function(){
-        for (criteria in $scope.random.criterion){
-            var questions = randomPick($scope.random.criterion[criteria].subject,$scope.random.criterion[criteria].type,$scope.random.criterion[criteria].topic,$scope.random.criterion[criteria].quantity)
-            for (question in questions){
-                    $scope.questions.push(questions[question]);
-            }
-            /*
-            restAPI.random($scope.random.criterion[criteria].subject,$scope.random.criterion[criteria].type,$scope.random.criterion[criteria].topic,$scope.random.criterion[criteria].quantity)
-            .then(function(response) {
-                var questions = response.data;
-                //$scope.test.push(questions);//[$scope.random.criterion[criteria].subject,$scope.random.criterion[criteria].type,$scope.random.criterion[criteria].topic,$scope.random.criterion[criteria].quantity]);
-                for (question in questions){
-                    $scope.questions.push(questions[question]);
-                }
-            });*/
+        n = $scope.random.way.quantity;
+        $scope.search.searchQuestions();
+
+        //Deselect all
+        for (i in $scope.search.selected){
+            $scope.search.selected[i] = false;
+        } 
+        //Random Selection
+        len = $scope.search.found.length;
+        if (n>=len)$scope.search.selectAll();
+        //No questions
+        for (var i=0;i<n;i++){
+            var x = $scope.search.found[Math.floor(Math.random() * len)];
+            while ($scope.search.selected[x]){var x = Math.floor(Math.random() * len);}
+            $scope.search.selected[x]=true;
         }
+        
+        
     };
 
     //JSON data
@@ -185,6 +202,9 @@ app.controller("main", function($scope,restAPI) {
     $scope.saveData.input = ""; //Input Save Data 
     $scope.saveData.load = function(){
         $scope.questions = JSON.parse($scope.saveData.input);
+        for (i in $scope.questions){
+            $scope.questions[i] = legacyToNew($scope.questions[i]);
+        }
     };
     
     //Answering
@@ -262,9 +282,6 @@ app.controller("main", function($scope,restAPI) {
             return !(Q.anspdf[0] == undefined && Q.answerImages[0] == undefined);
     }
     
-    $scope.answering = {
-        mode : "Exam"
-    };
     //document.getElementById("0_pdf").src = "https://c176.pcloud.com/dHZXyaKmVZh07JjVZZZL27TU7Z1ZZsR8ZXZ7hiy7ZvOWUjVnn0KBiqwfTb8cMm47kYIEV/2016%20Sec%204%20Express%20English%20SA2%20Dunman%20High%20School.pdf";
     //Data
     /*
@@ -299,10 +316,5 @@ app.controller("main", function($scope,restAPI) {
         "self_mark": false
     }];
     */
-    /* Debugging
-    restAPI.random().then(function(response) {
-            $scope.test = response.data;
-    });
-    //$scope.questionNo = 0;
-    */
 });
+

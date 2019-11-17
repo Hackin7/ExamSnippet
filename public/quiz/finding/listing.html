@@ -3,11 +3,12 @@
 <div class="card-body">
 
 <div class="alert alert-secondary alert-dismissible fade show" role="alert" ng-repeat="Q in length(questions)">
-  <span>{{questions[Q].paper}} {{questions[Q].q_id}}: {{questions[Q].question}}</span>
+  <vue-component name="QuestionHeader"
+        v-props-Q="questions[Q]" v-props-marks="questionScore(questions[Q].marks)"></vue-component>
   <button class="btn btn-secondary" ng-click="questions[Q].step=1;">Reset</button>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <button type="button" class="close" ng-click="questions.splice(Q,1);" aria-label="Close">
   <!--https://www.w3schools.com/js/js_array_methods.asp-->
-    <span aria-hidden="true" ng-click="questions.splice(Q,1);">&times;</span>
+    <span aria-hidden="true" >&times;</span>
   </button>
 </div>
 

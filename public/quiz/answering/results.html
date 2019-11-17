@@ -2,53 +2,54 @@
 <div class="card-header">Results</div>
 <div class="card-body">
 
-	<div class="result">
-		<p><b>Total Score: {{totalScoring(questions)}}</b></p>
-	<!--<div class="container"><div class="row">
-		<div class="col"></div>
-	</div></div>-->
-		<b>Questions:</b>
-	</div>
-	
-	<div ng-repeat="Q in questions" class="result">
-	<b>{{Q.paper}} {{Q.q_id}}: {{Q.question}}</b>
-	<table class="table">
-	<tr><th ng-show="questionCheckHasResources(Q)">Images</th><th>Answer</th><th width="40%">Correct Answer</th></tr>
-		<tr>
-			<td width="20%" ng-show="questionCheckHasResources(Q)">
-					<div ng-repeat="image in length(Q.images)">
-						<a href="{{Q.images[image]}}" target="_blank"><img src="{{Q.images[image]}}"/></a>
-					</div>
-					<div ng-repeat="pdf in length(Q.pdf)">
-					<a href="{{Q.pdf[pdf]}}" target="_blank" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
-					</div>
-			</td>
-			<td><ul>
-				<li ng-repeat="answer in length(Q.answer)">
-				<p>{{Q.answer[answer]}}</p></li>
-			</ul></td>
-			<td width="20%"  ng-show="questionCheckHasAnswerResources(Q)">
-					<div ng-repeat="image in length(Q.answerImages)">
-						<a href="{{Q.answerImages[image]}}" target="_blank"><img src="{{Q.answerImages[image]}}"/></a>
-					</div>
-					<div ng-repeat="pdf in length(Q.anspdf)">
-					<a href="{{Q.anspdf[pdf]}}" target="_blank" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
-					</div>
-			</td>
-			<td><ul>
-				<li ng-repeat="correct in length(Q.correct)" ng-style="mistakeHighlighting(Q,correct)">
-				{{Q.correct[correct]}}	<b>[{{Q.marks[correct]}}]</b></li>
-			</ul></td>
-		</tr>
-	</table>
-	Working Given: {{Q.workingArea}} <br>
-	Comments: {{Q.markerComments}}
-	</div>
+    <div class="result">
+        <h4><b>Total Score: {{totalScoring(questions)}}</b></h4>
+    <!--<div class="container"><div class="row">
+        <div class="col"></div>
+    </div></div>-->
+        <h5>Questions:</h5>
+    </div>
+    
+    <div ng-repeat="Q in questions" class="result">
+    <vue-component name="QuestionHeader"
+        v-props-Q="Q" v-props-marks="questionScore(Q.marks)"></vue-component>
+    <table class="table">
+    <tr><th ng-show="questionCheckHasResources(Q)">Images</th><th>Answer</th><th width="40%">Correct Answer</th></tr>
+        <tr>
+            <td width="20%" ng-show="questionCheckHasResources(Q)">
+                    <div ng-repeat="image in length(Q.images)">
+                        <a href="{{Q.images[image]}}" target="_blank"><img src="{{Q.images[image]}}"/></a>
+                    </div>
+                    <div ng-repeat="pdf in length(Q.pdf)">
+                    <a href="{{Q.pdf[pdf]}}" target="_blank" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
+                    </div>
+            </td>
+            <td><ul>
+                <li ng-repeat="answer in length(Q.answer)">
+                <p>{{Q.answer[answer]}}</p></li>
+            </ul></td>
+            <td width="20%"  ng-show="questionCheckHasAnswerResources(Q)">
+                    <div ng-repeat="image in length(Q.answerImages)">
+                        <a href="{{Q.answerImages[image]}}" target="_blank"><img src="{{Q.answerImages[image]}}"/></a>
+                    </div>
+                    <div ng-repeat="pdf in length(Q.anspdf)">
+                    <a href="{{Q.anspdf[pdf]}}" target="_blank" ng-show="Q.anspdf != None">PDF Answers Link {{pdf+1}}</a>
+                    </div>
+            </td>
+            <td><ul>
+                <li ng-repeat="correct in length(Q.correct)" ng-style="mistakeHighlighting(Q,correct)">
+                {{Q.correct[correct]}}  <b>[{{Q.marks[correct]}}]</b></li>
+            </ul></td>
+        </tr>
+    </table>
+    Working Given: {{Q.workingArea}} <br>
+    Comments: {{Q.markerComments}}
+    </div>
 </div>
 <div class="card-footer">
-	<!--<a href="/quiz" class="btn btn-default" style="float:left;" value="Again"/>-->
-	<input type="submit" class="btn btn-secondary" style="float:right;" value="Again" ng-click="again();"/>
-	<button class="btn btn-secondary" style="float:left;" ng-click="questions.splice(0,length(questions).slice(-1)+1);">Clear</button>
-	<!--<a href="/quiz" class="btn btn-default" style="float:right;" value="End"/>-->
+    <!--<a href="/quiz" class="btn btn-default" style="float:left;" value="Again"/>-->
+    <input type="submit" class="btn btn-secondary" style="float:right;" value="Again" ng-click="again();"/>
+    <button class="btn btn-secondary" style="float:left;" ng-click="questions.splice(0,length(questions).slice(-1)+1);">Clear</button>
+    <!--<a href="/quiz" class="btn btn-default" style="float:right;" value="End"/>-->
 </div>
 </div>

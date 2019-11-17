@@ -1,1 +1,1 @@
-var app = angular.module("quiz", ['ngRoute','ngclipboard']);
+var app = angular.module("quiz", ['ngRoute','ngclipboard', 'ngVue']);

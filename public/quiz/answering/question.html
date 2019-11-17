@@ -3,12 +3,16 @@
 
 
 <div class="card" style="margin-top:80px" ng-show="Q.step == 1" ng-repeat="Q in questions">
-<div class="card-header"><b>Question {{Q.id+1}}:</b> {{Q.paper}}: {{Q.q_id}}</div>
+<div class="card-header"><b>Question {{Q.id+1}}</b></div>
 <div class="card-body">
 
     <div class="question-viewing" ng-show="questionCheckHasResources(Q)"> <!--Viewing-->
         <!-- https://stackoverflow.com/questions/4853898/display-pdf-within-web-browser -->
-        <object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)" data="{{Q.pdf[pdf]}}" type='application/pdf'></object>
+        <object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)"
+         data="{{Q.pdf[pdf]}}"></object>
+         
+         
+         
         <div ng-repeat="pdf in length(Q.pdf)">
             <a href="{{Q.pdf[pdf]}}" target="_blank" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
         </div>
@@ -18,28 +22,29 @@
     </div>
     
     <div class="question-answering {{!questionCheckHasResources(Q) ? 'wide':''}}" > <!-- Answering-->
-        <p>{{Q.q_id}}: {{Q.question}} <b>[{{questionScore(Q.marks)}}]</b></p>
+        <vue-component name="QuestionHeader"
+        v-props-Q="Q" v-props-marks="questionScore(Q.marks)"></vue-component>
         <!-- Input Types -->
-        <div ng-show="Q.type == 'mcq'" ng-repeat="given in length(Q.given)" >
+        <div ng-show="Q.tags.Type[0] == 'mcq'" ng-repeat="given in length(Q.given)" >
             <p><input name="{{Q.id}}_" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>  {{Q.given[given]}}</p>
         </div>
-        <div ng-show="Q.type == 'blank'" ng-repeat="given in length(Q.given)">
+        <div ng-show="Q.tags.Type[0] == 'blank'" ng-repeat="given in length(Q.given)">
             <input name="{{Q.id}}_{{given}}" type='text' ng-model="Q.answer[given]"/><br>
         </div>
-        <div ng-show="Q.type == 'open'" ng-repeat="given in length(Q.given)">
+        <div ng-show="Q.tags.Type[0] == 'open'" ng-repeat="given in length(Q.given)">
             <textarea name="{{Q.id}}_{{given}}" ng-model="Q.answer[given]"/></textarea><br>
             <!--<div contenteditable name="{{Q.id}}_{{given}}" ng-bind-html="Q.answer[given]">HI</div>-->
         </div>
         Working Area:<br>
         <textarea ng-model="Q.workingArea"/></textarea><br>
         <div class="fs-container">
-          <div id="lc">drawing</div>
+          <div id="lc"></div>
         </div>
     </div>
     
 </div>
 <div class="card-footer">
-    <input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>
+    <!--<input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>-->
     <input type="submit" class="btn btn-secondary" style="float:right;" value="Submit" ng-click="Q.step = Q.step + 1;marking(Q.id);"/>
     <!--<input type="reset" class="btn btn-secondary" style="float:right;" value="Reset" ng-click="again();"/>-->
 </div>
