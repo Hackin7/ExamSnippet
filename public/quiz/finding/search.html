@@ -84,8 +84,8 @@
         <div class="list-group checked-list-box search-scrollable-group">
       <li class="list-group-item" ng-repeat="Q in search.found">
       <input type="checkbox" ng-model="search.selected[Q]"/>
-       <b>{{allQuestions[Q].q_id}}: {{allQuestions[Q].question}}</b><br>
-        Tagged {{allQuestions[Q].tags}}</li>
+       <vue-component name="QuestionHeader"
+        v-props-Q="allQuestions[Q]" v-props-marks="questionScore(allQuestions[Q].marks)"></vue-component>
      </div>
 </div>
 

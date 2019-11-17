@@ -13,7 +13,10 @@
                 <img src="{{image}}" alt="No Related image of question here"/>
             </a>
     </div>
-    <div class="col">{{Q.q_id}}: {{Q.question}}<br>Tagged: {{Q.tags}}</div>
+    <div class="col">
+        <vue-component name="QuestionHeader"
+        v-props-Q="Q" v-props-marks="questionScore(Q.marks)"></vue-component>
+    </div>
     <div ng-show="!questionCheckHasResources(Q)"></div>
     
     <div class="question-viewing" ng-show="questionCheckHasAnswerResources(Q)">

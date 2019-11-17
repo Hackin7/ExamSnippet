@@ -11,7 +11,8 @@
     </div>
     
     <div ng-repeat="Q in questions" class="result">
-    <b>{{Q.q_id}}: </b><br>Tagged: {{Q.tags}}
+    <vue-component name="QuestionHeader"
+        v-props-Q="Q" v-props-marks="questionScore(Q.marks)"></vue-component>
     <table class="table">
     <tr><th ng-show="questionCheckHasResources(Q)">Images</th><th>Answer</th><th width="40%">Correct Answer</th></tr>
         <tr>

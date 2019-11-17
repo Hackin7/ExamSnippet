@@ -33,15 +33,20 @@ app.controller("main", function($scope,restAPI) {
         return string;
     }
     var legacyToNew = function(Qn){
+        try{
         if (Qn.tags == null){
             if (Qn.q_id != null)Qn.q_id = Qn.paper+" "+Qn.q_id;
             Qn.tags={
                 "Type":[removeEscapeCharacters(Qn.type)],
                 "Subject":[removeEscapeCharacters(Qn.subject)], 
                 "Paper":[removeEscapeCharacters(Qn.paper)],
-                "Topics":Qn.topics.map(removeEscapeCharacters)
+                "Topics":[]
             };
-        }
+            if (Qn.topics != null){
+                Qn.tags.Topics = Qn.topics.map(removeEscapeCharacters);
+            }
+        }}
+        catch{}
         return Qn;
     }
     $scope.findKeys = function(object){
@@ -50,8 +55,9 @@ app.controller("main", function($scope,restAPI) {
     ////Getting Data/////////////////////////////////////////////////////
     $scope.picking = {}
     $scope.picking.picked = {}; //Selected Questions Tree
+    $scope.search = {};
     $scope.data.refresh = function(url){
-        $scope.allQuestions=[];
+        $scope.allQuestions=[];$scope.search.selected = {};
         restAPI.tree(url).then(function(response) {
                 $scope.picking.tree = response.data;
                 for (subject in $scope.picking.tree){
@@ -118,7 +124,6 @@ app.controller("main", function($scope,restAPI) {
             for (cat in givenTags){
                 //All tags
                 for (tag in givenTags[cat]){
-                    console.log(tag);
                     if (givenTags[cat][tag] && !inArray(tag,questionTags[cat]) ){
                         //Skip This Question
                         SkipQuestion = true;

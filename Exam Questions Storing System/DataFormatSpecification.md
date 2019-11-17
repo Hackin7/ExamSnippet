@@ -98,19 +98,19 @@ for question in AllQuestions{
 ```
 
 # TODOs: Top Down Design
-1. User Interface
+1. User Interface (done)
 	- Search bar
 	- Tags Pane
 	- Questions list
 		- Name, added, summary 
 	- (Mobile friendly)
-2. Select Questions Code
+2. Select Questions Code (Done)
 	- Find Tags
 		- Tags that only appear when other tags are chosen
 	 - Find Questions
 	 	- Only when things are refreshed
-3. Change random search to choose  by tags 
+3. Change random search to choose  by tags (Done)
 	- List of tags
 	- Random select code
-4. Change description on parts of the website
+4. Change description on parts of the website (Done)
 5. Convert data to new format
