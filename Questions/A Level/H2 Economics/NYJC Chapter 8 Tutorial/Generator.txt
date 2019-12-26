@@ -1,0 +1,32 @@
+#Social Studies Paper for Typical Question Generator
+H2 Economics
+NYJC Chapter 8 Tutorial
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/NYJC%20Chapter%207%20Tutorial/2019_JC1_H2_Tutorial_Package__Tutor__Chp_8_Inflation.pdf?raw=true
+0
+0
+0
+23
+CSQ 1a,2,Macroeconomics Case Study
+CSQ 1b,8,Macroeconomics Case Study
+CSQ 1c,6,Macroeconomics Case Study
+CSQ 1d,4,Macroeconomics Case Study
+CSQ 1e,10,Macroeconomics Case Study
+CSQ 2ai,2,Macroeconomics Case Study
+CSQ 2aii,4,Macroeconomics Case Study
+CSQ 2b,3,Macroeconomics Case Study
+CSQ 2c,8,Macroeconomics Case Study
+CSQ 2di,3,Macroeconomics Case Study
+CSQ 2dii,10,Macroeconomics Case Study
+3A 1,10,Macroeconomics Essays
+3B 1a,10,Macroeconomics Essays
+3B 1b,15,Macroeconomics Essays
+3B 2a,10,Macroeconomics Essays
+3B 2b,15,Macroeconomics Essays
+3B 3a,10,Macroeconomics Essays
+3B 3b,15,Macroeconomics Essays
+3B 4,25,Macroeconomics Essays
+3C 1a,10,Macroeconomics Essays
+3C 1b,15,Macroeconomics Essays
+3C 2,25,Macroeconomics Essays
+3C 3,25,Macroeconomics Essays

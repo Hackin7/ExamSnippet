@@ -1,0 +1,47 @@
+#Social Studies Paper for Typical Question Generator
+H1 Economics
+NYJC 2019 J1 December Holiday Homework Practice Papers
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/NYJC%20Chapter%207%20Tutorial/_Downgraders__2019_J1_H1_Economics_December_Holiday_Homework_QP.pdf?raw=true
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/NYJC%20Chapter%207%20Tutorial/_Downgraders__2019_J1_H1_Economics_December_Holiday_Homework_ANS.pdf?raw=true
+0
+0
+36
+1a,2,Macroeconomics Case Study
+1b,6,Microeconomics Case Study
+1c,8,Macroeconomics Case Study
+1di,4,Microeconomics Case Study
+1dii,4,Microeconomics Case Study
+1diii,8,Microeconomics Case Study
+1ei,3,Macroeconomics Case Study
+1eii,10,Macroeconomics Case Study
+2ai,2,Macroeconomics Case Study
+2aii,4,Macroeconomics Case Study
+2bi,4,Macroeconomics Case Study
+2bii,4,Macroeconomics Case Study
+2c,6,Macroeconomics Case Study
+2di,2,Macroeconomics Case Study
+2e,8,Macroeconomics Case Study
+2f,12,Macroeconomics Case Study
+3a,2,Macroeconomics Case Study
+3bi,2,Microeconomics Case Study
+3bii,2,Microeconomics Case Study
+3biii,2,Microeconomics Case Study
+3c,8,Macroeconomics Case Study
+3d,5,Macroeconomics Case Study
+3e,10,Macroeconomics Case Study
+3f,2,Macroeconomics Case Study
+3g,12,Macroeconomics Case Study
+4.1ai,2,Microeconomics Case Study
+4.1aii,5,Microeconomics Case Study
+4.1bi,1,Microeconomics Case Study
+4.1bii,4,Microeconomics Case Study
+4.1c,4,Microeconomics Case Study
+4.1d,4,Microeconomics Case Study
+4.1e,10,Microeconomics Case Study
+4.2a,2,Microeconomics Case Study
+4.2b,4,Microeconomics Case Study
+4.2ci,2,Microeconomics Case Study
+4.2cii,12,Microeconomics Case Study
+

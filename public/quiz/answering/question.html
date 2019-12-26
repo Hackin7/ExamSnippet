@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="answering/style.css">
 
 
-<div class="card" style="margin-top:80px" ng-show="Q.step == 1" ng-repeat="Q in questions">
+<div class="card" style="margin-top:80px;" ng-show="Q.step == 1" ng-repeat="Q in questions">
 <div class="card-header"><b>Question {{Q.id+1}}: {{Q.q_id}}</b></div>
 <div class="card-body">
 
@@ -10,7 +10,8 @@
         <!-- https://stackoverflow.com/questions/4853898/display-pdf-within-web-browser -->
         <!-- Use Google Drive embed https://stackoverflow.com/questions/14690000/how-to-embed-a-pdf-->
         <object ng-show="Q.pdf != None" ng-repeat="pdf in length(Q.pdf)"
-         data="http://docs.google.com/gview?url={{Q.pdf[pdf]}}&embedded=true"></object>
+         data="http://docs.google.com/gview?url={{Q.pdf[pdf]}}&embedded=true">
+        </object>
          
         <div ng-repeat="pdf in length(Q.pdf)">
             <a href="{{Q.pdf[pdf]}}" target="_blank" ng-show="Q.pdf != None">PDF Link {{pdf+1}}</a>
@@ -22,7 +23,8 @@
     
     <div class="question-answering {{!questionCheckHasResources(Q) ? 'wide':''}}" > <!-- Answering-->
         <vue-component name="QuestionHeader"
-        v-props-Q="Q" v-props-marks="questionScore(Q.marks)"></vue-component>
+        v-props-Q="Q" v-props-marks="questionScore(Q.marks)">
+        </vue-component>
         <!-- Input Types -->
         <div ng-show="Q.tags.Type[0] == 'mcq'" ng-repeat="given in length(Q.given)" >
             <p><input name="{{Q.id}}_" type='radio' ng-model="Q.answer[0]" value="{{Q.given[given]}}"/>  {{Q.given[given]}}</p>
