@@ -5,7 +5,7 @@
 <div class="card-body">
 
     <div class="question-viewing" ng-show="questionCheckHasResources(Q)">
-        <object ng-repeat="pdf in length(Q.pdf)" data="{{Q.pdf[pdf]}}" type='application/pdf' width="100%" height="70%"></object>
+        <object ng-repeat="pdf in length(Q.pdf)" data="http://docs.google.com/gview?url={{Q.pdf[pdf]}}&embedded=true" type='application/pdf' width="100%" height="70%"></object>
         <div ng-repeat="pdf in length(Q.pdf)">
             <a href="{{Q.pdf[pdf]}}" target="_blank">PDF Link {{pdf+1}}</a>
         </div>
@@ -22,7 +22,7 @@
     
     <div class="question-viewing" ng-show="questionCheckHasAnswerResources(Q)">
     Answers:
-        <object ng-repeat="pdf in length(Q.anspdf)" data="{{Q.anspdf[pdf]}}" type='application/pdf' width="100%" height="100%"></object>
+        <object ng-repeat="pdf in length(Q.anspdf)" data="http://docs.google.com/gview?url={{Q.anspdf[pdf]}}&embedded=true" type='application/pdf' width="100%" height="100%"></object>
         <div ng-repeat="pdf in length(Q.anspdf)">
             <a href="{{Q.anspdf[pdf]}}" target="_blank">PDF Answers Link {{pdf+1}}</a>
         </div>
