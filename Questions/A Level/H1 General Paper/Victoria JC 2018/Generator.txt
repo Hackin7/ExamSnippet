@@ -1,0 +1,38 @@
+#H1 General Paper for Typical Question Generator from https://www.sgtestpaper.com/gce/2018/y18_jc2_GP_h1_prelim_Victoria.html
+H1 General Paper
+Victoria JC 2018
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20General%20Paper/Victoria%20JC%202018/JC2_GP_H1_2018_Victoria.pdf?raw=true
+0
+0
+0
+15
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P2:1-5 7-11,17,Short Answer Questions
+P2:6,8,Summary
+P2:12,10,Application Question
+1 Has global interconnectedness made the world a better place?
+2. How far does the state have the right to restrict the freedom of the individual?
+3. ‘Far too much attention is given to image in today’s world.’ Do you agree?
+4. Is an ageing population necessarily a ticking time bomb?
+5. ‘Contrary to popular belief, artificial intelligence will not improve our lives.’ What is your view?
+6. ‘For the majority of people, the Arts are a waste of time.’ How true is this of your society?
+7. Examine the claim that work and happiness do not mix.
+8. Has the commercialisation of sport done more harm than good?
+9. How effective are prisons in addressing the problem of crime?
+10. Is there truth to the claim that inequality is the greatest threat to your society today?
+11. ‘Less is more.’ Is this sound advice?
+12. Assess the view that pop music today is frivolous. 
+
+

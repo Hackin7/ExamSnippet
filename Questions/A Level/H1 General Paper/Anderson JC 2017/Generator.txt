@@ -1,0 +1,39 @@
+#H1 General Paper for Typical Question Generator from https://www.sgtestpaper.com/gce/2018/y17_jc2_GP_h1_prelim_Anderson.html
+H1 General Paper
+Anderson JC 2018
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20General%20Paper/Anderson%20JC%202017/JC2_GP_H1_2017_Anderson.pdf?raw=true
+0
+0
+0
+15
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P2:1-9,17,Short Answer Questions
+P2:10,8,Summary
+P2:11,10,Application Question
+1. Should small countries be allowed to take the lead in global affairs?
+2. To what extent can the Arts effect positive social change today?
+3. ‘Experiences are more valuable than material possessions.’ Do you agree?
+4. ‘People in the workplace should embrace rather than fear technological advancements.’ Discuss.
+5. ‘The news today deals with what is popular, rather than what is important.’ How far do you agree with this statement?
+6. Evaluate the claim that a more connected world has resulted in greater divisions.
+7. ‘Public figures today are overly concerned about what people think of them.’ What is your view?
+8. Consider the view that there is no value in slowing down in today’s competitive world.
+9. Discuss the appeal and value of creativity in your society.
+10. Considering the increasing threat of terrorism, are governments justified in limiting people’s rights?
+11. To what extent is animal testing acceptable in scientific research?
+12. ‘Economic development is favoured at the expense of the welfare of people.’ How true is this of your society?
+
+
+

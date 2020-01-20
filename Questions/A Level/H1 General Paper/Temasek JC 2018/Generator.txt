@@ -1,0 +1,39 @@
+#H1 General Paper for Typical Question Generator from https://www.sgtestpaper.com/gce/2018/y18_jc2_GP_h1_prelim_Temasek.html
+H1 General Paper
+Temasek JC 2018
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20General%20Paper/Temasek%20JC%202018/JC2_GP_H1_2018_Temasek.pdf?raw=true
+0
+0
+0
+15
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P1,50,Essay
+P2:1-8,17,Short Answer Questions
+P2:9,8,Summary
+P2:10,10,Application Question
+1 ‘Fiction is enjoyable but of little value.’ Is this a fair comment?
+2 Should criminals be given a second chance?
+3 Do you agree that animals should never be kept in captivity?
+4 How important is it for politicians in your society to listen to the citizens?
+5 To what extent has science become a profit seeking industry?
+6 With the growth of online commerce, are traditional businesses becoming obsolete?
+7 Consider the claim that the study of the humanities has little relevance in a technologically advanced world.
+8 Is freedom of access to information always desirable?
+9 How far should tourism in developing countries be encouraged?
+10 Are women still less privileged than men today?
+11 ‘The sport industry in your society should focus more on local than foreign talent.’ What is your view?
+12 ‘Adversity brings out the worst in human nature.’ Discuss.
+
+
+
