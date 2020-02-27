@@ -1,0 +1,19 @@
+#Social Studies Paper for Typical Question Generator
+H2 Economics
+2018_VJC_H2_Economics_Paper2
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/2018_VJC_H2_Economics_Paper2/2018_VJC_H2_Economics_Paper2?raw=true
+0
+0
+0
+10
+1,25,Microeconomics Essays
+2a,10,Microeconomics Essays
+2b,15,Microeconomics Essays
+3a,10,Microeconomics Essays
+3b,15,Microeconomics Essays
+4a,10,Macroeconomics Essays
+4b,15,Macroeconomics Essays
+5a,10,Macroeconomics Essays
+5b,15,Macroeconomics Essays
+6,25,Macroeconomics Essays

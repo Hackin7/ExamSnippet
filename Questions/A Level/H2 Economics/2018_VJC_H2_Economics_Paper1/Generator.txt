@@ -1,0 +1,22 @@
+#Social Studies Paper for Typical Question Generator
+H2 Economics
+2018_VJC_H2_Economics_Paper1
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/2018_VJC_H2_Economics_Paper1/2018_VJC_H2_Economics_Paper1.pdf?raw=true
+0
+0
+0
+12
+1ai,2,Case Study
+1aii,4,Case Study
+1b,2,Case Study
+1c,4,Case Study
+1d,8,Case Study
+1e,10,Case Study
+2a,2,Case Study
+2b,3,Case Study
+2c,4,Case Study
+2d,3,Case Study
+2e,8,Case Study
+2f,10,Case Study
+

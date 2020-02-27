@@ -1,0 +1,19 @@
+#Social Studies Paper for Typical Question Generator
+H2 Economics
+2018_HCI_H2_Economics_Essays
+1
+https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Economics/2018_HCI_H2_Economics_Essays/HCI_H2_Economics_Essays.pdf?raw=true
+0
+0
+0
+10
+1a,10,Microeconomics Essays
+1b,15,Macroeconomics Essays
+2a,10,Microeconomics Essays
+2b,15,Macroeconomics Essays
+3a,10,Microeconomics Essays
+3b,15,Macroeconomics Essays
+4a,10,Macroeconomics Essays
+4b,15,Macroeconomics Essays
+5,25,Macroeconomics Essays
+6,25,Macroeconomics Essays
