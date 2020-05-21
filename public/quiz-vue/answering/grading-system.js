@@ -22,9 +22,10 @@ gradingSystem.scoring = function(awarded, marks){
 }
 
 gradingSystem.marking = function(Q){
+	Q.step = Q.step + 1;
 	if (Q.self_mark == false){
 		for (i in Q.correct){
-			if (Q.answer[i] == gradingSystem.questions.correct[i]){
+			if (Q.answer[i] == Q.correct[i]){
 				Q.awarded[i] = true;
 			}
 		}
@@ -49,7 +50,7 @@ gradingSystem.process = function(questions){
 		questions[i].step = 1; // Step
 		if (questions[i].type == "mcq"){questions[i].answer = [];}
 		else{questions[i].answer = questions[i].given;} //Answers by user
-		questions[i].awarded = getLength(questions[i].marks).map(x => 0); //Marks awarded to user
+		questions[i].awarded = gradingSystem.getLength(questions[i].marks).map(x => 0); //Marks awarded to user
 	}
 }
 //gradingSystem.again();
@@ -58,7 +59,7 @@ gradingSystem.process = function(questions){
 // Check if all questions are marked
 gradingSystem.checkMarkedComplete = function(questions){
 	for (var Q in questions){
-		if(questions[Q].step != 3){return false}
+		if(questions[Q].step < 3){return false}
 	}
 	return true;
 }

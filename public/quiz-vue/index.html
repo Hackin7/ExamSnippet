@@ -65,6 +65,9 @@
   <div class="collapse navbar-collapse" id="NavOptions">
   <ul class="navbar-nav">
     <li class="nav-item">
+      <a class="nav-link" href="#/search">Search Questions</a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" href="#/listing">Questions selected</a>
     </li>
     <li class="nav-item">
@@ -81,51 +84,24 @@
 <div id="content" style="margin-top:80px">
 <router-view></router-view>
 </div>
-
+<script>
+var settings = {};
+settings.data = {};
+settings.data.url = "../QuestionData/A_Level";
+settings.data.sources = {"Secondary School O Level":'/QuestionData/Secondary_School_O_Level',"A Level":'/QuestionData/A_Level'};
+var questions = [
+{"subject":"H1 Economics","paper":"NYJC 2019 J1 December Holiday Homework Practice Papers","q_id":"NYJC 2019 J1 December Holiday Homework Practice Papers 1a","topics":["Macroeconomics Case Study"],"images":[],"answerImages":[],"pdf":["https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20Economics/NYJC%202019%20J1%20December%20Holiday%20Homework%20Practice%20Papers/_Downgraders__2019_J1_H1_Economics_December_Holiday_Homework_QP.pdf?raw=true"],"anspdf":["https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20Economics/NYJC%202019%20J1%20December%20Holiday%20Homework%20Practice%20Papers/_Downgraders__2019_J1_H1_Economics_December_Holiday_Homework_ANS.pdf?raw=true"],"question":"","type":"open","given":[""],"correct":["",""],"marks":[1,1],"self_mark":true,"tags":{"Type":["open"],"Subject":["H1 Economics"],"Paper":["NYJC 2019 J1 December Holiday Homework Practice Papers"],"Topics":["Macroeconomics Case Study"]},"id":0,"step":2,"answer":[""],"awarded":[0,0]}
+];
+</script>
+<script type="text/javascript" src="utilities.js"></script>
+<script type="text/javascript" src="search/tagging-system.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript" src="listing/listing.js"></script>
 <script type="text/javascript" src="answering/grading-system.js"></script>
 <script type="text/javascript" src="answering/answering.js"></script>
-
 <script type="text/javascript" src="settings/settings.js"></script>
-
 <script type="text/javascript" src="router.js"></script>
 <script>
-
-
-var questions = [
-			{"subject":"H1 Economics","paper":"NYJC 2019 J1 December Holiday Homework Practice Papers","q_id":"NYJC 2019 J1 December Holiday Homework Practice Papers 2a","topics":["Macroeconomics Case Study"],"images":[],"answerImages":[],"pdf":["https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20Economics/NYJC%202019%20J1%20December%20Holiday%20Homework%20Practice%20Papers/_Downgraders__2019_J1_H1_Economics_December_Holiday_Homework_QP.pdf?raw=true"],"anspdf":["https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20Economics/NYJC%202019%20J1%20December%20Holiday%20Homework%20Practice%20Papers/_Downgraders__2019_J1_H1_Economics_December_Holiday_Homework_ANS.pdf?raw=true"],"question":"","type":"open","given":[""],"correct":["",""],"marks":[1,1],"self_mark":true,"tags":{"Type":["open"],"Subject":["H1 Economics"],"Paper":["NYJC 2019 J1 December Holiday Homework Practice Papers"],"Topics":["Macroeconomics Case Study"]},"id":0,"step":1,"answer":[""],"awarded":[0,0]},
-			{"subject":"H1 Economics","paper":"NYJC 2019 J1 December Holiday Homework Practice Papers","q_id":"NYJC 2019 J1 December Holiday Homework Practice Papers 1a","topics":["Macroeconomics Case Study"],"images":[],"answerImages":[],"pdf":["https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20Economics/NYJC%202019%20J1%20December%20Holiday%20Homework%20Practice%20Papers/_Downgraders__2019_J1_H1_Economics_December_Holiday_Homework_QP.pdf?raw=true"],"anspdf":["https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H1%20Economics/NYJC%202019%20J1%20December%20Holiday%20Homework%20Practice%20Papers/_Downgraders__2019_J1_H1_Economics_December_Holiday_Homework_ANS.pdf?raw=true"],"question":"","type":"open","given":[""],"correct":["",""],"marks":[1,1],"self_mark":true,"tags":{"Type":["open"],"Subject":["H1 Economics"],"Paper":["NYJC 2019 J1 December Holiday Homework Practice Papers"],"Topics":["Macroeconomics Case Study"]},"id":1,"step":1,"answer":[""],"awarded":[0,0]},
-			{"subject":"H2 Physics","paper":"2018 Innova Prelim","q_id":"2018 Innova Prelim 1","topics":["MCQ"],"images":["https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Physics/2018%20Innova%20Prelim%20Papers/MCQ/01.png?raw=true\r"],"answerImages":["https://github.com/Hackin7/ExamSnippet/blob/master/Questions/A%20Level/H2%20Physics/2018%20Innova%20Prelim%20Papers/MCQ/"],"question":"","type":"mcq","given":["A","B","C","D"],"correct":["A"],"marks":[1],"self_mark":false,"tags":{"Type":["mcq"],"Subject":["H2 Physics"],"Paper":["2018 Innova Prelim"],"Topics":["MCQ"]},"id":2,"step":3,"answer":["A"],"awarded":[true]}
-];
-////Helpful Methods/////////////////////////////////////////////////
-
-var haveEscapeCharacters = function(string){
-	escapeCharacters = ["\r","\n"]
-	return inArray(string.slice(-1),escapeCharacters);
-}
-var removeEscapeCharacters = function(string){
-	if (haveEscapeCharacters(string)){
-		return string.slice(0,-1);
-	}
-	return string;
-}
-var legacyToNew = function(Qn){
-	try{
-	if (Qn.tags == null){
-		if (Qn.q_id != null)Qn.q_id = Qn.paper+" "+Qn.q_id;
-		Qn.tags={
-			"Type":[removeEscapeCharacters(Qn.type)],
-			"Subject":[removeEscapeCharacters(Qn.subject)], 
-			"Paper":[removeEscapeCharacters(Qn.paper)],
-			"Topics":[]
-		};
-		if (Qn.topics != null){
-			Qn.tags.Topics = Qn.topics.map(removeEscapeCharacters);
-		}
-	}}
-	catch{}
-	return Qn;
-}
-
 var vm = new Vue({
    el: '#content', //Item selector
    // Variables and data //////////////////////////////////////////////////////////////////////////
