@@ -28,7 +28,7 @@ answeringHTML = `
 </div> 
    
 <div class="card-footer">
-    <button class="btn btn-secondary" style="float:right;" v-on:click="gradingSystem.marking(Q);window.console.log(Q);">Submit</button>
+    <button class="btn btn-secondary" style="float:right;" v-on:click="gradingSystem.marking(Q);window.console.log(Q);$forceUpdate();">Submit</button>
 </div>
 
 </div></div>
@@ -67,8 +67,8 @@ answeringHTML = `
 </div>
 <div class="card-footer">
     <!--<input type="submit" class="btn btn-secondary" style="float:left;" value="Quit"/>-->
-    <input type="submit" class="btn btn-secondary" style="float:right;" value="Submit" v-on:click="Q.step = Q.step + 1"/>
-    <input type="reset" class="btn btn-secondary" style="float:left;" value="Reset" v-on:click="Q.step=1;"/>
+    <input type="submit" class="btn btn-secondary" style="float:right;" value="Submit" v-on:click="Q.step = Q.step + 1;$forceUpdate();"/>
+    <input type="reset" class="btn btn-secondary" style="float:left;" value="Reset" v-on:click="Q.step=1;$forceUpdate();"/>
 </div>
 </div>
 </div>
@@ -113,8 +113,8 @@ answeringHTML = `
  
 </div>
 <div class="card-footer">
-    <input type="submit" class="btn btn-secondary" style="float:right;" value="Again" v-on:click="gradingSystem.process(questions);"/>
-    <button class="btn btn-secondary" style="float:left;" v-on:click="questions=[];">Clear</button>
+    <input type="submit" class="btn btn-secondary" style="float:right;" value="Again" v-on:click="gradingSystem.process(questions);$forceUpdate();"/>
+    <button class="btn btn-secondary" style="float:left;" v-on:click="questions=[];$forceUpdate();">Clear</button>
 </div>
 </div>
 
@@ -168,7 +168,7 @@ var Answering = Vue.component('answering', {
 	template:answeringHTML,
 	data: function() {
 		return {
-			gradingSystem:gradingSystem,window
+			gradingSystem:gradingSystem,window,
 		}
 	}
 })

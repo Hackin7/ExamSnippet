@@ -6,7 +6,7 @@ var searchHTML = `
 
 <div class="search-header">
     <h4 style="white-space:pre-wrap;display: inline;">Search:   </h4>
-    <input name='search-field' id="search-field" type='text' v-model="taggingSystem.query"  v-on:change="taggingSystem.searchItems();taggingSystem.updateTags();"/>
+    <input name='search-field' id="search-field" type='text' v-model="taggingSystem.query"  v-on:keyup="refresh();"/>
     <hr/>
 </div>
 <div class="search-menu">
@@ -15,7 +15,7 @@ var searchHTML = `
         <div v-for="t, tag in taggingSystem.tags">
             <b>{{tag}}</b><br/>
             <span v-for="name in taggingSystem.tags[tag]">
-                <input type='checkbox' v-on:change="taggingSystem.searchItems();taggingSystem.updateTags();"
+                <input type='checkbox' v-on:change="refresh();"
                 v-model="taggingSystem.tagSelect[tag][name]"/>  {{name}}<br>
             </span>
         </div>
@@ -83,6 +83,10 @@ var Search = Vue.component('search', {
 			xhttp.setRequestHeader("Content-type","application/json");
 			xhttp.send();
 			return xhttp;
+		},
+		refresh: function(){
+			taggingSystem.searchItems();taggingSystem.updateTags();
+			this.$forceUpdate();
 		},
 		addQuestions : function(){
 			let newQuestions = taggingSystem.getSelected();

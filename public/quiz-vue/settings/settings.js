@@ -9,11 +9,11 @@ settingsHTML = `
 <input id="savedata" v-model="savedata"/><!--{{questions}}-->
 </div>
 <div class="card-footer">
-    <!--<input type="button" class="btn btn-secondary" style="float:right;" ng-click="" value="Download"/>-->
+    
     <button class="btn btn-secondary" onclick="document.getElementById('savedata').select();document.execCommand('copy');">Copy to clipboard
     </button>
 	
-	<a role="button" class="btn btn-secondary" style="float:right;" v-on:click="loadData()">Load</a>
+	<button class="btn btn-secondary" style="float:right;" v-on:click="loadData()">Load</button>
 </div>
 </div>
 
