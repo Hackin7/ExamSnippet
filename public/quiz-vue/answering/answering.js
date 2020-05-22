@@ -2,7 +2,6 @@ answeringHTML = `
 <div>
 
 <link rel="stylesheet" type="text/css" href="answering/style.css">
-
 <!--answering field-->
 <div v-for="Q in questions">
 <div class="card" style="margin-bottom:80px;" v-if="Q.step==1">
@@ -23,7 +22,10 @@ answeringHTML = `
 			<textarea v-bind:name="Q.id+'_'+given" v-model="Q.answer[given]"/></textarea></div>
 		
         Working Area:<br>
-        <textarea v-model="Q.workingArea"/></textarea><br>
+		<textarea v-model="Q.workingArea"/></textarea><br>
+		<whiteboard-general v-bind:data="Q.whiteboard" v-bind:noedit="false"></whiteboard-general>
+		
+		
 	</div>
 </div> 
    
@@ -61,6 +63,8 @@ answeringHTML = `
             </td></tr>
         </table>
         Working Given: <p>{{Q.workingArea}}</p>
+		<whiteboard-general v-bind:data="Q.whiteboard" v-bind:noedit="false"></whiteboard-general>
+		<hr>
         Comments:<br>
         <textarea v-model="Q.markerComments"/></textarea><br>
     </div>
@@ -106,6 +110,8 @@ answeringHTML = `
         </tr>
     </table>
     Working Given: <p>{{Q.workingArea}}</p> 
+	<whiteboard-general v-bind:data="Q.whiteboard" v-bind:noedit="true"></whiteboard-general>
+	<hr>
     Comments: <p>{{Q.markerComments}}</p>
     <br/><br/>
 	
@@ -161,8 +167,19 @@ Vue.component('resources-rundown', {
 	`
 });
 
-
-
+Vue.component('whiteboard-general', {
+	props: ['data','noedit'],
+	template: `
+	<span>
+	 <br>
+	 <hr>
+	 <b>Whiteboard</b>
+		<whiteboard-management style=""
+			v-bind:whiteboard-data="data" wbwidth="335" wbheight="200" v-bind:noedit="noedit"></whiteboard-management>
+			<br>
+	</span>
+	`
+});
 var Answering = Vue.component('answering', {
 	props: ['questions'],
 	template:answeringHTML,

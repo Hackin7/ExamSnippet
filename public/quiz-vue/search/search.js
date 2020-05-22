@@ -27,7 +27,7 @@ var searchHTML = `
     <span style="display:inline;white-space:pre-wrap;">Amount  </span>
     <input type="number" name="Amount" min="1" v-model="taggingSystem.randomQuantity">
     <br><br>
-    <button role="button" class="btn btn-secondary" style="float:left;" v-on:click="taggingSystem.randomSelect();">Random Select</button>
+    <button role="button" class="btn btn-secondary" style="float:left;" v-on:click="taggingSystem.randomSelect();window.alert('Random selection done');">Random Select</button>
     <br><br>
 </div>
 

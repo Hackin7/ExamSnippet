@@ -51,6 +51,7 @@ gradingSystem.process = function(questions){
 		if (questions[i].type == "mcq"){questions[i].answer = [];}
 		else{questions[i].answer = questions[i].given;} //Answers by user
 		questions[i].awarded = gradingSystem.getLength(questions[i].marks).map(x => 0); //Marks awarded to user
+		questions[i].whiteboard = [];
 	}
 }
 //gradingSystem.again();

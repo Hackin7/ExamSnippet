@@ -14,7 +14,7 @@ var listingHTML = `
 
 </div>
 <div class="card-footer">
-    <a href="#\!" class="btn btn-secondary" style="float:left;">Add More</a>
+    <a href="#/search" class="btn btn-secondary" style="float:left;">Add More</a>
     <a href="#!answering" role="button" class="btn btn-secondary" style="float:right;" v-on:click="start();">Start</a>
     <button class="btn btn-secondary" style="float:right;" v-on:click="questions.splice(0,length(questions).slice(-1)+1);">Clear</button>
 </div>

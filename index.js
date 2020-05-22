@@ -5,7 +5,7 @@ var fs = require('fs');
 
 app.get('/', function(req,res){
     //res.send("hi");
-    res.redirect('/quiz/index.html')
+    res.redirect('/quiz-vue/index.html')
 });
 app.use(express.static('public'));
 

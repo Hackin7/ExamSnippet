@@ -28,6 +28,7 @@ var legacyToNew = function(Qn){
 			try{Qn.tags.Topics = Qn.topics.map(removeEscapeCharacters);}catch{}
 		}
 	}
+	if (Qn.whiteboard == null){Qn.whiteboard = [];}
 	return Qn;
 }
 
