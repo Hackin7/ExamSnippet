@@ -27,10 +27,10 @@ Vue.component('whiteboard',{
 		ctx.fillStyle="#fff";
 		if(this.savedata.data != undefined){// && typeof(this.savedata.data)==ImageData){
 			ctx.putImageData(this.savedata.data,0,0);
-			console.log(this.savedata.data);
+			//console.log(this.savedata.data);
 		}else{
 			ctx.fillRect(0,0,myCanvas.width,myCanvas.height);
-			console.log(this.savedata);
+			//console.log(this.savedata);
 		}
 		
 		ctx.strokeStyle = this.markercolor;
@@ -96,7 +96,7 @@ Vue.component('whiteboard',{
 				started: false,
 				start: function(evt) {
 					var position = getOffsetPosition(evt, myCanvas);
-					console.log(position);
+					//console.log(position);
 					
 					startDrawing(position.x,position.y);//evt.touches[0].offsetX,evt.touches[0].offsetY
 					this.started = true;
