@@ -65,10 +65,16 @@ gradingSystem.checkMarkedComplete = function(questions){
 	return true;
 }
 gradingSystem.checkQuestionHasResources = function(Q){
-		return !(Q.pdf == null && Q.images == null)
+	let pdf  = Q.pdf != null && Q.pdf.length >= 1;
+	let images  = Q.images != null && Q.images.length >= 1;
+	var condition =  pdf || images;
+	return condition;
 }
 gradingSystem.checkQuestionHasAnswerResources = function(Q){
-		return !(Q.anspdf == null && Q.answerImages == null);
+	let pdf  = Q.anspdf != null && Q.anspdf.length >= 1;
+	let images  = Q.answerImages != null && Q.answerImages.length >= 1;
+	var condition =  pdf || images;
+	return condition;
 }
 gradingSystem.mistakeHighlighting = function(Q, part){
 	if (Q.awarded[part] == false){return {'color':'red'};}//true;}
