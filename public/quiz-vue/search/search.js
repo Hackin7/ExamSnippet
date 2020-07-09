@@ -62,21 +62,26 @@ var Search = Vue.component('search', {
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				 if (xhttp.readyState == 4 && xhttp.status == 200) {
-					 let data = JSON.parse(xhttp.responseText);
-					 taggingSystem.itemsList = [];
-					 // Unpacking tree
-					 for (subject in data){
-						for (paper in data[subject]){
-							var paperData = data[subject][paper];
-							for (k in paperData.questions){ // Topics
-								//Legacy support
-								let Qn = legacyToNew(paperData.questions[k]);
-								//console.log(Qn);
-								taggingSystem.itemsList.push(Qn);
+					let data = JSON.parse(xhttp.responseText);
+					if (Array.isArray(data)){
+						taggingSystem.itemsList = data;//[];
+					}else{
+						taggingSystem.itemsList = [];
+						// Unpacking tree //////////////////////////////
+						for (subject in data){
+							for (paper in data[subject]){
+								var paperData = data[subject][paper];
+								for (k in paperData.questions){ // Topics
+									//Legacy support
+									let Qn = legacyToNew(paperData.questions[k]);
+									//console.log(Qn);
+									taggingSystem.itemsList.push(Qn);
+								}
 							}
 						}
+						////////////////////////////////////////
 					}
-					 taggingSystem.start();
+					taggingSystem.start();
 				 }
 			};
 			xhttp.open("GET", settings.data.url, true);
