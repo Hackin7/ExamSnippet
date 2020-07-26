@@ -48,7 +48,9 @@ function getAccountData(eventHandler, noAccount, xhttpError){
 function applyToClassElements(className,apply){
 	let elements = document.getElementsByClassName(className);
 	for (let i in elements){
-		apply(elements[i])
+		try{
+			apply(elements[i])
+		}catch(err){}
 	}
 }
 
