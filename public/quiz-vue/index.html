@@ -28,11 +28,17 @@
     p,#answer{white-space:pre-wrap;}
     object{width:100%;}
     textarea{resize:vertical;width:100%}
+	
+	.hide-when-small{display:none;}
+	.hide-when-big{display:inline;}
     @media screen and (min-width: 600px){
         .card{margin:auto;width: 80%;}
+		.hide-when-small{display:inline;}
+		.hide-when-big{display:none;}
     }
     @media screen and (min-width: 800px){
         .card{margin:auto;width: 60%;}
+		
     }
     img{width: 100%;}
     
@@ -78,9 +84,47 @@
     <li class="nav-item">
       <a class="nav-link" href="#/settings">Settings</a>
     </li>
-  </ul>
-  </div>
+	<li class="nav-item hide-when-big">
+      <a class="btn btn-secondary" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="min-width:10em;">
+		  <span class="login-system-name" style="float:left;">User</span><span style="float:right;">▼</span>
+		</a>
+		<div class="dropdown-menu">
+		  <span class="login-system-loggedin-options">
+			  <a class="dropdown-item" href="#/user/sessions">Sessions</a>
+			  <!--<a class="dropdown-item" href="#/user_questions">Questions Done</a>-->
+			  <a class="dropdown-item" href="#/user/settings">User Settings</a>
+			  <div role="separator" class="dropdown-divider"></div>
+			  <a class="dropdown-item" href="../../login_system/logout">Logout</a>
+		  </span>
+		  <a class="dropdown-item login-system-loggedout-options" href="../../login_system/login">Log In/ Sign Up</a>
+		  
+		</div>
+    </li>
+	
   
+  </ul>
+  
+
+  </div>
+    <span class="dropdown hide-when-small">
+	
+	
+	<a class="btn btn-secondary" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="min-width:10em;">
+	  <span class="login-system-name" style="float:left;">Loading....</span><span style="float:right;">▼</span>
+	</a>
+	<div class="dropdown-menu">
+	  <span class="login-system-loggedin-options">
+		  <a class="dropdown-item" href="#/user/sessions">Sessions</a>
+		  <!--<a class="dropdown-item" href="#/user_questions">Questions Done</a>-->
+		  <a class="dropdown-item" href="#/user/settings">User Settings</a>
+		  <div role="separator" class="dropdown-divider"></div>
+		  <a class="dropdown-item" href="../../login_system/logout">Logout</a>
+	  </span>
+	  <a class="dropdown-item login-system-loggedout-options" href="../../login_system/login">Log In/ Sign Up</a>
+	  
+	</div>
+  </span>
+
 </nav>
 
 <div id="content" style="margin-top:80px">
@@ -91,26 +135,54 @@ var settings = {};
 settings.data = {};
 settings.data.url = "../QuestionData/A_Level.json";
 settings.data.sources = {"Secondary School O Level":'/QuestionData/Secondary_School_O_Level',"A Level":'/QuestionData/A_Level.json'};
-var questions = [
 
-];
+function getDateTime(today){
+	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	var dateTime = date+' '+time;
+	return dateTime;
+}
+var session = {
+	startDate : getDateTime(new Date()),
+	questions: []
+}
+
+var sessionUpdate = function(givenSession){
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST','/user_data/api/sessions/addupdate', true);
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.setRequestHeader("Set-Cookie",getCookie('user_sid'));
+	xhr.onload = function () {
+		let data = JSON.parse(this.responseText);
+		if (data.error != null){alert("Error:\n"+data.error);}
+		else{
+			alert("Saved!");
+		}
+	};
+	xhr.send(JSON.stringify({session:givenSession}));
+}
 </script>
 <script type="text/javascript" src="utilities.js"></script>
 <script type="text/javascript" src="whiteboard-system/whiteboard.js"></script>
 <script type="text/javascript" src="whiteboard-system/whiteboard-management.js"></script>
 <script type="text/javascript" src="search/tagging-system.js"></script>
+
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript" src="listing/listing.js"></script>
 <script type="text/javascript" src="answering/grading-system.js"></script>
 <script type="text/javascript" src="answering/answering.js"></script>
 <script type="text/javascript" src="settings/settings.js"></script>
+
+<script type="text/javascript" src="user_data/user-search.js"></script>
+<script type="text/javascript" src="user_data/user-sessions.js"></script>
+<script type="text/javascript" src="user_data/login-system.js"></script>
+<script type="text/javascript" src="user_data/login-settings.js"></script>
 <script type="text/javascript" src="router.js"></script>
 <script>
 var vm = new Vue({
    el: '#content', //Item selector
    // Variables and data //////////////////////////////////////////////////////////////////////////
    data: {
-	questions:questions
    },
    router
 });

@@ -42,15 +42,17 @@ var searchHTML = `
 </div>
 
 <div class="search-ok">
-    <br>
+    <br><br>
     <button role="button" class="btn btn-secondary" style="float:left;" v-on:click="taggingSystem.selectAll();">Select All</button>
     <a href="#\listing" role="button" class="btn btn-secondary" style="float:right;" v-on:click="addQuestions();">OK</a>
+	<br><br><br>
 </div>
 
 </div>
 `;
 
 var Search = Vue.component('search', {
+	props: ['session'],
 	template:searchHTML,
 	data: function() {
 		return {
@@ -96,7 +98,7 @@ var Search = Vue.component('search', {
 		addQuestions : function(){
 			let newQuestions = taggingSystem.getSelected();
 			console.log(newQuestions);
-			questions = questions.concat(newQuestions);
+			this.session.questions = this.session.questions.concat(newQuestions);
 			window.location.href = "#/listing";
 		}
 	},

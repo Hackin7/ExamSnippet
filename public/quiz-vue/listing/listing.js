@@ -22,16 +22,16 @@ var listingHTML = `
 `;
 
 var Listing = Vue.component('listing', {
+	props: ['questions'],
 	template:listingHTML,
 	data: function() {
 		return {
-			questions,
 			gradingSystem
 		}
 	},
 	methods:{
 		start : function(){
-			gradingSystem.process(questions);
+			gradingSystem.process(this.questions);
 			window.location.href = "#/answering";
 		}
 	}

@@ -3,6 +3,7 @@ settingsHTML = `
 
 
 <!-- https://itsolutionstuff.com/post/how-to-copy-to-clipboard-without-flash-in-angularjs-example.html-->
+
 <div class="card" style="margin-bottom:80px">
 <div class="card-header">Current Save Data.</div>
 <div class="card-body">
@@ -13,9 +14,11 @@ settingsHTML = `
     <button class="btn btn-secondary" onclick="document.getElementById('savedata').select();document.execCommand('copy');">Copy to clipboard
     </button>
 	
+	<button class="btn btn-secondary" style="float:right;" v-on:click="sessionUpdate(session)">Save to Database</button>
 	<button class="btn btn-secondary" style="float:right;" v-on:click="loadData()">Load</button>
 </div>
 </div>
+
 
 <div class="card" style="margin-bottom:80px">
 <div class="card-header">Question Data Source</div>
@@ -38,7 +41,7 @@ settingsHTML = `
 `;
 
 var Settings = Vue.component('settings', {
-	props: ['questions'],
+	props: ['questions', 'session', 'sessionUpdate'],
 	template:settingsHTML,
 	data: function() {
 		return {
@@ -51,6 +54,6 @@ var Settings = Vue.component('settings', {
 			questions = JSON.parse(this.savedata);
 			for (q in questions){questions[q] = legacyToNew(questions[q]);}
 			alert("Save data Loaded");
-		}
+		},
 	}
 })

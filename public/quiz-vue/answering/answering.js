@@ -119,6 +119,7 @@ answeringHTML = `
  
 </div>
 <div class="card-footer">
+	<input type="submit" class="btn btn-secondary" style="float:right;" value="Save to Database" v-on:click="sessionUpdate(session)"/>
     <input type="submit" class="btn btn-secondary" style="float:right;" value="Again" v-on:click="gradingSystem.process(questions);$forceUpdate();"/>
     <button class="btn btn-secondary" style="float:left;" v-on:click="questions=[];$forceUpdate();">Clear</button>
 </div>
@@ -181,7 +182,7 @@ Vue.component('whiteboard-general', {
 	`
 });
 var Answering = Vue.component('answering', {
-	props: ['questions'],
+	props: ['questions', 'session', 'sessionUpdate'],
 	template:answeringHTML,
 	data: function() {
 		return {

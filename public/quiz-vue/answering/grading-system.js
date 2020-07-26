@@ -45,6 +45,8 @@ gradingSystem.getTotalScoring = function(questions){
 
 // Set up question to be processed ///////////////////////////////////////////////////////////////////
 gradingSystem.process = function(questions){
+	console.log("Processing:")
+	console.log(questions);
 	for (var i = 0; i < questions.length; i++) {
 		questions[i].id = i; // Ordering
 		questions[i].step = 1; // Step

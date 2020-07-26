@@ -22,26 +22,49 @@ const router = new VueRouter({
 		  path: '/search',
 		  mode: history,
 		  name: 'search',
+		  props: (route) => ({ session }),
 		  component: Search
 		},
 		{
 		  path: '/listing',
 		  mode: history,
 		  name: 'Listing',
+		  props: (route) => ({ questions: session.questions }),
 		  component: Listing
 		},
 		{
 		  path: '/answering',
 		  mode: history,
 		  name: 'Answering',
-		  props: (route) => ({ questions }),
+		  props: (route) => ({ questions: session.questions ,session, sessionUpdate}),
 		  component: Answering
 		},
 		{
 		  path: '/settings',
 		  mode: history,
-		  props: (route) => ({ questions }),
+		  props: (route) => ({ questions: session.questions, session:session , sessionUpdate}),
 		  component: Settings
+		},
+		{
+		  path: '/user_questions',
+		  mode: history,
+		  name:'user-questions',
+		  //props: (route) => ({ questions }),
+		  component: userQuestionData
+		},
+		{
+		  path: '/user/sessions',
+		  mode: history,
+		  name:'user-sessions',
+		  //props: (route) => ({ questions }),
+		  component: userSessionsData
+		},
+		{
+		  path: '/user/settings',
+		  mode: history,
+		  name:'login-system-settings',
+		  //props: (route) => ({ questions: session.questions }),
+		  component: LoginSystemSettings
 		},
 		{ path: '*', redirect: '/' }
 	]
