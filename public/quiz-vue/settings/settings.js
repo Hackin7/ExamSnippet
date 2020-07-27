@@ -52,7 +52,7 @@ var Settings = Vue.component('settings', {
 	methods : {
 		loadData : function(){
 			session.questions = JSON.parse(this.savedata);
-			for (q in questions){questions[q] = legacyToNew(questions[q]);}
+			for (q in session.questions){session.questions[q] = legacyToNew(session.questions[q]);}
 			alert("Save data Loaded");
 		},
 	}
