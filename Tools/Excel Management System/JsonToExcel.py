@@ -14,7 +14,7 @@ def getDfCol(df):
 
 def listToString(dataList):
     dataList = [str(i) for i in dataList]
-    return ','.join(dataList)
+    return '|'.join(dataList)
     
 def questionStoreToDataframe(qStore):
     columns = ['Subject', 'Paper', 'Topics', 'QuestionID', 'Question', 'Given', 'Answers', 'Marks', 'Type', 'selfMark', 'imagesURL', 'answerImagesURL', 'pdfsURL', 'answerPdfsURL']

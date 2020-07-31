@@ -6,22 +6,28 @@ answeringHTML = `
 <div v-for="Q in questions">
 <div class="card" style="margin-bottom:80px;" v-if="Q.step==1">
 
-<div class="card-header"><b>Question {{Q.id+1}}: {{Q.q_id}}</b></div>
+<div class="card-header">
+	<b>Question {{Q.id+1}}: {{Q.q_id}}</b>
+	<span style="float:right;">Show Resources <input v-model="showResources[Q.id]" type="checkbox" checked/></span>
+</div>
 <div class="card-body">
-    <question-viewing v-bind:pdfs="Q.pdf" v-bind:images="Q.images"  v-if="gradingSystem.checkQuestionHasResources(Q)"></question-viewing>
-    <div v-bind:class="'question-answering '+ (!gradingSystem.checkQuestionHasResources(Q) ? 'wide':'')" >
+    <question-viewing v-bind:pdfs="Q.pdf" v-bind:images="Q.images"  v-if="gradingSystem.checkQuestionHasResources(Q)&&(showResources[Q.id]||showResources[Q.id]==undefined)"></question-viewing>
+    <div v-bind:class="'question-answering '+ (!(gradingSystem.checkQuestionHasResources(Q)&&(showResources[Q.id]||showResources[Q.id]==undefined)) ? 'wide':'')" >
+	
         <question-header v-bind:Q="Q" v-bind:marks="gradingSystem.questionScore(Q.marks)"></question-header>
+		
+		<br><b>Answering:</b><br>
         <!-- Input Types -->
         <div v-if="Q.tags.Type[0] == 'mcq'" v-for="(g,given) in Q.given" >
             <p><input v-bind:name="Q.id+'_'" type='radio' v-model="Q.answer[0]" v-bind:value="Q.given[given]"/>  {{Q.given[given]}}</p>
         </div>
-        <div v-if="Q.tags.Type[0] == 'blank'" v-for="(g,given) in Q.given">
+        <!--<div v-if="Q.tags.Type[0] == 'blank'" v-for="(g,given) in Q.given">
             <input v-bind:name="Q.id+'_'+given" type='text' v-model="Q.answer[given]"/><br>
-        </div>
-        <div v-if="Q.tags.Type[0] == 'open'" v-for="(g,given) in Q.given">
+        </div>-->
+        <div v-if="Q.tags.Type[0] != 'mcq'" v-for="(g,given) in Q.given">
 			<textarea v-bind:name="Q.id+'_'+given" v-model="Q.answer[given]"/></textarea></div>
 		
-        Working Area:<br>
+        <br><b>Working Area:</b><br>
 		<textarea v-model="Q.workingArea"/></textarea><br>
 		<whiteboard-general v-bind:data="Q.whiteboard" v-bind:noedit="false"></whiteboard-general>
 		
@@ -133,9 +139,11 @@ answeringHTML = `
 Vue.component('pdf-viewer', {
   props: ['pdfs'],
   template:
-        `<span><object v-if="pdfs != null" v-for="pdf in pdfs"
-         v-bind:data="'http://docs.google.com/gview?url='+pdf+'&embedded=true'">
+        `<span>
+		<object type="application/pdf" v-if="pdfs != null" v-for="pdf in pdfs"
+			v-bind:data="'http://docs.google.com/gview?embedded=true&url='+pdf">
         </object>
+		
 		<div v-for="(pdf,index) in pdfs"><a v-bind:href="'http://docs.google.com/gview?url='+pdf+'&embedded=true'" target="_blank" >PDF Link {{index+1}}</a></div>
 		</span>
         `
@@ -143,8 +151,61 @@ Vue.component('pdf-viewer', {
 
 Vue.component('question-header', {
   props: ['Q', 'marks'],
+  data: function() {
+		return {
+			categoryPreviewLength: 4,
+			tagPreviewLength: 1,
+			expandTags:false,
+		}
+	},
   template:
-        '<span>{{Q.q_id}}: {{Q.question}} <b>[{{marks}}]</b><br><span>Tagged: {{Q.tags}}</span></span>'
+        `<span>
+			{{Q.q_id}}: {{Q.question}} <b>[{{marks}}]</b><br>
+			<span><b>Tagged</b>:
+					<span v-if="!expandTags" >
+						<span style="margin-left: 0.25em;" v-for="tag in trimmedObjKeys(Q.tags,categoryPreviewLength)">
+						{{tag}}: 
+							<span data-toggle="tooltip" v-bind:title="Q.tags[tag][labelIndex]" disabled="" class="badge badge-secondary" 
+							style="margin-left: 0.25em;" v-for="labelIndex in trimmedObjKeys(Q.tags[tag],tagPreviewLength)"><span>
+								{{trimmedString(Q.tags[tag][labelIndex])}}
+							</span></span>
+						</span>
+						...
+					</span>
+					
+					<span data-toggle="tooltip" title="Show More"  class="badge badge-primary" 
+						style="margin-left: 0.25em; cursor: pointer;" v-on:click="expandTags=!expandTags;"><span>
+						{{!expandTags?'+':'-'}}
+					</span></span>
+					
+					<span v-if="expandTags">
+						<div style="margin-left: 0.25em;" v-for="tag in Object.keys(Q.tags)">
+						{{tag}}: 
+							<span data-toggle="tooltip" v-bind:title="label" disabled="" class="badge badge-secondary" 
+							style="margin-left: 0.25em;" v-for="label in Q.tags[tag]"><span>
+								{{label}}
+							</span></span>
+						</div>
+					</span>
+			</span>
+		</span>`,
+	methods : {
+		trimmedObjKeys: function(obj,threshold){
+			let keys = Object.keys(obj);
+			if (keys.length > threshold){
+				keys.splice(threshold, keys.length-threshold);
+			}
+			return keys;
+		},
+		trimmedString : function(string){
+			let threshold = 11;
+			if (string.length > threshold){
+				return string.substring(0,threshold-3)+'...'
+			}else{
+				return string;
+			}
+		},
+	}
 });
 
 Vue.component('question-viewing', {
@@ -186,7 +247,10 @@ var Answering = Vue.component('answering', {
 	template:answeringHTML,
 	data: function() {
 		return {
-			gradingSystem:gradingSystem,window,
+			gradingSystem:gradingSystem,window,Object,
+			showResources:{},
 		}
+	},
+	created: function(){
 	}
 })

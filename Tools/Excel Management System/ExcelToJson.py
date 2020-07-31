@@ -13,7 +13,7 @@ def readList(string):
     if string == 'nan' or string == '-':
         return []
     else:
-        return string.split(',')
+        return string.split('|')
     
 def readToQuestionStore(qStore, FILENAME):
     xlsx = pd.ExcelFile(FILENAME)
@@ -34,11 +34,14 @@ def readToQuestionStore(qStore, FILENAME):
         question.questionId = read(row["QuestionID"])
         question.question = read(row["Question"])
         question.given = readList(row["Given"])
+        if len(question.given) == 0:
+            question.given.append("")
         question.answers = readList(row["Answers"])
         question.marks = [int(float(m)) for m in readList(row["Marks"])]
 
         question.type = read(row["Type"])
-        question.selfMark = read(row["selfMark"])
+        question.selfMark = read(row["selfMark"])!="0"
+        #print(question.selfMark!="0")
 
         question.imagesURL = readList(row["imagesURL"])
         question.answerImagesURL = readList(row["answerImagesURL"])
