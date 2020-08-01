@@ -2,9 +2,9 @@ var express = require('express');
 var bcrypt = require('bcrypt');
 
 class Users{
-	constructor(){
+	constructor(url){
 		this.MongoClient = require('mongodb').MongoClient;
-		this.dbURL = process.env.MONGODB_URL || "mongodb://localhost:27017/";
+		this.dbURL = url || "mongodb://localhost:27017/";
 		this.dbName = "exam-snippets";
 		this.collection = "users"
 		

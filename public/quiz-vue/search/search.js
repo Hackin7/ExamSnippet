@@ -32,7 +32,7 @@ var searchHTML = `
 </div>
 
 <div class="search-main">
-    <h4>Questions</h4>
+    <h4>Questions <h5 style="float:right;display: inline;">{{taggingSystem.found.length}} found</h5></h4>
         <div class="list-group checked-list-box search-scrollable-group">
       <li class="list-group-item" v-for="Q in taggingSystem.found">
 		<input type="checkbox" v-model="taggingSystem.selected[Q]"/>

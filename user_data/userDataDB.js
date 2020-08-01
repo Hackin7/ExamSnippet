@@ -1,8 +1,8 @@
 var express = require('express');
 class UserQuestionData{
-	constructor(){
+	constructor(url){
 		this.MongoClient = require('mongodb').MongoClient;
-		this.dbURL = process.env.MONGODB_URL || "mongodb://localhost:27017/";
+		this.dbURL = url || "mongodb://localhost:27017/";
 		this.dbName = "exam-snippets";
 		this.collection = "usersQuestions"
 		
@@ -87,7 +87,10 @@ class UserQuestionData{
 	
 	addSessions(id,newSessions){
 		return this.update(id, 
-			{$push: {sessions:{$each:newSessions} }}
+			{$push: {sessions:{
+				$each:newSessions,
+				$position:0
+			} }}
 		);
 	}
 	

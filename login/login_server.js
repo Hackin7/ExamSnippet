@@ -13,7 +13,7 @@ var SETTINGS = {
 }
 
 var usersDB = require('./userdb.js');
-var userdb = new usersDB();
+var userdb = new usersDB(process.env.MONGODB_URL);
 
 loginSystem.use('/static',express.static(path.join(__dirname, 'static')));
 

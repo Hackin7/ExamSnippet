@@ -45,15 +45,25 @@ var Settings = Vue.component('settings', {
 	template:settingsHTML,
 	data: function() {
 		return {
-			savedata : JSON.stringify(this.questions),
+			savedata : JSON.stringify(this.session),
 			data:settings.data,
 		}
 	},
 	methods : {
 		loadData : function(){
-			this.session.questions = JSON.parse(this.savedata);
-			for (q in this.session.questions){this.session.questions[q] = legacyToNew(this.session.questions[q]);}
-			alert("Save data Loaded");
+			let data = JSON.parse(this.savedata);
+			if (Array.isArray(data)){ //Legacy Code
+				this.session.questions = data;
+				for (q in this.session.questions){this.session.questions[q] = legacyToNew(this.session.questions[q]);}
+				alert("Legacy save data loaded");
+			}else{
+				for (q in data.questions){data.questions[q] = legacyToNew(data.questions[q]);}
+				for (property in data){
+					this.session[property] = data[property];
+				}
+				alert("Save data Loaded");
+			}
+			
 		},
 	}
 })

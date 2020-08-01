@@ -136,9 +136,12 @@ settings.data = {};
 settings.data.url = "../QuestionData/A_Level.json";
 settings.data.sources = {"Secondary School O Level":'/QuestionData/Secondary_School_O_Level',"A Level":'/QuestionData/A_Level.json'};
 
+function padZero(str){
+	return (String(str).length == 2 ? str: '0'+str)
+}
 function getDateTime(today){
 	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	var time = padZero(today.getHours()) + ":" + padZero(today.getMinutes()) + ":" + padZero(today.getSeconds());
 	var dateTime = date+' '+time;
 	return dateTime;
 }

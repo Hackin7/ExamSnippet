@@ -7,7 +7,7 @@ var SETTINGS = {
 }
 
 var UserDataDB = require('./userDataDB.js');
-var userdb = new UserDataDB();
+var userdb = new UserDataDB(process.env.MONGODB_URL);
 
 questionSystem.use(bodyParser.json());
 questionSystem.post('/api/get_question_data', (req, res)=>{

@@ -32,14 +32,19 @@ var userSessionsHTML = `
 </div>
 
 <div class="search-main">
-    <h4>Sessions</h4>
+    <h4>Sessions <h5 style="float:right;display: inline;">{{taggingSystem.found.length}} found</h5></h4>
       <div class="list-group checked-list-box search-scrollable-group">
 		<li class="list-group-item" v-for="Q in taggingSystem.found">
 			<input type="checkbox" name="session-choice" v-model="taggingSystem.selected[Q]"/>
 			<b>SessionDate:</b> {{taggingSystem.itemsList[Q].startDate}}<br
 			 
 			<ul>
-			<b>Show Questions</b> <input type="checkbox" name="session-choice" v-model="showQuestionsInSessions[Q]"/>	
+			<span><b>Questions(s)</b>: {{taggingSystem.itemsList[Q].questions.length}} </span> 
+			<span data-toggle="tooltip" title="Show More"  class="badge badge-primary" 
+				style="margin-left: 0.25em; cursor: pointer;" v-on:click="toggleQuestions(Q);"><span>
+				{{!showQuestionsInSessions[Q]?'+':'-'}}
+			</span></span>
+			
 				<li v-if="showQuestionsInSessions[Q]" v-for="qns in taggingSystem.itemsList[Q].questions">
 					<question-header v-bind:Q="qns"
 									v-bind:marks="gradingSystem.questionScore(qns.marks)">
@@ -73,6 +78,15 @@ var userSessionsData = Vue.component('user-sessions', {
 		}
 	},
 	methods : {
+		toggleQuestions: function(Q){
+			//console.log(Q);
+			if (this.showQuestionsInSessions[Q]==null){
+				Vue.set(this.showQuestionsInSessions, Q, true);
+			}else{
+				Vue.set(this.showQuestionsInSessions, Q, !this.showQuestionsInSessions[Q]);
+			}
+			console.log(this.showQuestionsInSessions);
+		},
 		processing: function(itemsList){
 			for (var i in itemsList){
 				//if (true){
