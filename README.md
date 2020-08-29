@@ -6,11 +6,13 @@ Very much a Work In Progress
 
 Just a Personal Project to test the MEAN stack
 
-## How to use
+## How to use (Work in progress)
 1. Prepare the exam papers and Generate an index.json for the papers
 2. Put Papers in Questions/[Subject]/[Paper]
-3. Run ```npm start```
-4. Open up localhost:8080
+3. Set the `MONGODB_URL` environment variable to an appropriate value 
+  - For Windows Powershell, use `$env:MONGODB_URL = '<URL>'`
+4. Run ```npm start```
+5. Open up localhost:8080
 
 This could work too I guess: 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)

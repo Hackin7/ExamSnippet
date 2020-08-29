@@ -1,6 +1,6 @@
 object{height:60vh;}
 .question-viewing{overflow-y: auto;max-height:65vh;}
-.question-answering{overflow-y: auto; max-height:35vh;}
+/*.question-answering{overflow-y: auto; max-height:35vh;}*/
 textarea{min-height:10vh;}
 @media screen and (min-width: 600px){
     .card{margin:auto;}
@@ -14,7 +14,7 @@ textarea{min-height:10vh;}
         grid-column-gap: 0.5em;
     }
     object{width:95%;}
-    .question-answering{max-height:65vh;}
+    /*.question-answering{max-height:65vh;}*/
     .result{
         grid-column:span 2;
     }
