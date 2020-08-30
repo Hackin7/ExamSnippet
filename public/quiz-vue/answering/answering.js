@@ -92,36 +92,53 @@ answeringHTML = `
         <h4><b>Total Score: {{gradingSystem.getTotalScoring(questions)}}</b></h4>
         <h5>Questions:</h5>
     </div>
-    
-    <div v-for="Q in questions" class="result">
-    <question-header v-bind:Q="Q" v-bind:marks="gradingSystem.questionScore(Q.marks)"></question-header>
 	
-    <table class="table">
-    <tr><th v-if="gradingSystem.checkQuestionHasResources(Q)">Images</th><th>Answer</th><th width="40%">Correct Answer</th></tr>
-        <tr>
-            <td width="20%" v-if="gradingSystem.checkQuestionHasResources(Q)">
-					<resources-rundown v-bind:pdfs="Q.pdf" v-bind:images="Q.images"></resources-rundown>
-            </td>
-            <td><ul>
-                <li v-for="answer in Q.answer">
-                <p>{{answer}}</p></li>
-            </ul></td>
-            <td width="20%"  v-if="gradingSystem.checkQuestionHasAnswerResources(Q)">
-                    <resources-rundown v-bind:pdfs="Q.anspdf" v-bind:images="Q.answerImages"></resources-rundown>
-            </td>
-            <td><ul>
-                <li v-for="(c,correct) in Q.correct" v-bind:style="gradingSystem.mistakeHighlighting(Q,correct)">
-                {{Q.correct[correct]}}  <b>[{{Q.marks[correct]}}]</b></li>
-            </ul></td>
-        </tr>
+    <table class="table" style='width:100%'>
+		<tr>
+			<th>Question</th>
+			<th>Resources</th>
+			<th>Answer</th>
+			<th>Correct Answer</th>
+			<th>Others</th>
+		</tr>
+			
+		<tr v-for="Q in questions" class="result">
+			<td>
+				<question-header v-bind:Q="Q" v-bind:marks="gradingSystem.questionScore(Q.marks)"></question-header>
+			</td>
+			
+			<td>
+				<span  v-if="!gradingSystem.checkQuestionHasResources(Q)">No Resources</span>
+				<resources-rundown v-bind:pdfs="Q.pdf" v-bind:images="Q.images"></resources-rundown>
+			</td>
+			
+			<td>
+				
+				<ul>
+					<li v-for="answer in Q.answer">
+					<p>{{answer}}</p></li>
+				</ul>
+				<b>Working Given:</b> <p>{{Q.workingArea}}</p> 
+				<whiteboard-general v-bind:data="Q.whiteboard" v-bind:noedit="true"></whiteboard-general>
+			</td>
+			
+			
+			
+			<td><ul>
+				<resources-rundown v-bind:pdfs="Q.anspdf" v-bind:images="Q.answerImages"></resources-rundown>
+				<li v-for="(c,correct) in Q.correct" v-bind:style="gradingSystem.mistakeHighlighting(Q,correct)">
+				{{Q.correct[correct]}}  <b>[{{Q.marks[correct]}}]</b></li>
+			</ul></td>
+			
+			<td>
+				Comments: <p>{{Q.markerComments}}</p>
+			</td>
+		</tr>
+	
     </table>
-    Working Given: <p>{{Q.workingArea}}</p> 
-	<whiteboard-general v-bind:data="Q.whiteboard" v-bind:noedit="true"></whiteboard-general>
-	<hr>
-    Comments: <p>{{Q.markerComments}}</p>
+    
     <br/><br/>
 	
-	</div>
  
 </div>
 <div class="card-footer">

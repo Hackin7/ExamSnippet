@@ -17,14 +17,22 @@ def readList(string):
     
 def readToQuestionStore(qStore, FILENAME):
     xlsx = pd.ExcelFile(FILENAME)
-    df = pd.read_excel(xlsx,  'Questions')
+    for name in xlsx.sheet_names:
+        print(name)
+        if name.startswith('Questions'):
+            readSheetToQuestionStore(qStore, xlsx, name)
+
+def readSheetToQuestionStore(qStore, xlsx, sheet_name='Questions'):
+    df = pd.read_excel(xlsx,  sheet_name)
     
-    print(df.shape[0])
+    #print(df.shape[0])
+    counter = 0
     for rowIndex in range(df.shape[0]): # Number of rows
         row = df.iloc[rowIndex]
         ### Assignment of Question Data ########################
         if str(row["Subject"]) == "nan": #Nothing left
             break
+        counter += 1
         
         question = qs.ExamQuestion()
         question.subject = read(row["Subject"])
@@ -49,6 +57,7 @@ def readToQuestionStore(qStore, FILENAME):
         question.answerPdfsURL = readList(row["answerPdfsURL"])
         ###############################################################
         qStore.addQuestion(question)
+    print(counter)
     
 XLS_FILENAME = './output.xlsx'
 JSON_FILENAME = '../../public/QuestionData/A_Level.json'
