@@ -2,6 +2,11 @@ object{height:60vh;}
 .question-viewing{overflow-y: auto;max-height:65vh;}
 /*.question-answering{overflow-y: auto; max-height:35vh;}*/
 textarea{min-height:10vh;}
+
+.table{font-size:0.75em;}
+.show-when-small{display:inline;}
+.hide-when-small{display:none;}
+
 @media screen and (min-width: 600px){
     .card{margin:auto;}
     object{width:100%;}
@@ -12,11 +17,8 @@ textarea{min-height:10vh;}
     }
     object{width:95%;}
     /*.question-answering{max-height:65vh;}*/
-    .result{
-        grid-column:span 2;
-    }
-    .wide{
-        grid-column:span 2;
-    }
+	.table{font-size:1em;}
+	.hide-when-small{display:inline;}
+	.show-when-small{display:none;}
 }
 

@@ -88,7 +88,7 @@ loginSystem.post('/get/user_details', (req, res)=>{
 		})
 		.catch(error => {
 			console.log(error)
-			res.status(500).json({error:error});
+			res.status(500).json({error:error.toString()});
 		});
 });
 
@@ -102,7 +102,7 @@ loginSystem.post('/update/user', (req, res)=>{
 		})
 		.catch(error => {
 			console.log(error)
-			res.status(500).json({result:error});
+			res.status(500).json({result:error.toString()});
 		});
 });
 
@@ -114,7 +114,7 @@ loginSystem.post('/update/password', (req, res)=>{
 		})
 		.catch(error => {
 			console.log(error)
-			res.status(500).json({result:error});
+			res.status(500).json({result:error.toString()});
 		});
 });
 
@@ -126,7 +126,7 @@ loginSystem.post('/delete/user', (req, res)=>{
 		})
 		.catch(error => {
 			console.log(error)
-			res.status(500).json({result:error});
+			res.status(500).json({result:error.toString()});
 		});
 });
 
@@ -139,7 +139,8 @@ loginSystem.route('/api/login').post(async (req, res) => {
 			req.session.userId = user._id;
 			res.json({result:"Done"});
 		}).catch(error=>{
-			res.status(500).json({result:error});
+			console.log(error);
+			res.status(500).json({result:error.toString()});
 		});
 });
 loginSystem.route('/api/signup').post(async (req, res) => {
@@ -148,7 +149,7 @@ loginSystem.route('/api/signup').post(async (req, res) => {
 			req.session.userId = user._id;
 			res.json({result:"Done"});
 		}).catch(error=>{
-			res.status(500).json({result:error});
+			res.status(500).json({result:error.toString()});
 		});
 });
 /////////////////////////////////////////////////////////////////////////////////////////

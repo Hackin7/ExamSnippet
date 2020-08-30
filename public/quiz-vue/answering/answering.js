@@ -93,21 +93,18 @@ answeringHTML = `
         <h5>Questions:</h5>
     </div>
 	
-    <table class="table" style='width:100%'>
+    <table class="table">
 		<tr>
 			<th>Question</th>
-			<th>Resources</th>
 			<th>Answer</th>
 			<th>Correct Answer</th>
-			<th>Others</th>
+			<th ><span class="hide-when-small">Comments</span></th>
 		</tr>
 			
 		<tr v-for="Q in questions" class="result">
 			<td>
 				<question-header v-bind:Q="Q" v-bind:marks="gradingSystem.questionScore(Q.marks)"></question-header>
-			</td>
-			
-			<td>
+				<br><br>
 				<span  v-if="!gradingSystem.checkQuestionHasResources(Q)">No Resources</span>
 				<resources-rundown v-bind:pdfs="Q.pdf" v-bind:images="Q.images"></resources-rundown>
 			</td>
@@ -128,10 +125,12 @@ answeringHTML = `
 				<resources-rundown v-bind:pdfs="Q.anspdf" v-bind:images="Q.answerImages"></resources-rundown>
 				<li v-for="(c,correct) in Q.correct" v-bind:style="gradingSystem.mistakeHighlighting(Q,correct)">
 				{{Q.correct[correct]}}  <b>[{{Q.marks[correct]}}]</b></li>
-			</ul></td>
+			</ul>
+			<span class='show-when-small'><b>Comments:</b><br>{{Q.markerComments}}</span>
+			</td>
 			
-			<td>
-				Comments: <p>{{Q.markerComments}}</p>
+			<td >
+				<span class="hide-when-small">{{Q.markerComments}}</span>
 			</td>
 		</tr>
 	

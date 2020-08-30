@@ -60,6 +60,12 @@ const router = new VueRouter({
 		  component: userSessionsData
 		},
 		{
+		  path: '/user/login',
+		  mode: history,
+		  name:'login-system-login',
+		  component: LoginSystemLogin
+		},
+		{
 		  path: '/user/settings',
 		  mode: history,
 		  name:'login-system-settings',

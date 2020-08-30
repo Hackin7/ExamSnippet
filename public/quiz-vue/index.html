@@ -96,7 +96,7 @@
 			  <div role="separator" class="dropdown-divider"></div>
 			  <a class="dropdown-item" href="../../login_system/logout">Logout</a>
 		  </span>
-		  <a class="dropdown-item login-system-loggedout-options" href="../../login_system/login">Log In/ Sign Up</a>
+		  <a class="dropdown-item" href="#/user/login">Log In/ Sign Up</a> <!--class: login-system-loggedout-options-->
 		  
 		</div>
     </li>
@@ -120,7 +120,7 @@
 		  <div role="separator" class="dropdown-divider"></div>
 		  <a class="dropdown-item" href="../../login_system/logout">Logout</a>
 	  </span>
-	  <a class="dropdown-item login-system-loggedout-options" href="../../login_system/login">Log In/ Sign Up</a>
+	  <a class="dropdown-item" href="#/user/login">Log In/ Sign Up</a> <!--class: login-system-loggedout-options-->
 	  
 	</div>
   </span>
@@ -157,7 +157,13 @@ var sessionUpdate = function(givenSession){
 	xhr.setRequestHeader("Set-Cookie",getCookie('user_sid'));
 	xhr.onload = function () {
 		let data = JSON.parse(this.responseText);
-		if (data.error != null){alert("Error:\n"+data.error);}
+		if (data.error != null){
+			alert("Error:\n"+data.error);
+			try{
+				updateNavBarUser();
+			}catch(e){
+			}
+		}
 		else{
 			alert("Saved!");
 		}
@@ -179,6 +185,7 @@ var sessionUpdate = function(givenSession){
 <script type="text/javascript" src="user_data/user-search.js"></script>
 <script type="text/javascript" src="user_data/user-sessions.js"></script>
 <script type="text/javascript" src="user_data/login-system.js"></script>
+<script type="text/javascript" src="user_data/user-login.js"></script>
 <script type="text/javascript" src="user_data/login-settings.js"></script>
 <script type="text/javascript" src="router.js"></script>
 <script>
