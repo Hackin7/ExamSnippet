@@ -93,7 +93,7 @@ answeringHTML = `
         <h5>Questions:</h5>
     </div>
 	
-    <table class="table">
+    <table class="table result">
 		<tr>
 			<th>Question</th>
 			<th>Answer</th>
@@ -101,7 +101,7 @@ answeringHTML = `
 			<th ><span class="hide-when-small">Comments</span></th>
 		</tr>
 			
-		<tr v-for="Q in questions" class="result">
+		<tr v-for="Q in questions" >
 			<td>
 				<question-header v-bind:Q="Q" v-bind:marks="gradingSystem.questionScore(Q.marks)"></question-header>
 				<br><br>
