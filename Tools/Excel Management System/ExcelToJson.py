@@ -48,7 +48,10 @@ def readSheetToQuestionStore(qStore, xlsx, sheet_name='Questions'):
         question.marks = [int(float(m)) for m in readList(row["Marks"])]
 
         question.type = read(row["Type"])
-        question.selfMark = read(row["selfMark"])!="0"
+        try:
+            question.selfMark = int(float(read(row["selfMark"])))
+        except:
+            question.selfMark = True
         #print(question.selfMark!="0")
 
         question.imagesURL = readList(row["imagesURL"])
