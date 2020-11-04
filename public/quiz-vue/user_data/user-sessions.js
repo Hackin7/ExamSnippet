@@ -36,6 +36,7 @@ var userSessionsHTML = `
       <div class="list-group checked-list-box search-scrollable-group">
 		<li class="list-group-item" v-for="Q in taggingSystem.found">
 			<input type="checkbox" name="session-choice" v-model="taggingSystem.selected[Q]"/>
+			<span v-on:click="rename(Q);" title="Click to rename" style="cursor: pointer;"><b>Name: </b><span >{{taggingSystem.itemsList[Q].name}},</span></span>
 			<b>SessionDate:</b> {{taggingSystem.itemsList[Q].startDate}}<br
 			 
 			<ul>
@@ -59,7 +60,7 @@ var userSessionsHTML = `
 
 <div class="search-ok">
     <br>
-    <button role="button" class="btn btn-secondary" style="float:left;" v-on:click="taggingSystem.selectAll();">Select All</button>
+    <button role="button" class="btn btn-secondary" style="float:left;" v-on:click="taggingSystem.selectAll();$forceUpdate();">Select All</button>
     <button  role="button" class="btn btn-secondary" style="float:right;" v-on:click="useSelected();">OK</button>
 	<button  role="button" class="btn btn-secondary" style="float:left;" v-on:click="deleteSelected();">Delete</button>
 	<br><br>
@@ -78,6 +79,16 @@ var userSessionsData = Vue.component('user-sessions', {
 		}
 	},
 	methods : {
+		rename: function(Q){
+			var newName = prompt("Enter new name:");
+			//alert(newName);
+			if (newName !== null){
+				this.taggingSystem.itemsList[Q].name = newName;
+				sessionUpdate(this.taggingSystem.itemsList[Q]);
+				this.$forceUpdate();
+			}
+			//console.log(this.taggingSystem.itemsList[Q])
+		},
 		toggleQuestions: function(Q){
 			//console.log(Q);
 			if (this.showQuestionsInSessions[Q]==null){
@@ -152,13 +163,24 @@ var userSessionsData = Vue.component('user-sessions', {
 			let newSessions = taggingSystem.getSelected();
 			console.log(JSON.stringify(newSessions))
 			if (newSessions.length !== 1){
-				alert("You can only select 1 session at a time. You currently selected "+newSessions.length+" sessions.")
-				return;
+				//alert("You can only select 1 session at a time. You currently selected "+newSessions.length+" sessions.")
+				if (confirm("Combine "+newSessions.length+" sessions for viewing?")){
+					// Concatenation of all things
+					session.name = "Combination of sessions";
+					session.questions = [];
+					for (var curr in newSessions){
+						session.questions = session.questions.concat(newSessions[curr].questions);
+					}
+					window.location.href = "#/answering";
+				}else{
+					return;
+				}
+			}else{
+				session = newSessions[0];
+				//console.log(newQuestions);
+				//questions = questions.concat(newQuestions);
+				window.location.href = "#/answering";
 			}
-			session = newSessions[0];
-			//console.log(newQuestions);
-			//questions = questions.concat(newQuestions);
-			window.location.href = "#/answering";
 		}
 	},
 	created: function() {

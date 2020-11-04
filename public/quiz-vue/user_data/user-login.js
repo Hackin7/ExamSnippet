@@ -10,7 +10,7 @@ var loginPageHTML = `
 </div>
 <div class="form-group">
 	<label class="form-label">Password</label>
-	<input placeholder="Password" type="password" name=password class="form-control" value="" v-model="password">
+	<input placeholder="Password" type="password" name=password class="form-control" value="" v-model="password" v-on:keyup.enter="login()">
 </div>
 	<button v-on:click="login()" class="btn btn-primary">Login</button>
 
