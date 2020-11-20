@@ -5,16 +5,20 @@ const router = new VueRouter({
 		  mode: history,
 		  name: 'Main',
 		  component:  {template:`
-		  <div class="card" style="margin-top:80px">
-			<div class="card-header">Select Questions</div>
-			<div class="card-body">
-				<!--<div class="container"><div class="row">
-					<div class="col" ng-repeat="image in Q.images"><img src="{{image}}" alt="No Related image of question here"/></div>
-				</div></div> -->
-				<a href="#/search" role="button" class="btn btn-secondary">Search for Question</a>
+		  <div >
+		  <br>
+		  <div style='margin:auto;width: 80%;'>
+		  <h1>Exam Snippets</h1>
+		  <p>Choose and do random examination questions on your computer! You can self-review your questions or even get the computer to mark MCQ questions! You can even create an account and save your sessions to the database!</p>
+		  <p>This currently has Singapore-Cambridge GCE O-Level/ A Level Questions for only a few subjects</p>
+		  <p>For more information on the code and how to set up check <a href='https://github.com/Hackin7/ExamSnippet'>here</a></p>
+		  <a href="#/search" role="button" class="btn btn-secondary">Search for Question</a>
 				<span></span>
-				<a href="#/settings" role="button" class="btn btn-secondary">Settings and JSON Save Data</a>
+				<!--<a href="#/settings" role="button" class="btn btn-secondary">Settings and JSON Save Data</a>-->
+		  </div>
+		  
 			</div>
+			
 			</div>
 		  `}
 		},

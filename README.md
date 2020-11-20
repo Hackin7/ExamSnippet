@@ -1,13 +1,16 @@
 # ExamSnippet
 
-An educational quiz made to provide quiz about exmination questions
+An educational quiz made to provide (random) examination questions.
+It's meant to help students to self practice whenever and wherever they want to.
+You can self-mark papers or for MCQ questions, get the computer to mark for you!
 
-Very much a Work In Progress
+Just a Personal Project to test the MEAN/MEVN stack
 
-Just a Personal Project to test the MEAN stack
+Since I have finished Secondary School and Junior College I probably won't be updating this website any longer with new features or questions. Feel free to make any pull requests or anything or copy the idea!
 
-## How to use (Work in progress)
+## How to use 
 1. Prepare the exam papers and Generate an index.json for the papers
+ - You can put the questions and papers in an Excel Sheet, and then use `ExcelToJson.py`. Check `Tools/Excel Management System`
 2. Put Papers in Questions/[Subject]/[Paper]
 3. Set the `MONGODB_URL` environment variable to an appropriate value 
   - For Windows Powershell, use `$env:MONGODB_URL = '<URL>'`
@@ -17,15 +20,7 @@ Just a Personal Project to test the MEAN stack
 This could work too I guess: 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## TODOs (If possible)
-* Username
-* Work on accounts system and logging of quiz attempts (Preferably using MongoDB)
-* Reorganise the entire repository to be more professional and neater
-* Make index.json Generators for Questions
-
 ## Structure
 The Backend Server and REST API are coded in node.js and express
-The client webpage is using AngularJS, 
-* ngRoute for routing webpages
-* The client webpage gets question data from the server using the REST API $http
-Hopefully the Database will be coded in MongoDB
+The client webpage is using VueJS, 
+The database will be coded in MongoDB

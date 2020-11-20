@@ -16,7 +16,7 @@ var listingHTML = `
 <div class="card-footer">
     <a href="#/search" class="btn btn-secondary" style="float:left;">Add More</a>
     <a href="#!answering" role="button" class="btn btn-secondary" style="float:right;" v-on:click="start();">Start</a>
-    <button class="btn btn-secondary" style="float:right;" v-on:click="questions.splice(0,questions.length.slice(-1)+1);$forceUpdate();">Clear</button>
+    <button class="btn btn-secondary" style="float:right;" v-on:click="questions = [];$forceUpdate();">Clear</button>
 </div>
 </div>
 `;
