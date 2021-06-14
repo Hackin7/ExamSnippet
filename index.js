@@ -1,4 +1,5 @@
 var express = require('express');
+var app = express();
 app.use(function(req, res, next) {
     if (req.headers.origin) {
         res.header('Access-Control-Allow-Origin', '*')
@@ -8,7 +9,6 @@ app.use(function(req, res, next) {
     }
     next()
 })
-var app = express();
 
 var morgan = require('morgan');
 // set morgan to log info about our requests for development use.
