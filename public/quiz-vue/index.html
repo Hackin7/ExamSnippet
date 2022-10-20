@@ -5,24 +5,29 @@
 <head>
     
 <title>Exam Snippets</title>
+
+<!--
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+-->
 
-<!--
 <link rel="stylesheet" href="/libraries/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB">
 <script src="/libraries/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"></script>
 <script src="/libraries/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"></script>
 <script src="/libraries/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"></script>
--->
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script> Need to update vue soon -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+<script src="/libraries/axios.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<!-- https://stackoverflow.com/questions/65149231/vue-createapp-is-not-working-but-is-working-with-new-vue-method -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script> -->
+<script src="/libraries/vue.min.js"></script>
+<!--<script src="https://unpkg.com/vue-router@3.6.5/dist/vue-router.js"></script>-->
+<script src="/libraries/vue-router.js"></script>
 
-<script src="http://zwibbler.com/zwibbler-demo.js"></script>
+<!--<script src="http://zwibbler.com/zwibbler-demo.js"></script>-->
 <style>
     .card{margin:auto;}
     p,#answer{white-space:pre-wrap;}
@@ -189,13 +194,15 @@ var sessionUpdate = function(givenSession){
 <script type="text/javascript" src="user_data/login-settings.js"></script>
 <script type="text/javascript" src="router.js"></script>
 <script>
+Vue.use(VueRouter);
+Vue.config.productionTip = false
 var vm = new Vue({
    el: '#content', //Item selector
    // Variables and data //////////////////////////////////////////////////////////////////////////
-   data: {
-   },
+   data: {},
    router
 });
+
 
 </script>
 </body>
