@@ -51,7 +51,7 @@ answeringHTML = `
 	<div class="col"><question-header v-bind:Q="Q" v-bind:marks="gradingSystem.questionScore(Q.marks)"></question-header></div>
     <div v-if="!gradingSystem.checkQuestionHasResources(Q)"></div>
     
-	<question-viewing v-bind:pdfs="Q.anspdf" v-bind:images="Q.answerimages"  v-if="gradingSystem.checkQuestionHasAnswerResources(Q)">
+	<question-viewing v-bind:pdfs="Q.anspdf" v-bind:images="Q.answerImages"  v-if="gradingSystem.checkQuestionHasAnswerResources(Q)">
 	<h3>Answers:</h3>
 	</question-viewing>
     
