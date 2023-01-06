@@ -157,10 +157,10 @@ Vue.component('pdf-viewer', {
   template:
         `<span>
 		<object type="application/pdf" v-if="pdfs != null" v-for="pdf in pdfs"
-			v-bind:data="'http://docs.google.com/gview?embedded=true&url='+pdf">
+			v-bind:data="'https://docs.google.com/gview?embedded=true&url='+pdf">
         </object>
 		
-		<div v-for="(pdf,index) in pdfs"><a v-bind:href="'http://docs.google.com/gview?url='+pdf+'&embedded=true'" target="_blank" >PDF Link {{index+1}}</a></div>
+		<div v-for="(pdf,index) in pdfs"><a v-bind:href="'https://docs.google.com/gview?url='+pdf+'&embedded=true'" target="_blank" >PDF Link {{index+1}}</a></div>
 		</span>
         `
 });
