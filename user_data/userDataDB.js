@@ -10,7 +10,11 @@ class UserQuestionData{
 		let mgcl = this.MongoClient,  dbURL = this.dbURL, dbName = this.dbName,  collection=this.collection;
 		// Creation of Database and Collection
 		mgcl.connect(dbURL, function(err, db) {
-		  if (err){throw err;}
+			if (err){
+			  console.log("Unable to connect - disabling database access for now.")
+			  return;
+			  //throw err;
+			}
 		  console.log("Database created at "+ dbURL);
 		  
 		  var dbo = db.db(dbName);

@@ -10,7 +10,8 @@ const router = new VueRouter({
 		  <div style='margin:auto;width: 80%;'>
 		  <h1>Exam Snippets</h1>
 		  <p>Choose and do random examination questions on your computer! You can self-review your questions or even get the computer to mark MCQ questions! You can even create an account and save your sessions to the database!</p>
-		  <p>This currently has Singapore-Cambridge GCE O-Level/ A Level Questions for only a few subjects</p>
+		  <p>This currently has Singapore-Cambridge GCE O-Level/ A Level Questions for only a few subjects.</p>
+		  <p>The user login and database might be down due to low demand.</p>
 		  <p>For more information on the code and how to set up check <a href='https://github.com/Hackin7/ExamSnippet'>here</a></p>
 		  <a href="#/search" role="button" class="btn btn-secondary">Search for Question</a>
 				<span></span>

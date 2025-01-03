@@ -1,5 +1,20 @@
 var express = require('express');
 var bcrypt = require('bcrypt');
+const { MongoNetworkError } = require('mongodb/lib/core');
+
+function mongoErrorHandling(err, reject){
+	if (err) {
+		console.log(err);
+		if (err instanceof  MongoNetworkError){
+			reject("Database is currently down - Contact the administrator zunmun@gmail.com if you want to bring it up.")
+		}else {
+			reject("Unknown issue - please contact administrator zunmun@gmail.com for more details: \n" + err);
+		}
+		//reject(err)
+		return true;
+	}
+	return false;
+}
 
 class Users{
 	constructor(url){
@@ -12,7 +27,11 @@ class Users{
 		let mgcl = this.MongoClient,  dbURL = this.dbURL, dbName = this.dbName,  collection=this.collection;
 		// Creation of Database and Collection
 		mgcl.connect(dbURL, function(err, db) {
-		  if (err){throw err;}
+		  if (err){
+			console.log("Unable to connect - disabling database access for now.")
+			return;
+			//throw err;
+	      }
 		  console.log("Database created at "+ dbURL);
 		  
 		  var dbo = db.db(dbName);
@@ -29,7 +48,7 @@ class Users{
 		let mgcl = this.MongoClient, dbURL = this.dbURL, dbName = this.dbName,  collection=this.collection;
 		let promise = new Promise(async function(resolve, reject) {
 			mgcl.connect(dbURL, function(err, db) {
-				if (err){reject(err);}
+				if (mongoErrorHandling(err, reject)){return;}
 				  
 				var dbo = db.db(dbName);
 				dbo.collection(collection).findOne({_id:require('mongodb').ObjectID(id)}, function(err, result) {
@@ -53,7 +72,7 @@ class Users{
 		let mgcl = this.MongoClient, dbURL = this.dbURL, dbName = this.dbName,  collection=this.collection;
 		let promise = new Promise(async function(resolve, reject) {
 			mgcl.connect(dbURL, function(err, db) {
-				if (err){reject(err);}
+				if (mongoErrorHandling(err, reject)){return;}
 				  
 				var dbo = db.db(dbName);
 				// Check if had duplicate username
@@ -92,7 +111,7 @@ class Users{
 				reject("New Password given is too short (less than 5 characters)");
 			}else{
 				mgcl.connect(dbURL, function(err, db) {
-					if (err){reject(err);}
+					if (mongoErrorHandling(err, reject)){return;}
 					  
 					var dbo = db.db(dbName);
 					dbo.collection(collection).findOne({_id:require('mongodb').ObjectID(id)}, async function(err, userToCheck) {
@@ -125,7 +144,7 @@ class Users{
 		let mgcl = this.MongoClient, dbURL = this.dbURL, dbName = this.dbName,  collection=this.collection;
 		let promise = new Promise(async function(resolve, reject) {
 			mgcl.connect(dbURL, function(err, db) {
-				if (err){reject(err);}
+				if (mongoErrorHandling(err, reject)){return;}
 				  
 				var dbo = db.db(dbName);
 				dbo.collection(collection).deleteOne({_id:require('mongodb').ObjectID(id)}, function(err, result) {
@@ -148,8 +167,8 @@ class Users{
 		let mgcl = this.MongoClient, dbURL = this.dbURL, dbName = this.dbName,  collection=this.collection;
 		let promise = new Promise(async function(resolve, reject) {
 			mgcl.connect(dbURL, function(err, db) {
-				if (err){reject(err);}
-				  
+				if (mongoErrorHandling(err, reject)){return;}
+
 				var dbo = db.db(dbName);
 				dbo.collection(collection).find({username:String(username)}).toArray(async function(err, result) {
 					if (err) reject(err); //throw err;
@@ -188,7 +207,7 @@ class Users{
 			
 			// Connect to Database
 			mgcl.connect(dbURL, function(err, db) {
-				if (err){reject(err);} //throw err;
+				if (mongoErrorHandling(err, reject)){return;}
 				  
 				var dbo = db.db(dbName);
 				// Check if had username
