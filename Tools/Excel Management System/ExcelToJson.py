@@ -61,10 +61,18 @@ def readSheetToQuestionStore(qStore, xlsx, sheet_name='Questions'):
         ###############################################################
         qStore.addQuestion(question)
     print(counter)
-    
+
+## For A Levels   
+'''
 XLS_FILENAME = './output.xlsx'
 JSON_FILENAME = '../../public/QuestionData/A_Level.json'
+'''
+
+## For CPSA   
+XLS_FILENAME = './CPSA Questions.xlsx'
+JSON_FILENAME = '../../public/QuestionData/CPSA.json'
 
 store = qs.QuestionStore(JSON_FILENAME)
 readToQuestionStore(store, XLS_FILENAME)
 store.save()#True)
+

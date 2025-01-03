@@ -139,7 +139,11 @@
 var settings = {};
 settings.data = {};
 settings.data.url = "../QuestionData/A_Level.json";
-settings.data.sources = {"Secondary School O Level":'/QuestionData/Secondary_School_O_Level',"A Level":'/QuestionData/A_Level.json'};
+settings.data.sources = {
+	"Secondary School O Level":'/QuestionData/Secondary_School_O_Level',
+	"A Level":'/QuestionData/A_Level.json', 
+	"CREST CPSA (CREST Practitioner Security Analyst)":'/QuestionData/CPSA.json'
+};
 
 function padZero(str){
 	return (String(str).length == 2 ? str: '0'+str)
